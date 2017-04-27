@@ -4,28 +4,26 @@ unset($CFG);
 global $CFG;
 $CFG = new stdClass();
 
-$CFG->dbtype    = 'pgsql';
+$CFG->dbtype    = 'mysqli';
 $CFG->dblibrary = 'native';
-$CFG->dbhost    = '10.1.2.47';
+$CFG->dbhost    = 'localhost';
 $CFG->dbname    = 'moodle';
-$CFG->dbuser    = 'saberes';
-$CFG->dbpass    = 'senhas@beres';
+$CFG->dbuser    = 'root';
+$CFG->dbpass    = 't00r';
 $CFG->prefix    = 'mdl_';
 $CFG->dboptions = array (
   'dbpersist' => 0,
+  'dbport' => '',
   'dbsocket' => '',
 );
 
 $CFG->wwwroot   = 'http://moodleh.interlegis.leg.br/moodle';
 $CFG->dataroot  = '/var/www/moodledata';
-//'/var/aplicacoes/saberes/moodledata';
 $CFG->admin     = 'admin';
 
 $CFG->directorypermissions = 0777;
 
-require_once(dirname(__FILE__) . '/lib/setup.php');
+require_once(__DIR__ . '/lib/setup.php');
 
 // There is no php closing tag in this file,
 // it is intentional because it prevents trailing whitespace problems!
-
-
