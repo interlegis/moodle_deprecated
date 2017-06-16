@@ -26,3 +26,4 @@
 $string['pluginname'] = 'CPF input';
 $string['invalidcpf'] = 'Invalid CPF';
 $string['cpfexists'] = 'CPF already exists';
+$string['onlydigits'] = 'Only digits are accepted';

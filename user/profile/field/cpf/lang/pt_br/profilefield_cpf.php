@@ -26,3 +26,5 @@
 $string['pluginname'] = 'Campo de CPF';
 $string['invalidcpf'] = 'CPF inválido';
 $string['cpfexists'] = 'CPF já existe';
+$string['onlydigits'] = 'Informe apenas dígitos';
+$string['required'] = 'É obrigatório informar o CPF';

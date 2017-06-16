@@ -6,13 +6,14 @@ class profile_field_cpf extends profile_field_base {
             'text',
             $this->inputname,
             format_string($this->field->name),
-            'maxlength="11" size="11" id="profilefield_cpf" pattern="[0-9]{11}"'
+            'maxlength="11" size="11" id="profilefield_cpf" pattern="[0-9]{11}" data-tip="Informe o CPF (apenas números)" title="Apenas números"'
         );
         $mform->setType($this->inputname, PARAM_TEXT);
-	if ($this->is_required() and !has_capability('moodle/user:update', get_context_instance(CONTEXT_SYSTEM))) {
-	       $mform->addRule($this->inputname, get_string('regexerrormessage', 'pluginname'), 'regex', '\d{11}');
+//	if ($this->is_required() and !has_capability('moodle/user:update', get_context_instance(CONTEXT_SYSTEM))) {
+//	       $mform->addRule($this->inputname, get_string('regexerrormessage', 'pluginname'), 'regex', '\d{11}');
+               $mform->addRule($this->inputname, get_string('onlydigits', 'profilefield_cpf'), 'numeric', null, 'client');
 //get_string('required'), 'nonzero', null, 'client');
-	   }
+//	   }
     }
     
     public function edit_validate_field($usernew) {
@@ -27,18 +28,12 @@ class profile_field_cpf extends profile_field_base {
         return $return;
     }
 
+   // Define formatação para o campo de CPF
    public function display_data() {
-//     $options = new stdClass();
-//     $options->para = false;
-//     $checked = intval($this->data) === 1 ? 'checked="checked"' : '';
-//     return '<input disabled="disabled" type="checkbox" name="'.$this->inputname.'" '.$checked.' />';
-//	return $this.data;
-
-	if(  preg_match( '/^(\d{3})(\d{3})(\d{3})(\d{2})$/', $data,  $matches ) ) {
-	    $result = $matches[1] . '.' .$matches[2] . '.' . $matches[3] . '-' . $matches[4];
-	    return $result;
+	if( preg_match( "/^(\d{3})(\d{3})(\d{3})(\d{2})$/", $this->data,  $matches ) )  { 
+         	$result = $matches[1] . '.' .$matches[2] . '.' . $matches[3] . '-' . $matches[4];
 	} else {
-		$result = "";
+		$result = $this->data;
 	}
 	return $result;
    }
