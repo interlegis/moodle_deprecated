@@ -74,7 +74,8 @@ class block_enrol_duration extends block_base {
                 $fulldate = $date['mday'] .' '. $date['month'] .', '. $date['year'];
             }
             */
-            $fulldate = $date['month'] .' '. $date['mday'] .', '. $date['year'];
+            setlocale(LC_ALL,'pt_BR');
+            $fulldate = $date['mday'] . ' de '. strftime('%B',$duration->timeend) .' de '. $date['year'];
             $coursename = $this->page->course->fullname;
 
             $this->content->text  = '<p>'.get_string('enrolmentin', 'block_enrol_duration').' <em>'.$coursename.'</em> '.
