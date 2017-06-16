@@ -43,9 +43,114 @@
     <link rel="shortcut icon" href="{{{ output.favicon }}}" />
     {{{ output.standard_head_html }}}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+	.NavGlobal {
+	    min-height: 47px;
+	    line-height: 40px;
+	    background-color: #00305C;
+	    border-bottom: 4px solid #00824A;
+	    color: #fff;
+	    box-shadow: 0 4px 0 #FAE042;
+	    margin-bottom: 4px;
+	}
+
+	.navbar-static-top {
+	    border-radius: 0;
+	}
+	.navbar-static-top {
+	    z-index: 1000;
+	    border-width: 0 0 1px;
+	}
+
+	.navbar {
+	    position: relative;
+	    border: 1px solid transparent;
+	}
+
+	.container {
+	    margin-right: auto;
+	    margin-left: auto;
+	    padding-left: 15px;
+	    padding-right: 15px;
+	}
+	.u-sizeFill {
+	    overflow: hidden !important;
+	}
+
+	.u-sizeFill, .u-sizeFit, .u-sizeFitAlt {
+	    display: block !important;
+	    width: auto !important;
+	}
+	.u-sizeFitAlt {
+	    float: right !important;
+	}
+
+	.text-center {
+	    text-align: center;
+	}
+
+	.pull-right {
+	    float: right !important;
+	}
+	.dropdown {
+	    position: relative;
+	}
+
+	.flat, .flat:active, .flat:focus, .flat:hover, .flat:visited {
+	    color: inherit;
+	    text-decoration: none;
+	}
+
+	.Icon--md {
+	    font-size: 16px;
+	}
+	.Icon, .ShareIcon::before {
+	    font-family: agenciaweb;
+	    font-style: normal;
+	    font-weight: 400;
+	    font-variant: normal;
+	    text-transform: none;
+	    line-height: 1;
+	    display: inline-block;
+	    vertical-align: middle;
+	}
+
+	.u-alignMiddle {
+    		vertical-align: middle !important;
+	}
+
+	.hidden-xs {
+	    display: block !important;
+	}
+    </style>
 </head>
 
 <body {{{ bodyattributes }}}>
+
+<div class="NavGlobal navbar navbar-static-top">
+        <div class="container">
+            <div class="u-sizeFitAlt">
+                <div class="dropdown pull-right"><a data-toggle="dropdown" href="#" class="flat dropdown-toggle">
+                    <div class="Icon Icon--menu Icon--md"></div> <span class="u-alignMiddle">Portais</span></a>
+                    <ul class="dropdown-menu--dark dropdown-menu">
+                        <li><a href="http://www12.senado.leg.br/institucional/">Institucional</a></li>
+                        <li><a href="http://www25.senado.leg.br/web/senadores/">Senadores</a></li>
+                        <li><a href="http://www25.senado.leg.br/web/atividade/">Atividade Legislativa</a></li>
+                        <li><a href="http://www12.senado.leg.br/noticias/">Notícias</a></li>
+                        <li><a href="http://www12.senado.leg.br/publicacoes/">Publicação e Documentação</a></li>
+                        <li><a href="http://www12.senado.leg.br/orcamento/">Orçamento</a></li>
+                        <li><a href="http://www12.senado.leg.br/transparencia/">Transparência</a></li>
+                        <li><a href="http://www12.senado.leg.br/ecidadania/">e-Cidadania</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="u-sizeFit"><a href="http://www.senado.gov.br/"><img src="http://www.senado.gov.br/inc/essencial/img/senado.svg" alt="Senado Federal" width="170" height="23"></a></div>
+            <div class="u-sizeFill text-center">
+                <div class="hidden-xs"><a href="http://www12.senado.gov.br/institucional/falecomosenado" class="flat">Fale com o Senado</a></div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div id="page-wrapper">
     {{{ output.standard_top_of_body_html }}}
