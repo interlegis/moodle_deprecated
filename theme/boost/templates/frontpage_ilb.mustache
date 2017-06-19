@@ -56,7 +56,6 @@
     <![endif]-->
 
     
-    <base href="http://www12.senado.leg.br/noticias/"><!--[if lt IE 7]></base><![endif]-->
     
 
     
@@ -200,7 +199,10 @@
 			<p>img1 img2</p>		
 		</div> 	
 		<div class="col-lg-3">
-			<form> Buscar cursos: <br/><input placeholder="Busca"/> </form>		
+			<form action='course/search.php'> Buscar cursos: <br/>
+				<input name="search" placeholder="Busca"/> 
+				<input type='submit' value='Buscar' /> 
+			</form>		
 		</div> 	
 	
 	</div>
@@ -247,15 +249,37 @@
 	<div class="row">
 	<div class="col-lg-4"style="background-color:#F7F7F7;"><h2>Saberes</h2><hr><p>A plataforma de ensino e aprendizagem do senado federal</p></div>
 	<div class="col-lg-4"><iframe width="360" height="215" src="https://www.youtube.com/embed/vW7-E5VBAbk" frameborder="0" allowfullscreen></iframe></div>
-	<div class="col-lg-4" style="background-color:#F7F7F7;"><h2>Acesso</h2> <form>Identificação do usuario<br/><input/><br/>Senha:<br/><input/><br/></form></div>
+	<div class="col-lg-4" style="background-color:#F7F7F7;">
+		<h2>Acesso</h2> 
+		<form class="loginform" id="login" method="post" action="login/index.php">
+		  <div class="c1 fld username">
+                     <label for="login_username">Identificação de usuário</label>
+                     <input type="text" name="username" id="login_username" value="">
+                  </div>
+                  <div class="c1 fld password">
+                     <label for="login_password">Senha</label>
+                     <input type="password" name="password" id="login_password" value="">
+                  </div>
+                  <div class="c1 rememberusername">
+                     <input type="checkbox" name="rememberusername" id="rememberusername" value="1">      
+                     <label for="rememberusername">Lembrar identificação de usuário</label>
+                  </div>
+                  <div class="c1 btn"><input type="submit" value="Acessar"></div>
+		</form>
+	</div>
 </div>
 </div>
 
 
 <div class="container">
 	<div class="row">
-	<div class="col-lg-12"><p>Categoa de cursos</p></div>
-	<div class="col-lg-1"><img src="https://raw.githubusercontent.com/interlegis/moodle/master/images/Cursos-on-line.png"><p>Cursos on-line com tutoria</div>
+	<div class="col-lg-12"><p>Categoria de cursos</p></div>
+	<div class="col-lg-1"><a href='course/index.php?categoryid=128'><img src="images/Cursos-on-line.png"></a><p>Cursos on-line com tutoria</div>
+	<div class="col-lg-1"><a href='course/index.php?categoryid=128'><img src="images/Cursos-on-line-sem-tutor.png"></a><p>Cursos on-line sem tutoria</div>
+	<div class="col-lg-1"><a href='course/index.php?categoryid=128'><img src="images/formacao_interna.png"></a><p>Formação interna continuada</div>
+	<div class="col-lg-1"><a href='course/index.php?categoryid=128'><img src="images/video-aula.png"></a><p>Videoaulas</div>
+	<div class="col-lg-1"><a href='course/index.php?categoryid=128'><img src="images/pos-graduacao.png"></a><p>Pós-graduação</div>
+	<div class="col-lg-1"><a href='course/index.php?categoryid=128'><img src="images/oficinas-interlegis.png"></a><p>Oficinas Interlegis</div>
 	<div class="col-lg-1"></div>
 </div>
 </div>
