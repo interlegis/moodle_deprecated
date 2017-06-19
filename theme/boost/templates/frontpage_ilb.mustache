@@ -197,14 +197,18 @@
 		
 		<div class="col-lg-2">
 			<p>img1 img2</p>		
-		</div> 	
-		<div class="col-lg-3">
-			<form action='course/search.php'> Buscar cursos: <br/>
-				<input name="search" placeholder="Busca"/> 
-				<input type='submit' value='Buscar' /> 
-			</form>		
-		</div> 	
-	
+		</div>
+        <div class="row">
+          <div class="col-lg-4">
+            <span>Buscar cursos:</span>
+            <div class="input-group">
+              <input type="text" name="SearchableText" autocomplete="off" class="form-control" placeholder="Busca">
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-default">Ícone Buscar<!--span class="glyphicon glyphicon-search"></span--></button>
+              </span>
+            </div><!-- /input-group -->
+          </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
 	</div>
 </div>
 <div class="container">
@@ -228,6 +232,12 @@
 	
 	</div>
 </div>
+    <style>
+        label{
+            font: #FFFFFF 18px solid;
+            margin: 
+        }
+    </style>
 <div class="container">
 	<div class="row">
 	<div class="col-lg-12" style="background-color:#002e56;"><p></p></div>
@@ -247,24 +257,43 @@
 
 <div class="container">
 	<div class="row">
-	<div class="col-lg-4"style="background-color:#F7F7F7;"><h2>Saberes</h2><hr><p>A plataforma de ensino e aprendizagem do senado federal</p></div>
+	<div class="col-lg-4" style="text-align: center; background-color:#F7F7F7; padding:0;">
+        <h1 style="color: #0F5688; border-bottom: 3px solid #0F5688; margin: 7% 3% 0 3%;">Saberes</h1>
+        <span style="color: #0F5688; font-size: 13px;"><strong>A Plataforma de ensino e aprendizagem do Senado Federal</strong></span>
+        <div style="background-color: #0F5688; margin: 6% 0 0 0; padding: 0 0 5% 0;">
+            <p style=" color: #FFFFFF; font-size: 20px; font: bold; padding-top: 3%; margin: 0;">Cursos abertos e sem custo para a comunidade lesgislativa e os cidadãos</p>
+        </div>
+    </div>
 	<div class="col-lg-4"><iframe width="360" height="215" src="https://www.youtube.com/embed/vW7-E5VBAbk" frameborder="0" allowfullscreen></iframe></div>
 	<div class="col-lg-4" style="background-color:#F7F7F7;">
 		<h2>Acesso</h2> 
 		<form class="loginform" id="login" method="post" action="login/index.php">
 		  <div class="c1 fld username">
-                     <label for="login_username">Identificação de usuário</label>
-                     <input type="text" name="username" id="login_username" value="">
-                  </div>
-                  <div class="c1 fld password">
-                     <label for="login_password">Senha</label>
-                     <input type="password" name="password" id="login_password" value="">
-                  </div>
-                  <div class="c1 rememberusername">
-                     <input type="checkbox" name="rememberusername" id="rememberusername" value="1">      
-                     <label for="rememberusername">Lembrar identificação de usuário</label>
-                  </div>
-                  <div class="c1 btn"><input type="submit" value="Acessar"></div>
+              <label for="login_username">Identificação de usuário</label>
+              <br />
+              <div class="input-group" style="width: 100%;">
+              <input type="text" name="username" id="login_username" value="" class="form-control" aria-describedby="basic-addon1">
+              </div>
+          </div>
+          <div class="c1 fld password">
+              <label for="login_password">Senha</label>
+              <br />
+              <div class="input-group" style="width: 100%;">
+              <input type="password" name="password" id="login_password" value="" class="form-control" aria-describedby="basic-addon1">
+              </div>
+          </div>
+          <div class="c1 rememberusername">
+              <input type="checkbox" name="rememberusername" id="rememberusername" value="1">
+              <label for="rememberusername">Lembrar identificação de usuário</label>
+          </div>
+            <div class="col-lg-4" style="padding: 5px 0 0 0; line-height: 15px;">
+                <a href="#" style="font-size:13px;">Cadastre-se</a>
+                <br />
+                <a href="#" style="font-size:11px;">Perdeu a senha?</a>
+            </div>
+          <div class="col-lg-1 col-lg-offset-5">
+          <div class="c1 btn"><input type="submit" value="Acessar"></div>
+              </div>
 		</form>
 	</div>
 </div>
