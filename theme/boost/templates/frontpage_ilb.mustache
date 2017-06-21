@@ -160,6 +160,15 @@
 	font-style:normal
 }
 
+@font-face{
+	font-family:'Glyphicons Halflings';
+	src:url(images/glyphicons-halflings-regular_f4769.eot);
+	src:url(images/glyphicons-halflings-regular_f4769.eot?#iefix) format('embedded-opentype'),
+		url(images/glyphicons-halflings-regular_448c3.woff2) format('woff2'),
+		url(images/glyphicons-halflings-regular_fa277.woff) format('woff'),
+		url(images/glyphicons-halflings-regular_e18bb.ttf) format('truetype'),
+		url(images/glyphicons-halflings-regular_89889.svg#glyphicons_halflingsregular) format('svg')
+}
 </style>
 </head>
 
@@ -213,9 +222,11 @@
             <span>Buscar cursos:</span>
             <div class="input-group">
               <input type="text" name="SearchableText" autocomplete="off" class="form-control" placeholder="Busca">
-              <span class="input-group-btn">
-                <button type="submit" class="btn btn-default">Ícone Buscar<!--span class="glyphicon glyphicon-search"></span--></button>
-              </span>
+        	<span class="input-group-btn">
+                  <button type="submit" aria-label="Buscar" class="btn btn-default">
+                      <div class="glyphicon glyphicon-search text-muted"></div>
+                  </button>
+                </span>
             </div><!-- /input-group -->
           </div><!-- /.col-lg-6 -->
         </div><!-- /.row -->
