@@ -1,0 +1,256 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_boost/columns2
+
+    Admin time setting template.
+
+    Boost 2 column layout template.
+
+    Context variables required for this template:
+    * sitename - The name of the site
+    * output - The core renderer for the page
+    * bodyattributes - attributes for the body tag as a string of html attributes
+    * sidepreblocks - HTML for the blocks
+    * hasblocks - true if there are blocks on this page
+    * navdraweropen - true if the nav drawer should be open on page load
+    * regionmainsettingsmenu - HTML for the region main settings menu
+    * hasregionmainsettingsmenu - There is a region main settings menu on this page.
+
+    Example context (json):
+    {
+        "sitename": "Moodle",
+        "output": {
+            "doctype": "<!DOCTYPE html>",
+            "page_title": "Test page",
+            "favicon": "favicon.ico",
+            "main_content": "<h1>Headings make html validators happier</h1>"
+         },
+        "bodyattributes":"",
+        "sidepreblocks": "<h2>Blocks html goes here</h2>",
+        "hasblocks":true,
+        "navdraweropen":true,
+        "regionmainsettingsmenu": "",
+        "hasregionmainsettingsmenu": false
+    }
+}}
+{{{ output.doctype }}}
+<html {{{ output.htmlattributes }}}>
+<head>
+    <title>{{{ output.page_title }}}</title>
+    <link rel="shortcut icon" href="{{{ output.favicon }}}" />
+    {{{ output.standard_head_html }}}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- HEAD DO SENADO -->
+
+<link rel="canonical" href="http://www12.senado.leg.br/noticias">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Senado Federal">
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+
+<link rel="kss-base-url" href="http://www12.senado.leg.br/hpsenado/">
+
+<link rel="stylesheet" type="text/css" href="http://www12.senado.leg.br/hpsenado/portal_css/Tema_HPSenado/base-cachekey1556.css" />
+<style type="text/css">@import url(http://www12.senado.leg.br/hpsenado/portal_css/Tema_HPSenado/resourceplone.app.jquerytools.overlays-cachekey3027.css);</style>
+<style type="text/css" media="screen">@import url(http://www12.senado.leg.br/hpsenado/portal_css/Tema_HPSenado/resourceplone.formwidget.autocompletejquery.autocomplete-cachekey1913.css);</style>
+<link rel="stylesheet" type="text/css" href="http://www12.senado.leg.br/hpsenado/portal_css/Tema_HPSenado/resourceplone.app.jquerytools.dateinput-cachekey2007.css"
+
+<link rel="kinetic-stylesheet" type="text/css" href="http://www12.senado.leg.br/hpsenado/portal_kss/Tema_HPSenado/at-cachekey3076.kss" />
+
+<script type="text/javascript" src="http://www12.senado.leg.br/hpsenado/portal_javascripts/Tema_HPSenado/resourcesenado.jqueryjquery-cachekey5865.js"></script>
+<script type="text/javascript" src="http://www12.senado.leg.br/hpsenado/portal_javascripts/Tema_HPSenado/resourceplone.formwidget.autocompletejquery.autocomplete.min-cachekey6312.js"></script>
+<link rel="apple-touch-icon" sizes="57x57" href="http://www12.senado.leg.br/hpsenado/++resource++senado.hpsenado/favicon/apple-touch-icon-57x57.png?v=OmmK4dNQkX" />
+<link rel="apple-touch-icon" sizes="60x60" href="http://www12.senado.leg.br/hpsenado/++resource++senado.hpsenado/favicon/apple-touch-icon-60x60.png?v=OmmK4dNQkX" />
+<link rel="apple-touch-icon" sizes="72x72" href="http://www12.senado.leg.br/hpsenado/++resource++senado.hpsenado/favicon/apple-touch-icon-72x72.png?v=OmmK4dNQkX" />
+<link rel="apple-touch-icon" sizes="76x76" href="http://www12.senado.leg.br/hpsenado/++resource++senado.hpsenado/favicon/apple-touch-icon-76x76.png?v=OmmK4dNQkX" />
+<link rel="apple-touch-icon" sizes="114x114" href="http://www12.senado.leg.br/hpsenado/++resource++senado.hpsenado/favicon/apple-touch-icon-114x114.png?v=OmmK4dNQkX" />
+<link rel="apple-touch-icon" sizes="120x120" href="http://www12.senado.leg.br/hpsenado/++resource++senado.hpsenado/favicon/apple-touch-icon-120x120.png?v=OmmK4dNQkX" />
+<link rel="apple-touch-icon" sizes="144x144" href="http://www12.senado.leg.br/hpsenado/++resource++senado.hpsenado/favicon/apple-touch-icon-144x144.png?v=OmmK4dNQkX" />
+<link rel="apple-touch-icon" sizes="152x152" href="http://www12.senado.leg.br/hpsenado/++resource++senado.hpsenado/favicon/apple-touch-icon-152x152.png?v=OmmK4dNQkX" />
+<link rel="apple-touch-icon" sizes="180x180" href="http://www12.senado.leg.br/hpsenado/++resource++senado.hpsenado/favicon/apple-touch-icon-180x180.png?v=OmmK4dNQkX" />
+
+<link rel="icon" type="image/png" href="images/favicon_saberes.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="images/favicon_saberes.ico" sizes="192x192" />
+<link rel="icon" type="image/png" href="images/favicon_saberes.ico" sizes="96x96" />
+<link rel="icon" type="image/png" href="images/favicon_saberes.ico" sizes="16x16" />
+
+<link rel="manifest" href="http://www12.senado.leg.br/hpsenado/++resource++senado.hpsenado/favicon/manifest.json?v=OmmK4dNQkX" />
+<link rel="images/favicon_saberes.ico" />
+<meta name="msapplication-TileColor" content="#00305c" />
+<meta name="msapplication-TileImage" content="http://www12.senado.leg.br/hpsenado/++resource++senado.hpsenado/favicon/mstile-144x144.png?v=OmmK4dNQkX" />
+<meta name="msapplication-config" content="http://www12.senado.leg.br/hpsenado/++resource++senado.hpsenado/favicon/browserconfig.xml?v=OmmK4dNQkX" />
+<meta name="theme-color" content="#00305c" />
+<link rel="stylesheet" href="http://www12.senado.leg.br/institucional/++theme++senado.tema/basic.css" type="text/css" />
+<link rel="stylesheet" href="http://www12.senado.leg.br/institucional/++theme++senado.tema/thin.css" type="text/css" />
+
+<link rel="stylesheet" href="https://www12.senado.leg.br/institucional/++theme++senado.tema/tema.css" type="text/css" />
+
+<script type="text/javascript" src="http://www12.senado.leg.br/noticias/portal_javascripts/Tema_PortalMultimidia/resourceplone.formwidget.autocompletejquery.autocomplete.min-cachekey4433.js" />
+<script type="text/javascript" src="http://www12.senado.leg.br/noticias/portal_javascripts/Tema_PortalMultimidia/resourcesenado.formwidget.textocomcontadordecaracterescontadordecaracteres-cachekey2942.js" />
+<script type="text/javascript" src="http://www12.senado.leg.br/noticias/portal_javascripts/Tema_PortalMultimidia/resourcesenado.jqueryjquery-cachekey4484.js" />
+
+
+<script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/audiojs/audio.min.js"></script>
+<script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/audiojs/audiojs-doc-ready.js"></script>
+<script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/script/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/script/root_index.js"></script>
+<script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/script/youtubeEvents.js"></script>
+<script type="text/javascript" src="http://www12.senado.leg.br/noticias/portal_javascripts/Tema_PortalMultimidia/resourcesenado.jqueryjquery-cachekey4484.js"></script>
+
+<title>Senado Federal - Portal de Notícias</title>
+
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon_saberes.ico">
+<link rel="manifest" href="http://www12.senado.leg.br/noticias/++resource++senado.noticias/favicon/manifest.json?v=697oma3x8q">
+<link rel="stylesheet" type="text/css" href="http://www12.senado.leg.br/hpsenado/portal_css/Tema_HPSenado/resourceplone.app.jquerytools.dateinput-cachekey2007.css" />
+<meta name="apple-mobile-web-app-title" content="Senado Federal">
+<meta name="application-name" content="Senado Federal">
+<meta name="msapplication-config" content="http://www12.senado.leg.br/noticias/++resource++senado.noticias/favicon/browserconfig.xml?v=697oma3x8q">
+<meta name="theme-color" content="#00305c">
+
+<script type="text/javascript">
+    jQuery(function($){
+        $.datepicker.setDefaults(
+            jQuery.extend($.datepicker.regional['pt-BR'],
+            {dateFormat: 'dd/mm/yy'}));
+    });
+</script>
+
+<link rel="home" href="http://www12.senado.leg.br/noticias" title="Página inicial">
+
+<link rel="alternate" href="http://www12.senado.leg.br/noticias/feed/todasnoticias/RSS" title="RSS 1.0" type="application/rss+xml">
+
+<link rel="search" href="http://www12.senado.leg.br/noticias/buscaavancada" title="Buscar neste site">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+<script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/audiojs/audio.min.js"></script>
+<script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/audiojs/audiojs-doc-ready.js"></script>
+<script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/script/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/script/root_index.js"></script>
+<script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/script/youtubeEvents.js"></script>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-16761182-1', 'auto');
+    ga('require', 'linkid');
+    ga('send', 'pageview');
+</script>
+<style>
+    @font-face{
+      font-family:agenciaweb;
+      src:url(images/agenciaweb_a6777.eot);
+      src:url(images/agenciaweb_a6777.eot) format('embedded-opentype'),url(images/agenciaweb_6a387.woff) format('woff'),url(images/agenciaweb_36ab2.ttf) format('truetype'),url(images/agenciaweb_3fc37.svg#icomoon) format('svg');
+      font-weight:400;
+      font-style:normal
+    }
+
+    @font-face{
+      font-family:'Glyphicons Halflings';
+      src:url(images/glyphicons-halflings-regular_f4769.eot);
+      src:url(images/glyphicons-halflings-regular_f4769.eot?#iefix) format('embedded-opentype'),
+        url(images/glyphicons-halflings-regular_448c3.woff2) format('woff2'),
+        url(images/glyphicons-halflings-regular_fa277.woff) format('woff'),
+        url(images/glyphicons-halflings-regular_e18bb.ttf) format('truetype'),
+        url(images/glyphicons-halflings-regular_89889.svg#glyphicons_halflingsregular) format('svg')
+    }
+</style>
+
+<!-- FIM DO HEADO DO SENADO -->
+
+</head>
+
+<body {{{ bodyattributes }}}>
+
+<div id="page-wrapper">
+
+    {{{ output.standard_top_of_body_html }}}
+
+    {{>theme_boost/header}}
+
+    <div id="page" class="container-fluid">
+        {{{ output.full_header }}}
+
+        <div id="page-content" class="row">
+            <div id="region-main-box" class="col-xs-12">
+                {{#hasregionmainsettingsmenu}}
+                <div id="region-main-settings-menu" class="hidden-print {{#hasblocks}}has-blocks{{/hasblocks}}">
+                    <div> {{{ output.region_main_settings_menu }}} </div>
+                </div>
+                {{/hasregionmainsettingsmenu}}
+                <section id="region-main" {{#hasblocks}}class="has-blocks"{{/hasblocks}}>
+                    <div class="card card-block">
+                    {{#hasregionmainsettingsmenu}}
+                        <div class="region_main_settings_menu_proxy"></div>
+                    {{/hasregionmainsettingsmenu}}
+                    {{{ output.course_content_header }}}
+                    {{{ output.main_content }}}
+                    {{{ output.course_content_footer }}}
+                    </div>
+                </section>
+                {{#hasblocks}}
+                <section data-region="blocks-column" class="hidden-print">
+                    {{{ sidepreblocks }}}
+                </section>
+                {{/hasblocks}}
+            </div>
+        </div>
+    </div>
+    {{> theme_boost/nav-drawer }}
+</div>
+<footer id="page-footer" class="p-y-1 bg-inverse">
+    <div class="container">
+        <div id="course-footer">{{{ output.course_footer }}}</div>
+
+        {{# output.page_doc_link }}
+            <p class="helplink">{{{ output.page_doc_link }}}</p>
+        {{/ output.page_doc_link }}
+
+        {{{ output.login_info }}}
+        {{{ output.home_link }}}
+        <nav class="nav navbar-nav hidden-lg-up">
+            {{# output.custom_menu_flat }}
+                <ul class="list-unstyled p-t-1">
+                    {{> theme_boost/custom_menu_footer }}
+                </ul>
+            {{/ output.custom_menu_flat }}
+        </nav>
+        {{{ output.standard_footer_html }}}
+        {{{ output.standard_end_of_body_html }}}
+    </div>
+</footer>
+
+</body>
+</html>
+{{#js}}
+require(['theme_boost/loader']);
+require(['theme_boost/drawer'], function(mod) {
+    mod.init();
+});
+{{/js}}
