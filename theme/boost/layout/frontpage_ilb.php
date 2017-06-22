@@ -41,15 +41,15 @@ if (isloggedin()) {
 	    'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
 	    'output' => $OUTPUT,
 	    'sidepreblocks' => $blockshtml,
-	    'hasblocks' => $hasblocks,
+	 //   'hasblocks' => $hasblocks,
 	    'bodyattributes' => $bodyattributes,
 	    'navdraweropen' => $navdraweropen,
-	    'regionmainsettingsmenu' => $regionmainsettingsmenu,
-	    'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu)
+	   // 'regionmainsettingsmenu' => $regionmainsettingsmenu,
+	   // 'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu)
 	];
 
 	$templatecontext['flatnavigation'] = $PAGE->flatnav;
-	echo $OUTPUT->render_from_template('theme_boost/columns2', $templatecontext);
+	echo $OUTPUT->render_from_template('theme_boost/frontpage_ilblogado', $templatecontext);
 } else {
 	$bodyattributes = $OUTPUT->body_attributes([]);
 
