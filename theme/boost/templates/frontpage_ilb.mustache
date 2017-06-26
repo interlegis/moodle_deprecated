@@ -36,35 +36,78 @@
          "bodyattributes":""
     }
 }}
+<!-- Placeholders do template: não remover!!-->
+<!-- {{{ output.course_content_header }}} -->
+<!-- {{{ output.main_content }}}          -->
+<!-- {{{ output.course_content_footer }}} -->
 {{{ output.doctype }}}
 <html {{{ output.htmlattributes }}}>
 <head>
-
-    <link rel="canonical" href="http://www12.senado.leg.br/noticias">
-
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <meta property="og:locale" content="pt_BR">
-    <meta property="og:site_name" content="Senado Federal">
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+    <meta property="og:site_name" content="Instituto Legislativo Brasileiro">
+    <meta name="apple-mobile-web-app-title" content="Instituto Legislativo Brasileiro - ILB">
+    <meta name="application-name" content="Instituto Legislativo Brasileiro - ILB">
+    <meta name="theme-color" content="#00305c">
+    <meta name="theme-color" content="#00305c" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-    <link rel="kss-base-url" href="http://www12.senado.leg.br/hpsenado/">
+    <title>Instituto Legislativo Brasileiro - ILB</title>
 
-    <link rel="stylesheet" type="text/css" href="http://www12.senado.leg.br/hpsenado/portal_css/Tema_HPSenado/base-cachekey1556.css" />
-    <style type="text/css">@import url(http://www12.senado.leg.br/hpsenado/portal_css/Tema_HPSenado/resourceplone.app.jquerytools.overlays-cachekey3027.css);</style>
-    <style type="text/css" media="screen">@import url(http://www12.senado.leg.br/hpsenado/portal_css/Tema_HPSenado/resourceplone.formwidget.autocompletejquery.autocomplete-cachekey1913.css);</style>
-    <link rel="stylesheet" type="text/css" href="http://www12.senado.leg.br/hpsenado/portal_css/Tema_HPSenado/resourceplone.app.jquerytools.dateinput-cachekey2007.css"
+    <link rel="canonical" href="http://saberes.senado.leg.br/">
+    <link rel="home" href="http://www12.senado.leg.br/noticias" title="Página inicial">
+    <link rel="alternate" href="http://www12.senado.leg.br/noticias/feed/todasnoticias/RSS" title="RSS 1.0" type="application/rss+xml">
+    <link rel="search" href="http://www12.senado.leg.br/noticias/buscaavancada" title="Buscar neste site">
+    <link rel="manifest" href="http://www12.senado.leg.br/noticias/++resource++senado.noticias/favicon/manifest.json?v=697oma3x8q">
 
+    <!-- FIXME verificar se usa KSS -->
+    <link rel="kss-base-url" href="http://saberes.senado.leg.br/">
     <link rel="kinetic-stylesheet" type="text/css" href="http://www12.senado.leg.br/hpsenado/portal_kss/Tema_HPSenado/at-cachekey3076.kss" />
 
-    <script type="text/javascript" src="http://www12.senado.leg.br/hpsenado/portal_javascripts/Tema_HPSenado/resourcesenado.jqueryjquery-cachekey5865.js"></script>
-    <script type="text/javascript" src="http://www12.senado.leg.br/hpsenado/portal_javascripts/Tema_HPSenado/resourceplone.formwidget.autocompletejquery.autocomplete.min-cachekey6312.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://www12.senado.leg.br/hpsenado/portal_css/Tema_HPSenado/base-cachekey1556.css" />
+    <link rel="stylesheet" type="text/css" href="https://www12.senado.leg.br/institucional/portal_css/Sunburst%20Theme/resourcestaticcssescola-de-governo-cachekey3115.css" />
+    <link rel="stylesheet" type="text/css" href="http://www12.senado.leg.br/hpsenado/portal_css/Tema_HPSenado/resourceplone.app.jquerytools.overlays-cachekey3027.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="http://www12.senado.leg.br/hpsenado/portal_css/Tema_HPSenado/resourceplone.formwidget.autocompletejquery.autocomplete-cachekey1913.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://www12.senado.leg.br/institucional/portal_css/Sunburst%20Theme/resourcestaticcsshome-cachekey0155.css" />
+    <link rel="stylesheet" href="http://www12.senado.leg.br/institucional/++theme++senado.tema/thin.css" type="text/css" />
+    <link rel="stylesheet" href="https://www12.senado.leg.br/institucional/++theme++senado.tema/tema.css" type="text/css" />
+    <link rel="stylesheet" href="http://www12.senado.leg.br/institucional/++theme++senado.tema/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="http://www12.senado.leg.br/hpsenado/portal_css/Tema_HPSenado/resourceplone.app.jquerytools.dateinput-cachekey2007.css" />
+<!--
+<link rel="stylesheet" type="text/css" href="https://www12.senado.leg.br/institucional/portal_css/Sunburst%20Theme/base-cachekey3894.css" />
+<link rel="stylesheet" type="text/css" href="https://www12.senado.leg.br/institucional/portal_css/Sunburst%20Theme/resourceconfigcssbasic-cachekey3600.css" />
+-->
+<!--
+<link rel="stylesheet" type="text/css" media="all" href="https://www12.senado.leg.br/institucional/portal_css/Sunburst%20Theme/ploneCustom-cachekey2573.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="https://www12.senado.leg.br/institucional/portal_css/Sunburst%20Theme/resourcestaticcssplone_fixes_senado-cachekey4482.css" />
+-->
+    <style>
+          @font-face{
+          	font-family:agenciaweb;
+          	src:url(images/agenciaweb_a6777.eot);
+          	src:url(images/agenciaweb_a6777.eot) format('embedded-opentype'),url(images/agenciaweb_6a387.woff) format('woff'),url(images/agenciaweb_36ab2.ttf) format('truetype'),url(images/agenciaweb_3fc37.svg#icomoon) format('svg');
+          	font-weight:400;
+          	font-style:normal
+          }
+
+          @font-face{
+          	font-family:'Glyphicons Halflings';
+          	src:url(images/glyphicons-halflings-regular_f4769.eot);
+          	src:url(images/glyphicons-halflings-regular_f4769.eot?#iefix) format('embedded-opentype'),
+          	url(images/glyphicons-halflings-regular_448c3.woff2) format('woff2'),
+          	url(images/glyphicons-halflings-regular_fa277.woff) format('woff'),
+          	url(images/glyphicons-halflings-regular_e18bb.ttf) format('truetype'),
+          	url(images/glyphicons-halflings-regular_89889.svg#glyphicons_halflingsregular) format('svg')
+          }
+
+          #portal-breadcrumbs {
+            display: block !important;
+          }
+    </style>
+
+  <!--
     <link rel="apple-touch-icon" sizes="57x57" href="http://www12.senado.leg.br/hpsenado/++resource++senado.hpsenado/favicon/apple-touch-icon-57x57.png?v=OmmK4dNQkX" />
     <link rel="apple-touch-icon" sizes="60x60" href="http://www12.senado.leg.br/hpsenado/++resource++senado.hpsenado/favicon/apple-touch-icon-60x60.png?v=OmmK4dNQkX" />
     <link rel="apple-touch-icon" sizes="72x72" href="http://www12.senado.leg.br/hpsenado/++resource++senado.hpsenado/favicon/apple-touch-icon-72x72.png?v=OmmK4dNQkX" />
@@ -74,435 +117,326 @@
     <link rel="apple-touch-icon" sizes="144x144" href="http://www12.senado.leg.br/hpsenado/++resource++senado.hpsenado/favicon/apple-touch-icon-144x144.png?v=OmmK4dNQkX" />
     <link rel="apple-touch-icon" sizes="152x152" href="http://www12.senado.leg.br/hpsenado/++resource++senado.hpsenado/favicon/apple-touch-icon-152x152.png?v=OmmK4dNQkX" />
     <link rel="apple-touch-icon" sizes="180x180" href="http://www12.senado.leg.br/hpsenado/++resource++senado.hpsenado/favicon/apple-touch-icon-180x180.png?v=OmmK4dNQkX" />
-
+  -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_saberes.ico">
     <link rel="icon" type="image/png" href="images/favicon_saberes.ico" sizes="32x32" />
     <link rel="icon" type="image/png" href="images/favicon_saberes.ico" sizes="192x192" />
     <link rel="icon" type="image/png" href="images/favicon_saberes.ico" sizes="96x96" />
     <link rel="icon" type="image/png" href="images/favicon_saberes.ico" sizes="16x16" />
 
-    <link rel="manifest" href="http://www12.senado.leg.br/hpsenado/++resource++senado.hpsenado/favicon/manifest.json?v=OmmK4dNQkX" />
-    <link rel="images/favicon_saberes.ico" />
-    <meta name="msapplication-TileColor" content="#00305c" />
-    <meta name="msapplication-TileImage" content="http://www12.senado.leg.br/hpsenado/++resource++senado.hpsenado/favicon/mstile-144x144.png?v=OmmK4dNQkX" />
-    <meta name="msapplication-config" content="http://www12.senado.leg.br/hpsenado/++resource++senado.hpsenado/favicon/browserconfig.xml?v=OmmK4dNQkX" />
-    <meta name="theme-color" content="#00305c" />
-    <link rel="stylesheet" href="http://www12.senado.leg.br/institucional/++theme++senado.tema/basic.css" type="text/css" />
-    <link rel="stylesheet" href="http://www12.senado.leg.br/institucional/++theme++senado.tema/thin.css" type="text/css" />
-
-    <link rel="stylesheet" href="https://www12.senado.leg.br/institucional/++theme++senado.tema/tema.css" type="text/css" />
-
+<!--
+    <script type="text/javascript" src="http://www12.senado.leg.br/hpsenado/portal_javascripts/Tema_HPSenado/resourcesenado.jqueryjquery-cachekey5865.js"></script>
+    <script type="text/javascript" src="http://www12.senado.leg.br/hpsenado/portal_javascripts/Tema_HPSenado/resourceplone.formwidget.autocompletejquery.autocomplete.min-cachekey6312.js"></script>
     <script type="text/javascript" src="http://www12.senado.leg.br/noticias/portal_javascripts/Tema_PortalMultimidia/resourceplone.formwidget.autocompletejquery.autocomplete.min-cachekey4433.js" />
     <script type="text/javascript" src="http://www12.senado.leg.br/noticias/portal_javascripts/Tema_PortalMultimidia/resourcesenado.formwidget.textocomcontadordecaracterescontadordecaracteres-cachekey2942.js" />
     <script type="text/javascript" src="http://www12.senado.leg.br/noticias/portal_javascripts/Tema_PortalMultimidia/resourcesenado.jqueryjquery-cachekey4484.js" />
-
-
     <script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/audiojs/audio.min.js"></script>
     <script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/audiojs/audiojs-doc-ready.js"></script>
     <script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/script/jquery.lazyload.min.js"></script>
     <script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/script/root_index.js"></script>
     <script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/script/youtubeEvents.js"></script>
-    <script type="text/javascript" src="http://www12.senado.leg.br/noticias/portal_javascripts/Tema_PortalMultimidia/resourcesenado.jqueryjquery-cachekey4484.js"></script>
+    <script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/audiojs/audio.min.js"></script>
+    <script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/audiojs/audiojs-doc-ready.js"></script>
+    <script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/script/root_index.js"></script>
+    <script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/script/youtubeEvents.js"></script>
+-->
 
-    <title>Senado Federal - Portal de Notícias</title>
-
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_saberes.ico">
-    <link rel="manifest" href="http://www12.senado.leg.br/noticias/++resource++senado.noticias/favicon/manifest.json?v=697oma3x8q">
-    <link rel="stylesheet" type="text/css" href="http://www12.senado.leg.br/hpsenado/portal_css/Tema_HPSenado/resourceplone.app.jquerytools.dateinput-cachekey2007.css" />
-    <meta name="apple-mobile-web-app-title" content="Senado Federal">
-    <meta name="application-name" content="Senado Federal">
-    <meta name="msapplication-config" content="http://www12.senado.leg.br/noticias/++resource++senado.noticias/favicon/browserconfig.xml?v=697oma3x8q">
-    <meta name="theme-color" content="#00305c">
-
-    <script type="text/javascript">
+  <!-- Arquivos javascript verificados-->
+  <script type="text/javascript" src="https://www12.senado.leg.br/institucional/portal_javascripts/Sunburst%20Theme/resourceconfigjqueryjquery-1.11.2.min-cachekey3986.js" />
+  <script type="text/javascript" src="https://www12.senado.leg.br/institucional/portal_javascripts/Sunburst%20Theme/resourceconfigbootstrapbootstrap.min-cachekey1567.js" />
+  <script type="text/javascript" src="https://www12.senado.leg.br/institucional/portal_javascripts/Sunburst%20Theme/resourcestaticjscalendario-cachekey4269.js" />
+  <script type="text/javascript" src="https://www12.senado.leg.br/institucional/portal_javascripts/Sunburst%20Theme/resourcestaticjsphoto-gallery-cachekey3318.js" />
+  <script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/script/jquery.lazyload.min.js"></script>
+  <script type="text/javascript" src="http://www12.senado.leg.br/noticias/portal_javascripts/Tema_PortalMultimidia/resourcesenado.jqueryjquery-cachekey4484.js"></script>
+  <script type="text/javascript">
         jQuery(function($){
             $.datepicker.setDefaults(
                 jQuery.extend($.datepicker.regional['pt-BR'],
                 {dateFormat: 'dd/mm/yy'}));
         });
-    </script>
-
-    <link rel="home" href="http://www12.senado.leg.br/noticias" title="Página inicial">
-
-    <link rel="alternate" href="http://www12.senado.leg.br/noticias/feed/todasnoticias/RSS" title="RSS 1.0" type="application/rss+xml">
-
-    <link rel="search" href="http://www12.senado.leg.br/noticias/buscaavancada" title="Buscar neste site">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-
-    <script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/audiojs/audio.min.js"></script>
-    <script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/audiojs/audiojs-doc-ready.js"></script>
-    <script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/script/jquery.lazyload.min.js"></script>
-    <script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/script/root_index.js"></script>
-    <script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/script/youtubeEvents.js"></script>
-
-    <script>
+  </script>
+  <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-16761182-1', 'auto');
+        ga('create', 'UA-77042575-1', 'auto');
         ga('require', 'linkid');
         ga('send', 'pageview');
-    </script>
-    <style>
-        @font-face{
-        	font-family:agenciaweb;
-        	src:url(images/agenciaweb_a6777.eot);
-        	src:url(images/agenciaweb_a6777.eot) format('embedded-opentype'),url(images/agenciaweb_6a387.woff) format('woff'),url(images/agenciaweb_36ab2.ttf) format('truetype'),url(images/agenciaweb_3fc37.svg#icomoon) format('svg');
-        	font-weight:400;
-        	font-style:normal
-        }
-
-        @font-face{
-        	font-family:'Glyphicons Halflings';
-        	src:url(images/glyphicons-halflings-regular_f4769.eot);
-        	src:url(images/glyphicons-halflings-regular_f4769.eot?#iefix) format('embedded-opentype'),
-        		url(images/glyphicons-halflings-regular_448c3.woff2) format('woff2'),
-        		url(images/glyphicons-halflings-regular_fa277.woff) format('woff'),
-        		url(images/glyphicons-halflings-regular_e18bb.ttf) format('truetype'),
-        		url(images/glyphicons-halflings-regular_89889.svg#glyphicons_halflingsregular) format('svg')
-        }
-    </style>
+  </script>
 </head>
 
 <body {{{ bodyattributes }}}>
-
-<header>
-   <div id="header-institucional">
-     <div class="NavGlobal navbar navbar-static-top">
-      <div class="NavGlobal-container">
-        <div class="pull-right dropdown" role="navigation"><a data-toggle="dropdown" class="NavGlobal-toggle dropdown-toggle">
-            <div class="Icon Icon--menu Icon--md"></div><span class="u-alignMiddle"> Portais</span></a>
-          <ul class="NavGlobal-dropdownMenu dropdown-menu"><li><a href="http://www.senado.gov.br/institucional/">Institucional</a></li>
-            <li><a href="http://www25.senado.leg.br/web/senadores/">Senadores</a></li>
-            <li><a href="http://www25.senado.leg.br/web/atividade/">Atividade Legislativa</a></li>
-            <li><a href="http://www12.senado.gov.br/noticias/">Notícias</a></li>
-            <li><a href="http://www12.senado.gov.br/publicacoes/">Publicação e Documentação</a></li>
-            <li><a href="http://www12.senado.gov.br/orcamento/">Orçamento</a></li>
-            <li><a href="http://www12.senado.gov.br/transparencia/">Transparência</a></li>
-            <li><a href="http://www12.senado.gov.br/ecidadania/">e-Cidadania</a></li>
-          </ul></div>
-        <div class="NavGlobal-logo pull-left"><a href="http://www.senado.gov.br/"><img src="//www.senado.gov.br/inc/essencial/img/senado.svg" alt="Senado Federal" height="23" width="170"></a></div>
-        <div class="NavGlobal-middle"><a href="http://www12.senado.gov.br/institucional/falecomosenado">Fale com o Senado</a></div>
+  <header>
+    <div id="header-institucional">
+      <div class="NavGlobal navbar navbar-static-top">
+        <div class="NavGlobal-container">
+          <div class="pull-right dropdown" role="navigation">
+            <a data-toggle="dropdown" class="NavGlobal-toggle dropdown-toggle">
+              <div class="Icon Icon--menu Icon--md"></div><span class="u-alignMiddle"> Portais</span>
+            </a>
+            <ul class="NavGlobal-dropdownMenu dropdown-menu">
+              <li><a href="http://www.senado.gov.br/institucional/">Institucional</a></li>
+              <li><a href="http://www25.senado.leg.br/web/senadores/">Senadores</a></li>
+              <li><a href="http://www25.senado.leg.br/web/atividade/">Atividade Legislativa</a></li>
+              <li><a href="http://www12.senado.gov.br/noticias/">Notícias</a></li>
+              <li><a href="http://www12.senado.gov.br/publicacoes/">Publicação e Documentação</a></li>
+              <li><a href="http://www12.senado.gov.br/orcamento/">Orçamento</a></li>
+              <li><a href="http://www12.senado.gov.br/transparencia/">Transparência</a></li>
+              <li><a href="http://www12.senado.gov.br/ecidadania/">e-Cidadania</a></li>
+            </ul>
+          </div>
+          <div class="NavGlobal-logo pull-left">
+            <a href="http://www.senado.gov.br/">
+                <img src="//www.senado.gov.br/inc/essencial/img/senado.svg" alt="Senado Federal" height="23" width="170" />
+              </a>
+          </div>
+          <div class="NavGlobal-middle">
+            <a href="http://www12.senado.gov.br/institucional/falecomosenado">Fale com o Senado</a>
+          </div>
+        </div>
       </div>
-     </div>
-   </div>
-</header>
+    </div>
+  </header>
 
-<div class="container">
-	<section id="cabecalhoTopo"><!-- Logo e busca --><div class="PortalTopo">
-          <div class="PortalTopo-id PortalTopo-id--wide">
-              <div class="PortalTopo-title">
-                  <a id="portal-home-link" href="https://www12.senado.leg.br/institucional">Institucional</a>
-                  <div class="PortalTopo-sub eta-xs epsilon"><a href="https://www12.senado.leg.br/institucional/escola-de-governo">Escola de Governo</a></div>
-              </div>
-          </div>
-          <div class="PortalTopo-redes-sociais">
-		<dl>
-		    <dd>
-			<a class="btn ShareIcon ShareIcon--circle ShareIcon--light ShareIcon--facebook" href="http://www.facebook.com/ilbsenado" target="_blank" title="Facebook" alt="Facebook"></a>
-			<a class="btn ShareIcon ShareIcon--circle ShareIcon--light ShareIcon--youtube" href="http://www.youtube.com/ILBCanal" target="_blank" title="YouTube" alt="YouTube"></a>
-		    </dd>
-               </dl>
-          </div>
-          <div class="PortalTopo-busca collapse">
-              <div class="portal-search">
-                  <form class="Az" action="//www6g.senado.gov.br/busca/" data-colecao="Institucional" role="search">
-                      <input type="hidden" name="portal" value="Institucional"><div class="input-group" data-toggle="_dropdown">
-                          <input type="text" name="q" class="Az-input form-control" placeholder="Busca" autocomplete="off"><span class="input-group-btn">
-                              <button class="btn btn-default" type="submit" aria-label="Buscar">
-                              <div class="glyphicon glyphicon-search text-muted"></div>
-                              </button>
-                          </span>
-                      </div>
-                      <div class="u-posRelative">
-                          <div class="Az-place Az-place--float Az-place--wide"><div class="Box Box--lg"><div class="List Box">
-                              <div class="eta text-muted">O quê você procura?</div>
-                          </div></div></div>
-                      </div>
-                  </form>
-              </div>
-          </div>
+  <div class="container">
+    <!-- Logo e busca -->
+    <section id="cabecalhoTopo">
 
-          <div class="clearfix"></div>
+      <div class="PortalTopo">
+        <div class="PortalTopo-id PortalTopo-id--wide">
+          <div class="PortalTopo-title">
+            <a id="portal-home-link" href="https://www12.senado.leg.br/institucional">Institucional</a>
+            <div class="PortalTopo-sub eta-xs epsilon">
+              <a href="https://www12.senado.leg.br/institucional/escola-de-governo">Escola de Governo</a>
+            </div>
+          </div>
+        </div>
+        <div class="PortalTopo-redes-sociais">
+          <dl>
+            <dd>
+              <a class="btn ShareIcon ShareIcon--circle ShareIcon--light ShareIcon--facebook" href="http://www.facebook.com/ilbsenado" target="_blank" title="Facebook" alt="Facebook"></a>
+              <a class="btn ShareIcon ShareIcon--circle ShareIcon--light ShareIcon--youtube" href="http://www.youtube.com/ILBCanal" target="_blank" title="YouTube" alt="YouTube"></a>
+            </dd>
+          </dl>
+        </div>
+        <div class="PortalTopo-busca collapse">
+          <div class="portal-search">
+            <form class="Az" action="course/search.php" role="search">
+              <input type="hidden" name="portal" value="Saberes">
+              <div class="input-group" data-toggle="_dropdown">
+                <input type="text" name="search" class="Az-input form-control" placeholder="Busca" autocomplete="off" />
+                <span class="input-group-btn">
+                      <button id="btnSearchCourse" class="btn btn-default" type="submit" aria-label="Buscar">
+                        <div class="glyphicon glyphicon-search text-muted"></div>
+                      </button>
+                </span>
+              </div>
+              <div class="u-posRelative">
+                <div class="Az-place Az-place--float Az-place--wide">
+                  <div class="Box Box--lg">
+                    <div class="List Box">
+                      <div class="eta text-muted">Que curso você procura?</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Navbar -->
-      <nav class="Nav--principal navbar navbar-default navbar-collapse nav-collapse collapse Nav--collapse" role="navigation"><ul class="nav navbar-nav"><!-- Menu Principal -->
-    <li class="dropdown">
-        <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">Certificados<span class="caret"></span></a>
-        <ul class="dropdown-menu"><li><a href="http://www12.senado.leg.br/institucional/estrutura">Estrutura</a></li>
-            <li><a href="http://www.senado.leg.br/transparencia/LAI/secrh/diretores_inter.pdf" target="_blank">Diretores e Coordenadores</a></li>
-        </ul></li>
-    <li class="dropdown">
-        <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">Perguntas frequentes<span class="caret"></span></a>
-        <ul class="dropdown-menu"><li><a href="http://www12.senado.leg.br/institucional/programas/primeira-infancia">Primeira Infância </a></li>
-            <li><a href="http://www12.senado.leg.br/jovemsenador" target="_blank"> Jovem Senador</a></li>
-            <li><a href="http://www25.senado.leg.br/web/atividade/conselhos" target="_blank"> Premiações</a></li>
-            <li><a href="http://www12.senado.leg.br/institucional/programas/pro-equidade"> Pró-Equidade</a></li>
-            <li><a href="http://www12.senado.leg.br/institucional/procuradoria"> Procuradoria da Mulher</a></li>
-            <li><a href="http://www12.senado.leg.br/institucional/estagio"> Programa de Estágio</a></li>
-            <li><a href="http://www12.senado.leg.br/institucional/programas/senado-inclusivo"> Senado Inclusivo</a></li>
-            <li><a href="http://www12.senado.leg.br/institucional/programas/senado-verde"> Senado Verde</a></li>
-            <li><a href="http://www2.congressonacional.leg.br/visite#/" target="_blank"> Visite o Senado</a></li>
-        </ul></li>
-    <li><a href="http://www12.senado.leg.br/institucional/escola-de-governo">Contatos</a></li>
+    <!-- navbar -->
+    <nav class="Nav--principal navbar navbar-default navbar-collapse nav-collapse collapse Nav--collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <!-- Menu Principal -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">Certificados<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://www12.senado.leg.br/institucional/estrutura">Validar certificado</a></li>
+            <li><a href="http://www.senado.leg.br/transparencia/LAI/secrh/diretores_inter.pdf" target="_blank">Obter certificados</a></li>
+            <li><a href="http://www17.senado.gov.br/user/login" target="_blank">Obter certificados antigos</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="http://www12.senado.leg.br/institucional/escola-de-governo">Perguntas Frequentes</a>
+        </li>
+        <li>
+          <a href="http://www12.senado.leg.br/institucional/escola-de-governo">Contatos</a>
+          <!--
 
+          1)      Contato
+          Serviço de Ensino a Distância – SEED
+          https://www12.senado.leg.br/institucional/resolveuid/06d2b450-d19b-47a1-a36c-402dd1d24ac061 3303-1475
+          https://www12.senado.leg.br/institucional/resolveuid/1624a6fd-6129-4ac3-a358-41fe3506c7a3ilbead@senado.leg.br
+
+          2)      Facebook:
+          https://www.facebook.com/ilbsenado
+
+          3)      Youtube
+          https://www.youtube.com/ILBCanal
+        -->
+        </li>
       </ul>
     </nav>
 
-          <!-- Invis&#237;vel por padr&#227;o. Para exibir, sobrescrever com regra "#portal-breadcrumbs {display: block;}". -->
+    <!-- breadcrumbs -->
+    <div id="portal-breadcrumbs" class="portal-breadcrumbs">
+      <ol class="Breadcrumbs">
+        <li id="breadcrumbs-you-are-here">Você está aqui:</li>
+        <li id="breadcrumbs-home">
+          <a href="http://www12.senado.leg.br/institucional">Página Inicial</a>
+        </li>
+        <li id="breadcrumbs-1">
+          <span id="breadcrumbs-current">Saberes</span>
+        </li>
+      </ol>
+    </div>
+  </div>
 
-          <div id="XXXportal-breadcrumbs" class="portal-breadcrumbs">
-              <ol class="Breadcrumbs"><li id="breadcrumbs-you-are-here">
-            Você está aqui:
-          </li><li id="breadcrumbs-home">
-
-        <a href="http://www12.senado.leg.br/institucional">Página Inicial</a>
-
-          </li><li id="breadcrumbs-1">
-
-            <span id="breadcrumbs-current">Estrutura</span>
-
-
-          </li></ol></div>
-          <!-- Invis&#237;vel por padr&#227;o. Para exibir, sobrescrever com regra "#portal-personaltools-wrapper {display: block;}". -->
-          <div id="XXXportal-personaltools-wrapper" class="portal-personaltools-wrapper">
-
-	</div>
-          <!-- Invis&#237;vel por padr&#227;o. Para exibir, sobrescrever com regra "#portal-login {display: inherit;}". -->
-          <div id="portal-login" class="portal-login"><ins></ins><a href="logout">Sair</a></div>
+  <!-- conteúdo principal -->
+  <div class="container">
+    <div class="row">
+      <!-- logotipo e texto -->
+      <div class="col-lg-4" style="text-align: center; background-color:#F7F7F7; padding:0; border: 1px solid #E6E6E6; padding-top:3%">
+        <img src='images/logo_saberes_xl.png' width='48%' height='48%' />
+        <div style="background-color: #0F5688; margin: 6% 0 0 0; padding: 0 0 5% 0;">
+          <p style=" color: #FFFFFF; font-size: 20px; font: bold; padding-top: 3%; margin: 0;">Cursos abertos e sem custo para a comunidade legislativa e os cidadãos</p>
+        </div>
       </div>
 
-  </section></div>
+      <!-- video  -->
+      <div class="col-lg-4">
+        <iframe width="360" height="215" src="https://www.youtube.com/embed/vW7-E5VBAbk" frameborder="0" allowfullscreen></iframe>
+      </div>
 
-<div class="container">
-	<div class="row">
-	<div class="col-lg-2">
-        <ol class="breadcrumb" style="font-size: 14px;">
-            <li><a href="#">Início</a></li>
-            <li class="active"><a href="#">Saberes</a></li>
-        </ol>
-</div>
-</div>
-
-<div class="container">
-    <div class="row">
-	<div class="col-lg-4" style="text-align: center; background-color:#F7F7F7; padding:0; border: 1px solid #E6E6E6; padding-top:3%">
-	    <img src='images/logo_saberes_xl.png' width='48%' height='48%'/>
-            <div style="background-color: #0F5688; margin: 6% 0 0 0; padding: 0 0 5% 0;">
-              <p style=" color: #FFFFFF; font-size: 20px; font: bold; padding-top: 3%; margin: 0;">Cursos abertos e sem custo para a comunidade legislativa e os cidadãos</p>
+      <!-- bloco para login -->
+      <div class="col-lg-4" style="background-color:#F7F7F7; border: 1px solid #E6E6E6;">
+        <h3 style="margin-top: 1%; color: #0F5688;">ACESSO</h3>
+        <form class="loginform" id="login" method="post" action="login/index.php">
+          <div class="c1 fld username">
+            <label for="login_username">Identificação de usuário</label>
+            <br />
+            <div class="input-group" style="width: 100%;">
+              <input type="text" name="username" id="login_username" value="" class="form-control input-sm">
             </div>
-        </div>
-	<div class="col-lg-4">
-           <iframe width="360" height="215" src="https://www.youtube.com/embed/vW7-E5VBAbk" frameborder="0" allowfullscreen></iframe>
-        </div>
-	<div class="col-lg-4" style="background-color:#F7F7F7; border: 1px solid #E6E6E6;">
-		<h3 style="margin-top: 1%; color: #0F5688;">ACESSO</h3>
-		<form class="loginform" id="login" method="post" action="login/index.php">
-		  <div class="c1 fld username">
-			      <label for="login_username">Identificação de usuário</label>
-			      <br />
-			      <div class="input-group" style="width: 100%;">
-			      <input type="text" name="username" id="login_username" value="" class="form-control input-sm">
-			      </div>
-			  </div>
-			  <div class="c1 fld password">
-			      <label for="login_password">Senha</label>
-			      <br />
-			      <div class="input-group" style="width: 100%;">
-			      <input type="password" name="password" id="login_password" value="" class="form-control input-sm">
-			      </div>
-			  </div>
-			  <div class="c1 rememberusername">
-			      <input type="checkbox" name="rememberusername" id="rememberusername" value="1">
-			      <label for="rememberusername">Lembrar identificação de usuário</label>
-			  </div>
-			    <div class="col-lg-4" style="padding: 5px 0 0 0; line-height: 15px;">
-				<a href="login/signup.php" style="font-size:13px;">Cadastre-se</a>
-				<br />
-				<a href="login/forgot_password.php" style="font-size:11px;">Perdeu a senha?</a>
-			    </div>
-			  <div class="col-lg-1 col-lg-offset-5">
-			  <div class="c1 btn"><input type="submit" value="Acessar"></div>
-		</div>
-	      </form>
-	</div>
-   </div>
-</div>
-
-
-<div class="container">
-	<div class="row" style="padding: 0;">
-	<div class="col-lg-12"><p>Categoria de cursos</p></div>
-	<div class="col-md-2 text-center"><a href='course/index.php?categoryid=130'><img src="images/Cursos-on-line.png"></a><p>Cursos on-line com tutoria</div>
-	<div class="col-md-2 text-center"><a href='course/index.php?categoryid=128'><img src="images/Cursos-on-line-sem-tutor.png"></a><p>Cursos on-line sem tutoria</div>
-	<div class="col-md-2 text-center"><a href='course/index.php?categoryid=102'><img src="images/formacao_interna.png"></a><p>Formação interna continuada</div>
-	<div class="col-md-2 text-center"><a href='course/index.php?categoryid=127'><img src="images/video-aula.png"></a><p>Videoaulas</div>
-	<div class="col-md-2 text-center"><a href='course/index.php?categoryid=46'><img src="images/pos-graduacao.png"></a><p>Pós-graduação</div>
-	<div class="col-md-2 text-center"><a href='course/index.php?categoryid=112'><img src="images/oficinas-interlegis.png"></a><p>Oficinas Interlegis</div>
-</div>
-</div>
-<!-- fim Corpo da página-->
-
-<div id="page-wrapper">
-    {{{ output.standard_top_of_body_html }}}
-
-    <div id="page" class="container-fluid">
-        <div id="page-content" class="row">
-            <div id="region-main-box" class="col-xs-12">
-
-                <section id="region-main">
-                    <div class="card card-block">
-
-				<!-- conteúdo dos cursos e topo  da página antiga -->
-                   <!-- {{{ output.course_content_header }}} -->
-                   <!-- {{{ output.main_content }}}          -->
-                   <!-- {{{ output.course_content_footer }}} -->
-                    </div>
-                </section>
+          </div>
+          <div class="c1 fld password">
+            <label for="login_password">Senha</label>
+            <br />
+            <div class="input-group" style="width: 100%;">
+              <input type="password" name="password" id="login_password" value="" class="form-control input-sm">
             </div>
-        </div>
+          </div>
+          <div class="c1 rememberusername">
+            <input type="checkbox" name="rememberusername" id="rememberusername" value="1">
+            <label for="rememberusername">Lembrar identificação de usuário</label>
+          </div>
+          <div class="col-lg-4" style="padding: 5px 0 0 0; line-height: 15px;">
+            <a href="login/signup.php" style="font-size:13px;">Cadastre-se</a>
+            <br />
+            <a href="login/forgot_password.php" style="font-size:11px;">Perdeu a senha?</a>
+          </div>
+          <div class="col-lg-1 col-lg-offset-5">
+            <div class="c1 btn"><input type="submit" value="Acessar"></div>
+          </div>
+        </form>
+      </div>
     </div>
-</div>
-{{{ output.standard_end_of_body_html }}}
+  </div>
 
-<!-- Rodapé -->
-<div class="FooterMain / u-noPrint">
+  <!-- Categorias de cursos -->
+  <div class="container">
+    <div class="row" style="padding: 0;">
+      <div class="col-lg-12">
+        <p>Categoria de cursos</p>
+      </div>
+      <div class="col-md-2 text-center"><a href='course/index.php?categoryid=130'><img src="images/Cursos-on-line.png"></a>
+        <p>Cursos on-line com tutoria</div>
+      <div class="col-md-2 text-center"><a href='course/index.php?categoryid=128'><img src="images/Cursos-on-line-sem-tutor.png"></a>
+        <p>Cursos on-line sem tutoria</div>
+      <div class="col-md-2 text-center"><a href='course/index.php?categoryid=102'><img src="images/formacao_interna.png"></a>
+        <p>Formação interna continuada</div>
+      <div class="col-md-2 text-center"><a href='course/index.php?categoryid=127'><img src="images/video-aula.png"></a>
+        <p>Videoaulas</div>
+      <div class="col-md-2 text-center"><a href='course/index.php?categoryid=46'><img src="images/pos-graduacao.png"></a>
+        <p>Pós-graduação</div>
+      <div class="col-md-2 text-center"><a href='course/index.php?categoryid=112'><img src="images/oficinas-interlegis.png"></a>
+        <p>Oficinas Interlegis</div>
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <footer>
+    <div id="footer-institucional">
+      <div class="FooterMain">
         <div class="container">
-            <div class="FooterMain-row">
-                <div class="FooterMain-section">
-                    <dl class="FooterMain-list">
-                        <dt>Portais</dt>
-                        <dd>
-                            <a href="http://www12.senado.leg.br/institucional/" class="FooterMain-link u-linkClean">
-                                Institucional
-                            </a>
-                        </dd>
-                        <dd>
-                            <a href="http://www25.senado.leg.br/web/senadores/" class="FooterMain-link u-linkClean">
-                                Senadores
-                            </a>
-                        </dd>
-                        <dd>
-                            <a href="http://www25.senado.leg.br/web/atividade/" class="FooterMain-link u-linkClean">
-                                Atividade Legislativa
-                            </a>
-                        </dd>
-                        <dd>
-                            <a href="http://www12.senado.leg.br/noticias" class="FooterMain-link u-linkClean">Notícias</a>
-                        </dd>
-                        <dd>
-                            <a href="http://www12.senado.leg.br/publicacoes" class="FooterMain-link u-linkClean">Publicação
-                                e Documentação
-                            </a>
-                        </dd>
-                        <dd>
-                            <a href="http://www12.senado.leg.br/orcamento" class="FooterMain-link u-linkClean">Orçamento</a>
-                        </dd>
-                        <dd>
-                            <a href="http://www12.senado.leg.br/transparencia/" class="FooterMain-link u-linkClean">
-                                Transparência
-                            </a>
-                        </dd>
-                        <dd>
-                            <a href="http://www12.senado.leg.br/ecidadania/" class="FooterMain-link u-linkClean">
-                                e-Cidadania
-                            </a>
-                        </dd>
-                    </dl>
-                </div>
-                <div class="FooterMain-section">
-                    <dl class="FooterMain-list">
-                        <dt>Acesso Rápido</dt>
-                        <dd>
-                            <a href="http://www12.senado.leg.br/blog" class="FooterMain-link u-linkClean">Assessoria de Imprensa</a>
-                        </dd>
-                        <dd>
-                            <a href="http://www12.senado.leg.br/blog/credenciamento-de-jornalistas" class="FooterMain-link u-linkClean">Credenciamento de Jornalistas
-                            </a>
-                        </dd>
-                        <dd>
-                            <a href="http://www12.senado.leg.br/senado/ilb/ead/abrangencia" class="FooterMain-link u-linkClean">Educação a distância
-                            </a>
-                        </dd>
-                        <dd>
-                            <a href="http://www12.senado.leg.br/jovemsenador" class="FooterMain-link u-linkClean">Jovem
-                                Senador
-                            </a>
-                        </dd>
-                        <dd>
-                            <a href="http://www12.senado.gov.br/institucional/procuradoria" class="FooterMain-link u-linkClean">Procuradoria da Mulher
-                            </a>
-                        </dd>
-                        <dd>
-                            <a href="http://www12.senado.gov.br/institucional/estagio" class="FooterMain-link u-linkClean">Programa de Estágio
-                            </a>
-                        </dd>
-                        <dd>
-                            <a href="http://www.interlegis.leg.br/" class="FooterMain-link u-linkClean">Programa
-                                Interlegis
-                            </a>
-                        </dd>
-                        <dd>
-                            <a href="http://www.senado.leg.br/senado/visite/" class="FooterMain-link u-linkClean">Visite
-                                o Senado
-                            </a>
-                        </dd>
-                    </dl>
-                </div>
-                <div class="FooterMain-section milli">
-                    <dl class="FooterMain-list CutHere CutHere--white CutHere--xl">
-                        <dt>
-                            <a target="_blank" href="http://www.senado.leg.br/transparencia/LAI/secrh/parla_inter.pdf" class="FooterMain-hlink u-linkClean">
-                                <strong>Fale com os Senadores</strong>
-                            </a>
-                        </dt>
-                        <dd>
-                            <a href="http://www12.senado.leg.br/institucional/falecomosenado" class="FooterMain-hlink u-linkClean u-linkBlock">
-                                <strong>Fale com o Senado</strong>
-                            </a>
-                        </dd>
-                        <dd>
-                            <a target="_blank" href="http://www.congressonacional.leg.br/" class="FooterMain-hlink u-linkClean u-linkBlock">
-                                <strong>Congresso Nacional</strong>
-                            </a>
-                            <a target="_blank" href="http://www.camara.leg.br/" class="FooterMain-hlink u-linkClean u-linkBlock">
-                                <strong>Câmara dos Deputados</strong>
-                            </a>
-                            <a target="_blank" href="http://www.tcu.gov.br/" class="FooterMain-hlink u-linkClean u-linkBlock">
-                                <strong>Tribunal de Contas da União</strong>
-                            </a>
-                        </dd>
-                    </dl>
-                </div>
-                <div class="FooterMain-section">
-                    <dl class="FooterMain-list">
-                        <dt>Redes Sociais</dt>
-                        <dd>
-                            <a href="http://www.facebook.com/senadofederal" target="_blank" title="Facebook" alt="Facebook" class="ShareIcon ShareIcon--dark ShareIcon--circle ShareIcon--facebook"></a>
-                            <a href="http://twitter.com/senadofederal" target="_blank" title="Twitter" alt="Twitter" class="ShareIcon ShareIcon--dark ShareIcon--circle ShareIcon--twitter"></a>
-                            <a href="http://www.youtube.com/agenciasenadoBR" target="_blank" title="YouTube" alt="YouTube" class="ShareIcon ShareIcon--dark ShareIcon--circle ShareIcon--youtube"></a>
-                            <a href="http://www.flickr.com/agenciasenado" target="_blank" title="Flickr" alt="Flickr" class="ShareIcon ShareIcon--dark ShareIcon--circle ShareIcon--flickr"></a>
-                        </dd>
-                    </dl>
-                </div>
+          <div class="FooterMain-row">
+            <div class="FooterMain-section">
+              <dl class="FooterMain-list"><dt>Portais</dt>
+                <dd><a class="FooterMain-link u-linkClean" href="http://www12.senado.leg.br/institucional/">Institucional</a></dd>
+                <dd><a class="FooterMain-link u-linkClean" href="http://www25.senado.leg.br/web/senadores/">Senadores</a></dd>
+                <dd><a class="FooterMain-link u-linkClean" href="http://www25.senado.leg.br/web/atividade/">Atividade Legislativa</a></dd>
+                <dd><a class="FooterMain-link u-linkClean" href="http://www12.senado.leg.br/noticias">Notícias</a></dd>
+                <dd><a class="FooterMain-link u-linkClean" href="http://www12.senado.leg.br/publicacoes">Publicação e Documentação</a></dd>
+                <dd><a class="FooterMain-link u-linkClean" href="http://www12.senado.leg.br/orcamento">Orçamento</a></dd>
+                <dd><a class="FooterMain-link u-linkClean" href="http://www12.senado.leg.br/transparencia/">Transparência</a></dd>
+                <dd><a class="FooterMain-link u-linkClean" href="http://www12.senado.leg.br/ecidadania/">e-Cidadania</a></dd>
+              </dl>
             </div>
-            <div class="FooterMain-end milli">
-                <span class="glyphicon glyphicon-lock u-alignBaseline"></span>
-                <a href="https://intranet.senado.gov.br/" target="_blank">Intranet</a>
-                <span class="pull-right">
-                    <span class="glyphicon glyphicon-chevron-up u-alignBaseline"></span>
-                    <a href="#">Voltar ao topo</a>
-                </span>
+            <div class="FooterMain-section">
+              <dl class="FooterMain-list"><dt>Acesso Rápido</dt>
+                <dd><a class="FooterMain-link u-linkClean" href="http://www12.senado.leg.br/blog">Blog</a></dd>
+                <dd><a class="FooterMain-link u-linkClean" href="http://www12.senado.leg.br/blog/credenciamento-de-jornalistas">Credenciamento de Jornalistas</a></dd>
+                <dd><a class="FooterMain-link u-linkClean" href="http://www12.senado.leg.br/senado/ilb/ead/abrangencia">Educação a distância</a></dd>
+                <dd><a class="FooterMain-link u-linkClean" href="http://www12.senado.leg.br/jovemsenador">Jovem Senador</a></dd>
+                <dd><a class="FooterMain-link u-linkClean" href="http://www12.senado.gov.br/institucional/procuradoria">Procuradoria da Mulher</a></dd>
+                <dd><a class="FooterMain-link u-linkClean" href="http://www12.senado.gov.br/institucional/estagio">Programa de Estágio</a></dd>
+                <dd><a class="FooterMain-link u-linkClean" href="http://www.interlegis.leg.br/">Programa Interlegis</a></dd>
+                <dd><a class="FooterMain-link u-linkClean" href="http://www.senado.leg.br/senado/visite/">Visite o Senado</a></dd>
+              </dl>
             </div>
+            <div class="FooterMain-section milli">
+              <dl class="FooterMain-list CutHere CutHere--white CutHere--xl"><dt><a class="FooterMain-hlink u-linkClean" target="_blank" href="http://www.senado.leg.br/transparencia/LAI/secrh/parla_inter.pdf"><strong>Fale com os Senadores</strong></a></dt>
+                <dd><a class="FooterMain-hlink u-linkClean u-linkBlock" href="http://www12.senado.leg.br/institucional/falecomosenado"><strong>Fale com o Senado</strong></a></dd>
+                <dd><a class="FooterMain-hlink u-linkClean u-linkBlock" target="_blank" href="http://www.congressonacional.leg.br/"><strong>Congresso Nacional</strong></a><a class="FooterMain-hlink u-linkClean u-linkBlock" target="_blank" href="http://www.camara.leg.br/"><strong>Câmara dos Deputados</strong></a>
+                  <a
+                    class="FooterMain-hlink u-linkClean u-linkBlock" target="_blank" href="http://www.tcu.gov.br/"><strong>Tribunal de Contas da União</strong></a>
+                </dd>
+              </dl>
+            </div>
+            <div class="FooterMain-section">
+              <dl class="FooterMain-list"><dt>Redes Sociais</dt>
+                <dd><a class="ShareIcon ShareIcon--dark ShareIcon--circle ShareIcon--facebook" href="http://www.facebook.com/senadofederal" target="_blank" title="Facebook" alt="Facebook"></a> <a class="ShareIcon ShareIcon--dark ShareIcon--circle ShareIcon--twitter"
+                    href="http://twitter.com/senadofederal" target="_blank" title="Twitter" alt="Twitter"></a> <a class="ShareIcon ShareIcon--dark ShareIcon--circle ShareIcon--youtube" href="http://www.youtube.com/agenciasenadoBR" target="_blank" title="YouTube"
+                    alt="YouTube"></a> <a class="ShareIcon ShareIcon--dark ShareIcon--circle ShareIcon--flickr" href="http://www.flickr.com/agenciasenado" target="_blank" title="Flickr" alt="Flickr"></a>
+                </dd>
+              </dl>
+            </div>
+          </div>
+          <div class="FooterMain-stand Arrange Arrange--middle milli">
+            <div class="Arrange-sizeFit u-textNoWrap"><span class="glyphicon glyphicon-lock u-alignBaseline"></span> <a href="https://intranet.senado.gov.br/" target="_blank">Intranet</a>
+            </div>
+            <div class="Arrange-sizeFill">
+              <ul class="Box Fence Fence--lg hidden-xs">
+                <li><a href="http://www12.senado.leg.br/institucional/pessoas/pessoas">Servidor efetivo</a></li>
+                <li><a href="http://www12.senado.leg.br/institucional/pessoas/pessoas">Servidor comissionado</a></li>
+                <li><a href="http://www12.senado.leg.br/institucional/pessoas/pessoas">Servidor aposentado</a></li>
+                <li><a href="http://www12.senado.leg.br/institucional/pessoas/pessoas">Pensionista</a></li>
+              </ul>
+            </div>
+            <div class="Arrange-sizeFit u-textNoWrap"><span class="glyphicon glyphicon-chevron-up u-alignBaseline"></span> <a href="#">Voltar ao topo</a>
+            </div>
+          </div>
         </div>
         <div class="FooterMain-endereco">
-            Senado Federal -
-            Praça dos Três Poderes - Brasília DF - CEP 70165-900
-            | Telefone: 0800 61 22 11
+          Senado Federal - Praça dos Três Poderes - Brasília DF - CEP 70165-900 | Telefone: 0800 61 22 11
+        </div>
+      </div>
     </div>
-</div>
+  </footer>
 </body>
 </html>
 {{#js}}
