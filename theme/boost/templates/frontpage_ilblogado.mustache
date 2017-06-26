@@ -50,6 +50,7 @@
 }}
 {{{ output.doctype }}}
 <html {{{ output.htmlattributes }}}>
+
 <head>
     <title>{{{ output.page_title }}}</title>
     <link rel="shortcut icon" href="{{{ output.favicon }}}" />
@@ -77,7 +78,7 @@
 <link rel="stylesheet" type="text/css" href="http://www12.senado.leg.br/hpsenado/portal_css/Tema_HPSenado/base-cachekey1556.css" />
 <style type="text/css">@import url(http://www12.senado.leg.br/hpsenado/portal_css/Tema_HPSenado/resourceplone.app.jquerytools.overlays-cachekey3027.css);</style>
 <style type="text/css" media="screen">@import url(http://www12.senado.leg.br/hpsenado/portal_css/Tema_HPSenado/resourceplone.formwidget.autocompletejquery.autocomplete-cachekey1913.css);</style>
-<link rel="stylesheet" type="text/css" href="http://www12.senado.leg.br/hpsenado/portal_css/Tema_HPSenado/resourceplone.app.jquerytools.dateinput-cachekey2007.css"
+<link rel="stylesheet" type="text/css" href="http://www12.senado.leg.br/hpsenado/portal_css/Tema_HPSenado/resourceplone.app.jquerytools.dateinput-cachekey2007.css">
 
 <link rel="kinetic-stylesheet" type="text/css" href="http://www12.senado.leg.br/hpsenado/portal_kss/Tema_HPSenado/at-cachekey3076.kss" />
 
@@ -109,9 +110,11 @@
 
 <link rel="stylesheet" href="https://www12.senado.leg.br/institucional/++theme++senado.tema/tema.css" type="text/css" />
 
-<script type="text/javascript" src="http://www12.senado.leg.br/noticias/portal_javascripts/Tema_PortalMultimidia/resourceplone.formwidget.autocompletejquery.autocomplete.min-cachekey4433.js" />
-<script type="text/javascript" src="http://www12.senado.leg.br/noticias/portal_javascripts/Tema_PortalMultimidia/resourcesenado.formwidget.textocomcontadordecaracterescontadordecaracteres-cachekey2942.js" />
-<script type="text/javascript" src="http://www12.senado.leg.br/noticias/portal_javascripts/Tema_PortalMultimidia/resourcesenado.jqueryjquery-cachekey4484.js" />
+    <script type="text/javascript" src="http://www12.senado.leg.br/noticias/portal_javascripts/Tema_PortalMultimidia/resourceplone.formwidget.autocompletejquery.autocomplete.min-cachekey4433.js"></script>
+
+    <script type="text/javascript" src="http://www12.senado.leg.br/noticias/portal_javascripts/Tema_PortalMultimidia/resourcesenado.formwidget.textocomcontadordecaracterescontadordecaracteres-cachekey2942.js"></script>
+
+    <script type="text/javascript" src="http://www12.senado.leg.br/noticias/portal_javascripts/Tema_PortalMultimidia/resourcesenado.jqueryjquery-cachekey4484.js"></script>
 
 
 <script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/audiojs/audio.min.js"></script>
@@ -190,88 +193,85 @@
 
 <div id="page-wrapper">
 
-    <!-- {{{ output.standard_top_of_body_html }}} --> 
+    <!-- {{{ output.standard_top_of_body_html }}} -->
 
-     {{>theme_boost/header}} 
+     {{>theme_boost/header}}
 
 
 
 	<!-- inicio conteudo pagina logada -->
 
 <div class="container">
- 
- <div class="container">
- 	<div class="row">
- 	<div class="col-lg-12">
-         <nav class="breadcrumb">
-		<a class="breadcrumb-item" href="#">Início</a>
-		<a class="breadcrumb-item" href="#">Saberes</a>
-		<a class="breadcrumb-item active" href="#">Ensino a Distância</a>
-	</nav>
- </div>
- </div>
- <br/>
- 
- <div class="cantainer">
-     <div class="row">
-     <div class="col-lg-3" >
-         <div class="col-lg-12" style="background-color:#3e6892; padding-left:15px; padding-top:7px;"><p style="color:#ffffff;">Navegação</p></div>
-         <div class="col-lg-12" style="background-color:#f7f7f7;"> 
-		<ol class="breadcrumb">
-			<li><a href="#">Início</a></li>
-			<li><a href="#">Saberes</a></li>
-			<li><a href="#">Ensino a Distância</a></li>
-		</ol>
-	</div>
-         <div class="col-lg-12" style="background-color:#3e6892; padding-left:15px; padding-top:7px;"><p style="color:#ffffff;">Cursos</p></div>
-         <div class="col-lg-12" style="background-color:#f7f7f7;"><br/>
-         	
-			<div class="panel-group" id="accordion">
-    <div class="panel panel-default" style="border-color:#f7f7f7;">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Ensino a Distância</a>
-        </h4>
-      </div>
-      <div id="collapse1" class="panel-collapse collapse in" >
-        <div class="panel-body" >Lista de cursos</div>
-      </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <nav class="breadcrumb">
+        		<a class="breadcrumb-item" href="#">Início</a>
+        		<a class="breadcrumb-item" href="#">Saberes</a>
+        		<a class="breadcrumb-item active" href="#">Ensino a Distância</a>
+            </nav>
+        </div>
     </div>
-    <div class="panel panel-default" style="border-color:#f7f7f7;">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Educação Cidadã</a>
-        </h4>
-      </div>
-      <div id="collapse2" class="panel-collapse collapse">
-        <div class="panel-body">Conteudo educação cidadã</div>
-      </div>
-    </div>
-    <div class="panel panel-default" style="border-color:#f7f7f7;">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><p style="font-size:15px;">Cursos Presenciais no Interlegis</p></a>
-        </h4>
-      </div>
-      <div id="collapse3" class="panel-collapse collapse">
-        <div class="panel-body">Lista de cursos</div>
-      </div>
-    </div>
-  </div>          
-
-
-         </div>
-         
-     </div>
-     <div class="col-lg-9" Style="background-color:#f7f7f7; padding-top:10px">
-         <div class="col-lg-12" >
-         <div class="col-lg-3"><p style="color:#002e56;font-size:15px;">Ensino a Distâncias</p></div>
-         <div class="col-lg-3" style="font-size:12px;"><a href="#"/><img src="images/matricula_encerrada.png" /> Informações</a></div>
-         <div class="col-lg-3" style="font-size:12px;"><a href="#"/><img src="images/matricula_aberta_verde.png"/> Matriculas Abertas</a></div>
-         <div class="col-lg-3" style="font-size:12px;"><a href="#"/><img src="images/matricula_encerrada_vermelho.png"/> Matriculas Encerradas</a></div>
-         <br/>
-         <div class="col-lg-12"></div>
-     </div>
+    
+    <div class="row">
+        <div class="col-lg-3" >
+            <div class="col-lg-12" style="background-color:#3e6892; padding-left:15px; padding-top:7px;">
+                <p style="color:#ffffff;">Navegação</p>
+            </div>
+            <div class="col-lg-12" style="background-color:#f7f7f7;">
+        		<ol class="breadcrumb">
+        			<li><a href="#">Início</a></li>
+        			<li><a href="#">Saberes</a></li>
+        			<li><a href="#">Ensino à Distância</a></li>
+        		</ol>
+        	</div>
+           <div class="col-lg-12" style="background-color:#3e6892; padding-left:15px; padding-top:7px;">
+               <p style="color:#ffffff;">Cursos</p>
+           </div>
+           <div class="col-lg-12" style="background-color:#f7f7f7;">
+              <div class="panel-group" id="accordion">
+              <div class="panel panel-default" style="border-color:#f7f7f7;">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Ensino a Distância</a>
+                  </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in" >
+                  <div class="panel-body">Lista de cursos</div>
+                </div>
+              </div>
+              <div class="panel panel-default" style="border-color:#f7f7f7;">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Educação Cidadã</a>
+                  </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                  <div class="panel-body">Conteudo educação cidadã</div>
+                </div>
+              </div>
+              <div class="panel panel-default" style="border-color:#f7f7f7;">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><p style="font-size:15px;">Cursos Presenciais no Interlegis</p></a>
+                  </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                  <div class="panel-body">Lista de cursos</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       <div class="col-lg-9" style="background-color:#f7f7f7; padding-top:10px">
+           <div class="col-lg-12" >
+           <div class="col-lg-3"><p style="color:#002e56;font-size:15px;">Ensino a Distâncias</p></div>
+           <div class="col-lg-3" style="font-size:12px;"><a href="#"/><img src="images/matricula_encerrada.png" /> Informações</a></div>
+           <div class="col-lg-3" style="font-size:12px;"><a href="#"/><img src="images/matricula_aberta_verde.png"/> Matriculas Abertas</a></div>
+           <div class="col-lg-3" style="font-size:12px;"><a href="#"/><img src="images/matricula_encerrada_vermelho.png"/> Matriculas Encerradas</a></div>
+           <br/>
+            </div>
+            <div class="col-lg-12"></div>
+       </div>
      </div>
  </div>
  <br/><br/><br/><br/>
@@ -286,7 +286,7 @@
 
         <div id="page-content" class="row">
             <div id="region-main-box" class="col-xs-12">
-                {{#hasregionmainsettingsmenu}} 
+                {{#hasregionmainsettingsmenu}}
                 <div id="region-main-settings-menu" class="hidden-print {{#hasblocks}}has-blocks{{/hasblocks}}">
                     <div> {{{ output.region_main_settings_menu }}} </div>
                 </div>
