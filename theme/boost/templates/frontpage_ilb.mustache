@@ -105,6 +105,10 @@
           #portal-breadcrumbs {
             display: block !important;
           }
+          label {
+              font-weight: normal;
+              color: #787878;
+          }
     </style>
 
   <!--
@@ -134,7 +138,11 @@
     <script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/audiojs/audiojs-doc-ready.js"></script>
     <script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/script/jquery.lazyload.min.js"></script>
     <script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/script/root_index.js"></script>
-    <script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/script/youtubeEvents.js"></script>
+    <script type=<style>
+      label {
+          font-weight: normal;
+      }
+      </style>"text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/script/youtubeEvents.js"></script>
     <script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/audiojs/audio.min.js"></script>
     <script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/audiojs/audiojs-doc-ready.js"></script>
     <script type="text/javascript" src="http://www12.senado.leg.br/noticias/++resource++senado.noticias/script/root_index.js"></script>
@@ -157,7 +165,11 @@
   </script>
   <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        (i[r].q=i<style>
+      label {
+          font-weight: normal;
+      }
+      </style>[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
@@ -300,58 +312,66 @@
   <div class="container">
     <div class="row">
       <!-- logotipo e texto -->
-      <div class="col-lg-4" style="text-align: center; background-color:#F7F7F7; padding:0; border: 1px solid #E6E6E6; padding-top:3%">
-        <img src='images/logo_saberes_xl.png' width='48%' height='48%' />
-        <div style="background-color: #0F5688; margin: 6% 0 0 0; padding: 0 0 5% 0;">
-          <p style=" color: #FFFFFF; font-size: 20px; font: bold; padding-top: 3%; margin: 0;">Cursos abertos e sem custo para a comunidade legislativa e os cidadãos</p>
+      <div class="col-xs-12 col-md-4 col-lg-4 text-center">
+        <div style="background-color: #F7F7F7; border: 1px solid #E6E6E6; border-bottom: 0; padding: 10% 0 10% 0;">
+            <img src='images/logo_saberes_xl.png' width='48%' height='48%' />
+        </div>
+        <div style="background-color: #0F5688; border: 1px solid #E6E6E6;">
+          <p style=" color: #FFFFFF; font-size: 18px; padding: 9% 0 9% 0;">Cursos abertos e sem custo para a comunidade legislativa e os cidadãos</p>
         </div>
       </div>
 
       <!-- video  -->
-      <div class="col-lg-4">
-        <iframe width="360" height="215" src="https://www.youtube.com/embed/vW7-E5VBAbk" frameborder="0" allowfullscreen></iframe>
+      <div class="col-xs-12 col-md-4 col-lg-4">
+        <iframe width="360" height="215" src="https://www.youtube.com/embed/D6IMzbSh0KI" frameborder="0" allowfullscreen style="padding: 0; height: 228.5px;"></iframe>
       </div>
 
       <!-- bloco para login -->
-      <div class="col-lg-4" style="background-color:#F7F7F7; border: 1px solid #E6E6E6;">
-        <h3 style="margin-top: 1%; color: #0F5688;">ACESSO</h3>
-        <form class="loginform" id="login" method="post" action="login/index.php">
-          <div class="c1 fld username">
-            <label for="login_username">Identificação de usuário</label>
-            <br />
-            <div class="input-group" style="width: 100%;">
-              <input type="text" name="username" id="login_username" value="" class="form-control input-sm">
+      <div class="col-xs-12 col-md-4 col-lg-4">
+        <div class="col-xs-12 col-md-12 col-lg-12" style="background-color: #F7F7F7; border: 1px solid #E6E6E6; border-bottom: 0;">
+          <h4 style="color: #0F5688; border: 0;">ACESSO</h4>
+          <form class="loginform" id="login" method="post" action="login/index.php">
+            <div class="c1 fld username">
+              <label for="login_username">Identificação de usuário</label>
+              <br />
+              <div class="input-group" style="width: 100%;">
+                <input type="text" name="username" id="login_username" value="" class="form-control input-sm">
+              </div>
             </div>
-          </div>
-          <div class="c1 fld password">
-            <label for="login_password">Senha</label>
-            <br />
-            <div class="input-group" style="width: 100%;">
-              <input type="password" name="password" id="login_password" value="" class="form-control input-sm">
+            <div class="c1 fld password">
+              <label for="login_password">Senha</label>
+              <br />
+              <div class="input-group" style="width: 100%;">
+                <input type="password" name="password" id="login_password" value="" class="form-control input-sm">
+              </div>
             </div>
-          </div>
-          <div class="c1 rememberusername">
-            <input type="checkbox" name="rememberusername" id="rememberusername" value="1">
-            <label for="rememberusername">Lembrar identificação de usuário</label>
-          </div>
-          <div class="col-lg-4" style="padding: 5px 0 0 0; line-height: 15px;">
+            <div class="c1 rememberusername">
+              <input type="checkbox" name="rememberusername" id="rememberusername" value="1">
+              <label for="rememberusername">Lembrar identificação de usuário</label>
+            </div>
+          </form>
+        </div>
+        <div class="col-xs-12 col-md-12 col-lg-12" style="background-color: #F7F7F7; border: 1px solid #E6E6E6; border-top: 0; padding-bottom: 1%;">
+          <div class="col-xs-5 col-md-5 col-lg-5" style="padding-top: 3%; line-height: 100%; padding-left: 0;">
             <a href="login/signup.php" style="font-size:13px;">Cadastre-se</a>
             <br />
             <a href="login/forgot_password.php" style="font-size:11px;">Perdeu a senha?</a>
           </div>
-          <div class="col-lg-1 col-lg-offset-5">
-            <div class="c1 btn"><input type="submit" value="Acessar"></div>
+          <div class="btn col-xs-1 col-xs-offset-4 col-md-1 col-md-offset-4 col-lg-1 col-lg-offset-3">
+            <input class="btn btn-primary" type="submit" value="Acessar">
           </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>
 
+  <br />
+
   <!-- Categorias de cursos -->
   <div class="container">
-    <div class="row" style="padding: 0;">
+    <div class="row" style=" margin-bottom: 90%; padding: 0; border-bottom: 1px solid #E6E6E6">
       <div class="col-lg-12">
-        <p>Categoria de cursos</p>
+        <h3>Categoria de cursos</h3>
       </div>
       <div class="col-md-2 text-center"><a href='course/index.php?categoryid=130'><img src="images/Cursos-on-line.png"></a>
         <p>Cursos on-line com tutoria</div>
@@ -395,7 +415,7 @@
                 <dd><a class="FooterMain-link u-linkClean" href="http://www12.senado.gov.br/institucional/procuradoria">Procuradoria da Mulher</a></dd>
                 <dd><a class="FooterMain-link u-linkClean" href="http://www12.senado.gov.br/institucional/estagio">Programa de Estágio</a></dd>
                 <dd><a class="FooterMain-link u-linkClean" href="http://www.interlegis.leg.br/">Programa Interlegis</a></dd>
-                <dd><a class="FooterMain-link u-linkClean" href="http://www.senado.leg.br/senado/visite/">Visite o Senado</a></dd>
+                <dd><a class="FooterMain-link u-linkClean" href="http://www.senado.leg.br/senado/visite/">Visite o Senado</a></dd>default
               </dl>
             </div>
             <div class="FooterMain-section milli">
