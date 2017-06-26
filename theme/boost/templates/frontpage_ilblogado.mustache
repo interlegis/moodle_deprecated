@@ -49,6 +49,7 @@
     }
 }}
 {{{ output.doctype }}}
+
 <html {{{ output.htmlattributes }}}>
 
 <head>
@@ -204,7 +205,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <nav class="breadcrumb">
+            <nav id="#" class="breadcrumb">
         		<a class="breadcrumb-item" href="#">Início</a>
         		<a class="breadcrumb-item" href="#">Saberes</a>
         		<a class="breadcrumb-item active" href="#">Ensino a Distância</a>
@@ -256,7 +257,7 @@
                   </h4>
                 </div>
                 <div id="collapse3" class="panel-collapse collapse">
-                  <div class="panel-body">Lista de cursos</div>
+                  <div class="panel-body"><p>Lista de cursos</p><p>Lista de cursos</p><p>Lista de cursos</p><p>Lista de cursos</p><p>Lista de cursos</p><p>Lista de cursos</p> </div>
                 </div>
               </div>
             </div>
@@ -264,31 +265,29 @@
         </div>
        <div class="col-lg-9" style="background-color:#f7f7f7; padding-top:10px">
            <div class="col-lg-12" >
-           <div class="col-lg-3"><p style="color:#002e56;font-size:15px;">Ensino a Distâncias</p></div>
-           <div class="col-lg-3" style="font-size:12px;"><a href="#"/><img src="images/matricula_encerrada.png" /> Informações</a></div>
-           <div class="col-lg-3" style="font-size:12px;"><a href="#"/><img src="images/matricula_aberta_verde.png"/> Matriculas Abertas</a></div>
-           <div class="col-lg-3" style="font-size:12px;"><a href="#"/><img src="images/matricula_encerrada_vermelho.png"/> Matriculas Encerradas</a></div>
+          	 <div class="col-lg-3"><p style="color:#002e56;font-size:15px;">Ensino a Distâncias</p></div>
+           	<div class="col-lg-3" style="font-size:12px;"><img src="images/matricula_encerrada.png" /> Informações</div>
+           	<div class="col-lg-3" style="font-size:12px;"><img src="images/matricula_aberta_verde.png"/> Matriculas Abertas</div>
+           	<div class="col-lg-3" style="font-size:12px;"><img src="images/matricula_encerrada_vermelho.png"/> Matriculas Encerradas</div>
            <br/>
             </div>
-            <div class="col-lg-12"></div>
+            
        </div>
-     </div>
- </div>
- <br/><br/><br/><br/>
+	<br/><br/><br/>
 
-<!-- fim conteudo pagina logado -->
-
-
-
-
+	<div class="col-lg-9" style="background-color:#f7f7f7; height: 500px; overflow-y: scroll; overflow-x: hidden; ">
+		
+	
+	<!-- cursos inicio -->
+		
     <div id="page" class="container-fluid">
         {{{ output.full_header }}}
 
         <div id="page-content" class="row">
             <div id="region-main-box" class="col-xs-12">
-                {{#hasregionmainsettingsmenu}}
+		        {{#hasregionmainsettingsmenu}}
                 <div id="region-main-settings-menu" class="hidden-print {{#hasblocks}}has-blocks{{/hasblocks}}">
-                    <div> {{{ output.region_main_settings_menu }}} </div>
+                    <div> {{{ output.region_main_settings_menu }}}</div>
                 </div>
                 {{/hasregionmainsettingsmenu}}
                 <section id="region-main" {{#hasblocks}}class="has-blocks"{{/hasblocks}}>
@@ -300,7 +299,7 @@
                     {{{ output.main_content }}}
                     {{{ output.course_content_footer }}}
                     </div>
-                </section>
+                </section> 
                 {{#hasblocks}}
                 <section data-region="blocks-column" class="hidden-print">
                     {{{ sidepreblocks }}}
@@ -311,7 +310,29 @@
     </div>
     {{> theme_boost/nav-drawer }}
 </div>
-<footer id="page-footer" class="p-y-1 bg-inverse">
+<!-- cursos fim -->
+
+	</div>
+     </div>
+ </div>
+ <br/><br/><br/><br/>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12" style="background-color:#00305c; padding-top:10px; text-align:center">
+            <p style="color:#ffffff">Senado Federal - Praça dos Três Poderes - Brasília DF - CEP 70165-900 | Telefone: 0800 61 22 11</p>
+        </div>
+    </div>
+</div>
+
+<!-- fim conteudo pagina logado -->
+
+
+
+
+
+<!-- <footer id="page-footer" class="p-y-1 bg-inverse">
     <div class="container">
         <div id="course-footer">{{{ output.course_footer }}}</div>
 
@@ -320,7 +341,7 @@
         {{/ output.page_doc_link }}
 
         {{{ output.login_info }}}
-        {{{ output.home_link }}}
+        {{{ output.home_link }}} 
         <nav class="nav navbar-nav hidden-lg-up">
             {{# output.custom_menu_flat }}
                 <ul class="list-unstyled p-t-1">
@@ -331,7 +352,7 @@
         {{{ output.standard_footer_html }}}
         {{{ output.standard_end_of_body_html }}}
     </div>
-</footer>
+</footer>-->
 
 </body>
 </html>
