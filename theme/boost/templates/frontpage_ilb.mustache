@@ -282,7 +282,7 @@
           <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">Certificados<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="" onclick="javascript:ativaAba(event, 'div.validacert');return false;">Validar certificados</a></li>
-            <li><a href="" onclick="javascript:ativaAba(event, 'div.obtemcert');return false;">Obter certificados</a></li>
+            <li><a href="blocks/get_certificate/index.php">Obter certificados</a></li>
             <li><a href="http://www17.senado.gov.br/user/login" target="_blank">Obter certificados antigos</a></li>
           </ul>
         </li>
@@ -311,7 +311,11 @@
 
   <div class="container" style="visibility:visible">
     <div id="div.validacert" class="container tabcontent">
-      Página de validação de certificados
+      <form class="loginform" name="cert" method="post" action="blocks/verify_certificate/index.php">
+        <input type="text" name="certnumber" id="certnumber" size="10" value="">
+        <input type="hidden" name="list" id="list" value="8">
+        <input type="submit" value="Verificar">
+      </form>
     </div>
 
     <div id="div.obtemcert" class="container tabcontent">
