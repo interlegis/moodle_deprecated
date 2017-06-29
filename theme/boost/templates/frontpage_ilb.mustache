@@ -276,15 +276,14 @@
 
     <!-- navbar -->
     <nav class="Nav--principal navbar navbar-default navbar-collapse nav-collapse collapse Nav--collapse" role="navigation">
+	
+
+	
       <ul class="nav navbar-nav">
         <!-- Menu Principal -->
         <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">Certificados<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="" onclick="javascript:ativaAba(event, 'div.validacert');return false;">Validar certificados</a></li>
-            <li><a href="blocks/get_certificate/index.php">Obter certificados</a></li>
-            <li><a href="http://www17.senado.gov.br/user/login" target="_blank">Obter certificados antigos</a></li>
-          </ul>
+          <a class="dropdown-toggle" href="#" onclick="javascript:ativaAba(event, 'div.validacert');return false;" data-toggle="dropdown" aria-expanded="false">Certificados</a>
+          
         </li>
         <li class="dropdown">
           <a href="" onclick="javascript:ativaAba(event, 'div.faq');return false;">Perguntas Frequentes</a>
@@ -310,13 +309,24 @@
   </div>
 
   <div class="container" style="visibility:visible">
-    <div id="div.validacert" class="container tabcontent">
+	<div id="div.validacert" class="container tabcontent">
+	
+
+
+	<div class="col-lg-4" style="background:#F7f7f7; border: 1px solid #e6e6e6">
+	<p>Validar Certificado</p>
       <form class="loginform" name="cert" method="post" action="blocks/verify_certificate/index.php">
         <input type="text" name="certnumber" id="certnumber" size="10" value="">
         <input type="hidden" name="list" id="list" value="8">
         <input type="submit" value="Verificar">
       </form>
-    </div>
+	
+	</div>
+	<div class="col-lg-4" style=""><div class="col-lg-12" style="background:#f7f7f7;border: 1px solid #e6e6e6; padding:18px;">Obter Certificados</div></div>
+	<div class="col-lg-4" style="background:#f7f7f7; border: 1px solid #e6e6e6; padding:18px;">Obter Certificados antigos</div>
+	
+	</div>    
+	</div>
 
     <div id="div.obtemcert" class="container tabcontent">
       Página de obtenção de certificados
@@ -325,6 +335,137 @@
     <div id="div.faq" class="container tabcontent">
       <div class="panel-group" id="accordion">
         <!-- inicio do bloco accordion -->
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+        O que significa a sigla EaD?</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse">
+      <div class="panel-body">A sigla EaD significa Educação a Distância.</div>
+    </div>
+  </div>        
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+        O que é Educação a Distância?</a>
+      </h4>
+    </div>
+    <div id="collapse2" class="panel-collapse collapse">
+      <div class="panel-body">A Educação a Distância é a modalidade educacional na qual a mediação didáticopedagógica
+nos processos de ensino e aprendizagem ocorre com a utilização de meios
+e tecnologias de informação e comunicação, com estudantes e professores
+desenvolvendo atividades educativas em lugares ou tempos diversos.
+Esta definição está presente no Decreto 5.622, de 19.12.2005 (que revoga o
+Decreto 2.494/98), que regulamenta o Art. 80 da Lei 9.394/96 (LDB) .</div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+        Qual a Legislação específica para EaD?</a>
+      </h4>
+    </div>
+    <div id="collapse3" class="panel-collapse collapse">
+      <div class="panel-body">
+          <ul>
+              <li>Decreto Nº. 5.622, de 19 de dezembro de 2005, regualmenta o art. 80 da Lei nº9.394, de 20 de dezembro de 1996 (LDB).</li>
+              <li>Decreto N.º 5.773, de 09 de maio de 2006, dispõe sobre o exercício das funções de regulação, supervisão e avaliação de instituições de educação superior e
+cursos superiores de graduação e seqüenciais no sistema federal de ensino.</li>
+              <li>Decreto N.º 6.303, de 12 de dezembro de 2007, altera dispositivos dos Decretos nos 5.622, de 19 de dezembro de 2005, que estabelece as diretrizes e bases da educação nacional, e 5.773, de 9 de maio de 2006, que dispõe sobre o exercício das funções de regulação, supervisão e avaliação de instituições de educação superior e cursos superiores de graduação e seqüenciais no sistema federal de
+                  ensino.</li>
+              <li>Portaria nº 1, de 10 de janeiro de 2007.</li>
+              <li>Portaria nº 2 (revogada), de 10 de janeiro de 2007.</li>
+              <li>Portaria nº 40, de 13 de dezembro de 2007.</li>
+              <li>Portaria nº 10, de 02 julho de 2009</li>
+              <li> Decreto Nº 9.057, de 25 de maio de 2017.</li>
+          </ul>
+        </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+        O que significa a sigla ILB?</a>
+      </h4>
+    </div>
+    <div id="collapse4" class="panel-collapse collapse">
+        <div class="panel-body"><P>ILB é a sigla do Instituto Legislativo Brasileiro, a Escola de Governo do Senado
+Federal, criado por meio da Resolução nº 09, de 29 de janeiro de 1997.</P></div>
+    </div>
+  </div>
+            <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+        Quem pode se inscrever nos cursos oferecidos pelo ILB?</a>
+      </h4>
+    </div>
+    <div id="collapse5" class="panel-collapse collapse">
+      <div class="panel-body">Nos cursos EaD sem tutoria, podem se matricular servidores dos legislativos
+federal, estadual, municipal e distrital, dos órgãos conveniados e dos parlamentos de
+língua portuguesa, e o público em geral. Nos cursos EaD com tutoria, as matrículas são
+destinadas a públicos segmentados conforme o curso. A definição do público é dada na
+página de cada curso com tutoria.</div>
+    </div>
+  </div>
+            <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+        Quanto custa os cursos oferecidos pelo ILB?</a>
+      </h4>
+    </div>
+    <div id="collapse6" class="panel-collapse collapse">
+      <div class="panel-body">Todos os cursos oferecidos pelo ILB, na modalidade à distância, com e sem
+tutoria, são sem custo para os alunos.</div>
+    </div>
+  </div>
+            <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+        Quantos cursos, ao mesmo tempo, posso fazer?</a>
+      </h4>
+    </div>
+    <div id="collapse7" class="panel-collapse collapse">
+      <div class="panel-body">O aluno pode realizar até 02 (dois) cursos simultaneamente, sem tutoria, e um
+curso com tutoria, desde que haja vaga.</div>
+    </div>
+  </div>
+            <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
+        Os cursos oferecidos pelo ILB são reconhecidos pelo MEC?</a>
+      </h4>
+    </div>
+    <div id="collapse8" class="panel-collapse collapse">
+      <div class="panel-body">Os cursos a distância ofertados pelo ILB são considerados cursos de educação
+continuada e, por isso, não estão sujeitos ao reconhecimento do MEC. Conforme a lei
+nº. 9394/96; Decreto nº. 5.154/04; Deliberação CEE 14/97 (Indicação CEE 14/97).</div>
+    </div>
+  </div>
+            <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
+        Os cursos de EaD do ILB são totalmente à distância ou é preciso participar de aulas
+presenciais?</a>
+      </h4>
+    </div>
+    <div id="collapse9" class="panel-collapse collapse">
+      <div class="panel-body">Não existe nenhuma atividade presencial. O curso é realizado, em sua totalidade,
+a distância.</div>
+    </div>
+  </div>
+
         <div class="panel panel-default">
           <!-- inicio bloco pergunta e resposta -->
           <div class="panel-heading">
