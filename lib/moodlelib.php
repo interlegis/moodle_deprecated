@@ -2862,8 +2862,8 @@ function require_login($courseorid = null, $autologinguest = true, $cm = null, $
                 }
             }
         }
-
-        if (!$access) {
+	// MGBF: evita redirecionamento em caso de estar logado como outro usuário
+	if (!$access && !\core\session\manager::is_loggedinas()) {
             if ($preventredirect) {
                 throw new require_login_exception('Not enrolled');
             }
