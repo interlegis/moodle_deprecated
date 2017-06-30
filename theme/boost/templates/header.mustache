@@ -18,6 +18,7 @@
     Page header.
 }}
 <header role="banner" class="pos-f-t navbar navbar-full navbar-light bg-faded navbar-static-top moodle-has-zindex">
+<<<<<<< HEAD
 
 <!-- NAV SUPERIOR DO SENADO -->
 
@@ -37,107 +38,45 @@
           </ul></div>
         <div class="NavGlobal-logo pull-left"><a href="http://www.senado.gov.br/"><img src="//www.senado.gov.br/inc/essencial/img/senado.svg" alt="Senado Federal" height="23" width="170"></a></div>
         <div class="NavGlobal-middle"><a href="http://www12.senado.gov.br/institucional/falecomosenado">Fale com o Senado</a></div>
+=======
+   <div class="container-fluid navbar-nav">
+  
+          <div data-region="drawer-toggle">
+              <button aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}" aria-controls="nav-drawer" type="button" class="btn pull-xs-left m-r-1 btn-secondary" data-
+          </div>
+  
+          <a href="{{{ config.wwwroot }}}" class="navbar-brand {{# output.should_display_navbar_logo }}has-logo{{/ output.should_display_navbar_logo }}
+              {{^ output.should_display_navbar_logo }}
+                  hidden-sm-down
+              {{/ output.should_display_navbar_logo }}
+                  ">
+              {{# output.should_display_navbar_logo }}
+                  <span class="logo hidden-xs-down">
+                      <img src="{{output.get_compact_logo_url}}" alt="{{sitename}}">
+                  </span>
+              {{/ output.should_display_navbar_logo }}
+              <span class="site-name hidden-sm-down">{{{ sitename }}}</span>
+          </a>
+  
+          <!-- user_menu -->
+          {{{ output.user_menu }}}
+  
+          <!-- navbar_plugin_output -->
+          {{{ output.navbar_plugin_output }}}
+  
+          <!-- search_box -->
+          <span class="hidden-md-down">
+          {{{ output.search_box }}}
+          </span>
+  
+          <nav class="nav navbar-nav hidden-md-down">
+              <!-- custom_menu -->
+              {{{ output.custom_menu }}}
+              <!-- page_heading_menu -->
+              {{{ output.page_heading_menu }}}
+          </nav>
+>>>>>>> 61d10e6e671df0d09617fe4210f01665666a8a57
       </div>
-     </div>
-   </div>
 
-<div class="container navbar-nav">
-
-    <div data-region="drawer-toggle">
-        <button aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}" aria-controls="nav-drawer" type="button" class="btn pull-xs-left m-r-1 btn-secondary" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav"><span aria-hidden="true">&#9776;</span><span class="sr-only">{{#str}}expand, core{{/str}}</span></button>
-    </div>
-
-    <!-- <a href="{{{ config.wwwroot }}}" class="navbar-brand {{# output.should_display_navbar_logo }}has-logo{{/ output.should_display_navbar_logo }}
-        {{^ output.should_display_navbar_logo }}
-            hidden-sm-down
-        {{/ output.should_display_navbar_logo }}
-            ">
-        {{# output.should_display_navbar_logo }}
-            <span class="logo hidden-xs-down">
-                <img src="{{output.get_compact_logo_url}}" alt="{{sitename}}">
-            </span>
-        {{/ output.should_display_navbar_logo }}
-        <span class="site-name hidden-sm-down">{{{ sitename }}}</span>
-    </a> -->
-
-    <!-- user_menu -->
-    {{{ output.user_menu }}}
-
-    <!-- navbar_plugin_output -->
-    {{{ output.navbar_plugin_output }}}
-
-    <!-- search_box -->
-    <span class="hidden-md-down">
-    {{{ output.search_box }}}
-    </span>
-
-    <nav class="nav navbar-nav hidden-md-down">
-        <!-- custom_menu -->
-        {{{ output.custom_menu }}}
-        <!-- page_heading_menu -->
-        {{{ output.page_heading_menu }}}
-    </nav>
-</div>
 </header>
 
-<div class="container">
-  <section id="cabecalhoTopo"><!-- Logo e busca --><div class="PortalTopo">
-          <div class="PortalTopo-id PortalTopo-id--wide">
-              <div class="PortalTopo-title">
-                  <a id="portal-home-link" href="https://www12.senado.leg.br/institucional">Institucional</a>
-                  <div class="PortalTopo-sub eta-xs epsilon"><a href="https://www12.senado.leg.br/institucional/escola-de-governo">Escola de Governo</a></div>
-              </div>
-          </div>
-          <!-- <div class="PortalTopo-redes-sociais">
-          <dl>
-            <dd>
-              <a class="btn ShareIcon ShareIcon--circle ShareIcon--light ShareIcon--facebook" href="http://www.facebook.com/ilbsenado" target="_blank" title="Facebook" alt="Facebook"></a>
-              <a class="btn ShareIcon ShareIcon--circle ShareIcon--light ShareIcon--youtube" href="http://www.youtube.com/ILBCanal" target="_blank" title="YouTube" alt="YouTube"></a>
-            </dd>
-          </dl>
-          </div> -->
-          <div class="PortalTopo-busca collapse">
-              <div class="portal-search">
-                  <form class="Az" action="//www6g.senado.gov.br/busca/" data-colecao="Institucional" role="search">
-                      <input type="hidden" name="portal" value="Institucional"><div class="input-group" data-toggle="_dropdown">
-                          <input type="text" name="q" class="Az-input form-control" placeholder="Busca" autocomplete="off"><span class="input-group-btn">
-                              <button class="btn btn-default" type="submit" aria-label="Buscar">
-                              <div class="glyphicon glyphicon-search text-muted"></div>
-                              </button>
-                          </span>
-                      </div>
-                      <div class="u-posRelative">
-                          <div class="Az-place Az-place--float Az-place--wide"><div class="Box Box--lg"><div class="List Box">
-                              <div class="eta text-muted">O quê você procura?</div>
-                          </div></div></div>
-                      </div>
-                  </form>
-              </div>
-            </div>
-          <div class="clearfix"></div>
-      </div>
-
-      <!-- Navbar -->
-      <nav class="Nav--principal navbar navbar-default navbar-collapse nav-collapse collapse Nav--collapse" role="navigation">
-        <ul class="nav navbar-nav"><!-- Menu Principal -->
-          <li class="dropdown">
-              <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">Certificados</a>
-              <ul class="dropdown-menu"><li><a href="http://www12.senado.leg.br/institucional/estrutura">Estrutura</a></li>
-                  <li><a href="http://www.senado.leg.br/transparencia/LAI/secrh/diretores_inter.pdf" target="_blank">Diretores e Coordenadores</a></li>
-              </ul>
-          </li>
-          <li class="dropdown">
-              <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">Perguntas frequentes</a>
-              <ul class="dropdown-menu"><li><a href="http://www12.senado.leg.br/institucional/programas/primeira-infancia">Primeira Infância </a></li>
-                  <li><a href="http://www12.senado.leg.br/jovemsenador" target="_blank"> Jovem Senador</a></li>
-                  <li><a href="http://www25.senado.leg.br/web/atividade/conselhos" target="_blank"> Premiações</a></li>
-                  <li><a href="http://www12.senado.leg.br/institucional/programas/pro-equidade"> Pró-Equidade</a></li>
-                  <li><a href="http://www12.senado.leg.br/institucional/procuradoria"> Procuradoria da Mulher</a></li>
-                  <li><a href="http://www12.senado.leg.br/institucional/estagio"> Programa de Estágio</a></li>
-                  <li><a href="http://www12.senado.leg.br/institucional/programas/senado-inclusivo"> Senado Inclusivo</a></li>
-                  <li><a href="http://www12.senado.leg.br/institucional/programas/senado-verde"> Senado Verde</a></li>
-                  <li><a href="http://www2.congressonacional.leg.br/visite#/" target="_blank"> Visite o Senado</a></li>
-              </ul></li>
-          <li><a href="http://www12.senado.leg.br/institucional/escola-de-governo">Contatos</a></li>
-      </ul>
-    </nav>

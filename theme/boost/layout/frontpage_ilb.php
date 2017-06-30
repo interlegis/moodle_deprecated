@@ -49,7 +49,9 @@ if (isloggedin()) {
 	];
 
 	$templatecontext['flatnavigation'] = $PAGE->flatnav;
-	echo $OUTPUT->render_from_template('theme_boost/frontpage_ilblogado', $templatecontext);
+	//	echo $OUTPUT->render_from_template('theme_boost/frontpage_ilblogado', $templatecontext);
+	echo $OUTPUT->render_from_template('theme_boost/columns2', $templatecontext);
+
 } else {
 	$bodyattributes = $OUTPUT->body_attributes([]);
 
