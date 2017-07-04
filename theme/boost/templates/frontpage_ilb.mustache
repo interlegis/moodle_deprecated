@@ -43,7 +43,7 @@
 <!-- {{{ output.course_content_footer }}} -->
 {{{ output.doctype }}}
 <html {{{ output.htmlattributes }}}>
-<head>
+  <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,818 +57,815 @@
 
     <title>Instituto Legislativo Brasileiro - ILB</title>
 
-{{>theme_boost/head}}
+    {{>theme_boost/head}}
 
-</head>
+  </head>
 
-<body {{{ bodyattributes }}}>
-  
-{{>theme_boost/header}}
+  <body {{{ bodyattributes }}}>
 
-  <div class="container">
+    {{>theme_boost/header}}
+
     <!-- Logo e busca -->
-    <section id="cabecalhoTopo">
+    <div class="container">
+      <section id="cabecalhoTopo">
 
-      <div class="PortalTopo">
-        <div class="PortalTopo-id PortalTopo-id--wide">
-          <div class="PortalTopo-title">
-            <a id="portal-home-link" href="https://www12.senado.leg.br/institucional">Institucional</a>
-            <div class="PortalTopo-sub eta-xs epsilon">
-              <a href="https://www12.senado.leg.br/institucional/escola-de-governo">Escola de Governo</a>
+        <div class="PortalTopo">
+          <div class="PortalTopo-id PortalTopo-id--wide">
+            <div class="PortalTopo-title">
+              <a id="portal-home-link" href="https://www12.senado.leg.br/institucional">Institucional</a>
+              <div class="PortalTopo-sub eta-xs epsilon">
+                <a href="https://www12.senado.leg.br/institucional/escola-de-governo">Escola de Governo</a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="PortalTopo-redes-sociais">
-          <dl>
-            <dd>
-              <a class="btn ShareIcon ShareIcon--circle ShareIcon--light ShareIcon--facebook" href="http://www.facebook.com/ilbsenado" target="_blank" title="Facebook" alt="Facebook"></a>
-              <a class="btn ShareIcon ShareIcon--circle ShareIcon--light ShareIcon--youtube" href="http://www.youtube.com/ILBCanal" target="_blank" title="YouTube" alt="YouTube"></a>
-            </dd>
-          </dl>
-        </div>
-        <div class="PortalTopo-busca collapse">
-          <div class="portal-search">
-            <form class="Az" action="course/search.php" role="search">
-              <input type="hidden" name="portal" value="Saberes">
-              <div class="input-group" data-toggle="_dropdown">
-                <input type="text" name="search" class="Az-input form-control" placeholder="Busca" autocomplete="off" />
-                <span class="input-group-btn">
-                      <button id="btnSearchCourse" class="btn btn-default" type="submit" aria-label="Buscar">
-                        <div class="glyphicon glyphicon-search text-muted"></div>
-                      </button>
-                </span>
-              </div>
-              <div class="u-posRelative">
-                <div class="Az-place Az-place--float Az-place--wide">
-                  <div class="Box Box--lg">
-                    <div class="List Box">
-                      <div class="eta text-muted">Que curso você procura?</div>
+          <div class="PortalTopo-redes-sociais">
+            <dl>
+              <dd>
+                <a class="btn ShareIcon ShareIcon--circle ShareIcon--light ShareIcon--facebook" href="http://www.facebook.com/ilbsenado" target="_blank" title="Facebook" alt="Facebook"></a>
+                <a class="btn ShareIcon ShareIcon--circle ShareIcon--light ShareIcon--youtube" href="http://www.youtube.com/ILBCanal" target="_blank" title="YouTube" alt="YouTube"></a>
+              </dd>
+            </dl>
+          </div>
+          <div class="PortalTopo-busca collapse">
+            <div class="portal-search">
+              <form class="Az" action="course/search.php" role="search">
+                <input type="hidden" name="portal" value="Saberes">
+                <div class="input-group" data-toggle="_dropdown">
+                  <input type="text" name="search" class="Az-input form-control" placeholder="Busca" autocomplete="off" />
+                  <span class="input-group-btn">
+                        <button id="btnSearchCourse" class="btn btn-default" type="submit" aria-label="Buscar">
+                          <div class="glyphicon glyphicon-search text-muted"></div>
+                        </button>
+                  </span>
+                </div>
+                <div class="u-posRelative">
+                  <div class="Az-place Az-place--float Az-place--wide">
+                    <div class="Box Box--lg">
+                      <div class="List Box">
+                        <div class="eta text-muted">Que curso você procura?</div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- navbar -->
-    <nav class="Nav--principal navbar navbar-default navbar-collapse nav-collapse collapse Nav--collapse" role="navigation">
-
-
-
-      <ul class="nav navbar-nav">
-        <!-- Menu Principal -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" onclick="javascript:ativaAba(event, 'div.validacert');return false;" data-toggle="dropdown" aria-expanded="false">Certificados</a>
-
-        </li>
-        <li class="dropdown">
-          <a href="" onclick="javascript:ativaAba(event, 'div.faq');return false;">Perguntas Frequentes</a>
-        </li>
-        <li>
-          <a href="" onclick="javascript:ativaAba(event, 'div.contato');return false;">Contatos</a>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- breadcrumbs -->
-    <div id="portal-breadcrumbs" class="portal-breadcrumbs">
-      <ol class="Breadcrumbs">
-        <li id="breadcrumbs-you-are-here">Você está aqui:</li>
-        <li id="breadcrumbs-home">
-          <a href="http://www12.senado.leg.br/institucional">Página Inicial</a>
-        </li>
-        <li id="breadcrumbs-1">
-          <span id="breadcrumbs-current">Saberes</span>
-        </li>
-      </ol>
-    </div>
-  </div>
-
-  <div class="container" style="visibility:visible">
-  	<div id="div.validacert" class="container tabcontent tabcontentCert">
-
-      <div class="col-xs-12 col-lg-4">
-      	<div class="col-lg-12" style="background:#F7f7f7; border: 1px solid #e6e6e6; padding-bottom: 5%;">
-        	<h4 style="color: #0F5688;">Validar Certificado</h4>
-          <p style="padding-top: 5%;">Digite o código do certificado para verificar:</p>
-            <form class="loginform" name="cert" method="post" action="blocks/verify_certificate/index.php">
-              <div class="col-xs-12 col-lg-8" style="padding-left: 0;">
-                <input type="text" name="certnumber" id="certnumber" size="10" value="" style="width:100%;">
-                <input type="hidden" name="list" id="list" value="8">
-              </div>
-              <div class="col-lg-4">
-                <input class="btn btn-primary" type="submit" value="Verificar">
-              </div>
-            </form>
-      	</div>
-      </div>
-
-    	<div class="col-xs-12 col-lg-4">
-        <div class="col-lg-12" style="background:#F7f7f7; border: 1px solid #e6e6e6; padding-bottom: 4%;">
-          <div class="col-lg-12">
-            <h4 style="color: #0F5688;">Obter Certificados</h4>
-          </div>
-          <div class="col-lg-12">
-            <p>Para obter o certificado de cursos já concluídos, clique no botão abaixo.</p>
-          </div>
-          <div class="col-lg-12 text-center">
-            <a class="btn btn-primary" href="">Obter certificados</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-xs-12 col-lg-4">
-      	<div class="col-lg-12" style="background:#f7f7f7; border: 1px solid #e6e6e6; padding-bottom: 8%;">
-          <h4 style="color: #0F5688;">Certificados antigos</h4>
-          <p>Emissão de certificados para alunos inscritos no período de 2010/2013.</p>
-          <a href="http://www17.senado.gov.br/user/login">Obter certificados</a>
-        </div>
-      </div>
-  	</div>
-	</div>
-
-    <div id="div.obtemcert" class="container tabcontent">
-      Página de obtenção de certificados
-    </div>
-
-    <div id="div.faq" class="container tabcontent">
-      <div class="panel-group" id="accordion">
-        <!-- inicio do bloco accordion -->
-
-
-      <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-              1. O que significa a sigla EaD?</a>
-            </h4>
-          </div>
-          <div id="collapse1" class="panel-collapse collapse">
-            <div class="panel-body">A sigla EaD significa Educação a Distância.</div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-              2. O que é Educação a Distância?</a>
-            </h4>
-          </div>
-          <div id="collapse2" class="panel-collapse collapse">
-            <div class="panel-body">A Educação a Distância é a modalidade educacional na qual a mediação didáticopedagógica
-      nos processos de ensino e aprendizagem ocorre com a utilização de meios
-      e tecnologias de informação e comunicação, com estudantes e professores
-      desenvolvendo atividades educativas em lugares ou tempos diversos.
-      Esta definição está presente no Decreto 5.622, de 19.12.2005 (que revoga o
-      Decreto 2.494/98), que regulamenta o Art. 80 da Lei 9.394/96 (LDB) .</div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-              3. Qual a Legislação específica para EaD?</a>
-            </h4>
-          </div>
-          <div id="collapse3" class="panel-collapse collapse">
-            <div class="panel-body">
-                <ul>
-                    <li>Decreto Nº. 5.622, de 19 de dezembro de 2005, regualmenta o art. 80 da Lei nº9.394, de 20 de dezembro de 1996 (LDB).</li>
-                    <li>Decreto N.º 5.773, de 09 de maio de 2006, dispõe sobre o exercício das funções de regulação, supervisão e avaliação de instituições de educação superior e
-      cursos superiores de graduação e seqüenciais no sistema federal de ensino.</li>
-                    <li>Decreto N.º 6.303, de 12 de dezembro de 2007, altera dispositivos dos Decretos nos 5.622, de 19 de dezembro de 2005, que estabelece as diretrizes e bases da educação nacional, e 5.773, de 9 de maio de 2006, que dispõe sobre o exercício das funções de regulação, supervisão e avaliação de instituições de educação superior e cursos superiores de graduação e seqüenciais no sistema federal de
-                        ensino.</li>
-                    <li>Portaria nº 1, de 10 de janeiro de 2007.</li>
-                    <li>Portaria nº 2 (revogada), de 10 de janeiro de 2007.</li>
-                    <li>Portaria nº 40, de 13 de dezembro de 2007.</li>
-                    <li>Portaria nº 10, de 02 julho de 2009</li>
-                    <li> Decreto Nº 9.057, de 25 de maio de 2017.</li>
-                </ul>
-              </div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-              4. O que significa a sigla ILB?</a>
-            </h4>
-          </div>
-          <div id="collapse4" class="panel-collapse collapse">
-              <div class="panel-body"><P>ILB é a sigla do Instituto Legislativo Brasileiro, a Escola de Governo do Senado
-      Federal, criado por meio da Resolução nº 09, de 29 de janeiro de 1997.</P></div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
-              5. Quem pode se inscrever nos cursos oferecidos pelo ILB?</a>
-            </h4>
-          </div>
-          <div id="collapse5" class="panel-collapse collapse">
-            <div class="panel-body">Nos cursos EaD sem tutoria, podem se matricular servidores dos legislativos
-      federal, estadual, municipal e distrital, dos órgãos conveniados e dos parlamentos de
-      língua portuguesa, e o público em geral. Nos cursos EaD com tutoria, as matrículas são
-      destinadas a públicos segmentados conforme o curso. A definição do público é dada na
-      página de cada curso com tutoria.</div>
-          </div>
-        </div>
-                  <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
-              6. Quanto custa os cursos oferecidos pelo ILB?</a>
-            </h4>
-          </div>
-          <div id="collapse6" class="panel-collapse collapse">
-            <div class="panel-body">Todos os cursos oferecidos pelo ILB, na modalidade à distância, com e sem
-      tutoria, são sem custo para os alunos.</div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
-              7. Quantos cursos, ao mesmo tempo, posso fazer?</a>
-            </h4>
-          </div>
-          <div id="collapse7" class="panel-collapse collapse">
-            <div class="panel-body">O aluno pode realizar até 02 (dois) cursos simultaneamente, sem tutoria, e um
-      curso com tutoria, desde que haja vaga.</div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
-              8. Os cursos oferecidos pelo ILB são reconhecidos pelo MEC?</a>
-            </h4>
-          </div>
-          <div id="collapse8" class="panel-collapse collapse">
-            <div class="panel-body">Os cursos a distância ofertados pelo ILB são considerados cursos de educação
-      continuada e, por isso, não estão sujeitos ao reconhecimento do MEC. Conforme a lei
-      nº. 9394/96; Decreto nº. 5.154/04; Deliberação CEE 14/97 (Indicação CEE 14/97).</div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
-              8. Os cursos de EaD do ILB são totalmente à distância ou é preciso participar de aulas
-      presenciais?</a>
-            </h4>
-          </div>
-          <div id="collapse9" class="panel-collapse collapse">
-            <div class="panel-body">Não existe nenhuma atividade presencial. O curso é realizado, em sua totalidade,
-      a distância.</div>
-          </div>
-        </div>
-
-        <div class="panel panel-default">
-          <!-- inicio bloco pergunta e resposta -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse10">10. Preciso de um equipamento muito potente e completo para fazer os cursos?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
-                  </h4>
-          </div>
-          <div id="collapse10" class="panel-collapse collapse">
-            <div class="panel-body">Não. É necessário um computador com configurações básicas e acesso à internet banda larga e o conhecimento de procedimentos simples. Caso você tenha dúvidas em relação ao acesso e à utilização do material on-line, você pode pedir ajuda à equipe
-              de EaD pelo e-mail ilbead@senado.leg.br.</div>
-          </div>
-        </div>
-        <!-- fim bloco perguntas e repostas -->
-        <div class="panel panel-default">
-          <!-- inicio bloco pergunta e resposta -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse11">11. O ILB utiliza o Moodle como plataforma de ensino?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
-                  </h4>
-          </div>
-          <div id="collapse11" class="panel-collapse collapse">
-            <div class="panel-body">Sim. O Saberes, plataforma de ensino do ILB, foi totalmente construído sobre o software livre Moodle.</div>
-          </div>
-        </div>
-        <!-- fim bloco perguntas e repostas -->
-        <div class="panel panel-default">
-          <!-- inicio bloco pergunta e resposta -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse12">12. O que é o Saberes?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
-                  </h4>
-          </div>
-          <div id="collapse12" class="panel-collapse collapse">
-            <div class="panel-body">O Saberes é um Ambiente Virtual de Aprendizagem – AVA, baseado no Moodle, que visa facilitar a aprendizagem. É neste ambiente que o participante dos cursos à distância do ILB terá acesso aos conteúdos, realizará as atividades, enviará e receberá
-              mensagens e terá acesso às suas notas e certificado. É também por meio desse ambiente que professores tutores e coordenadores de cursos interagem com os participantes e têm acesso a informações e relatórios. O ILB passou a utilizar o Saberes em
-              fevereiro de 2014.
+              </form>
             </div>
           </div>
         </div>
-        <!-- fim bloco perguntas e repostas -->
-        <div class="panel panel-default">
-          <!-- inicio bloco pergunta e resposta -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            			<a data-toggle="collapse" data-parent="#accordion" href="#collapse13">13. Quero fazer um curso oferecido pelo ILB. O que devo fazer?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
-            		</h4>
-          </div>
-          <div id="collapse13" class="panel-collapse collapse">
-            <div class="panel-body">
-              <p>1. Se você já tem o cadastro na nossa plataforma, Saberes, acesse pelo endereço eletrônico http://saberes .senado.leg.br, escolha o curso de sua preferência e efetue sua matrícula.</p>
+      </section>
 
-              <p>2. Caso você não tenha cadastro na nossa plataforma, acesse pelo endereço eletrônico http://saberes.senado.leg.br, clique em Criar uma Conta, abaixo da opção Acessar, à esquerda da tela.</p>
+      <!-- Menu Principal -->
+      <nav class="Nav--principal navbar navbar-default navbar-collapse nav-collapse collapse Nav--collapse" role="navigation">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a class="dropdown-toggle" href="#" onclick="javascript:ativaAba(event, 'div.validacert');return false;" data-toggle="dropdown" aria-expanded="false">Certificados</a>
 
-              <p>3. Preencha as informações solicitadas e, ao final, clique em cadastrar este novo usuário.
-              </p>
-
-              <p>4. Será enviado um e-mail, para o endereço eletrônico que foi informado, para que o seu cadastro seja confirmado.</p>
-
-              <p>5. Após a confirmação, acesse a plataforma, escolha o curso do seu interesse e efetive a sua matrícula.</p>
-            </div>
-          </div>
-        </div>
-        <!-- fim bloco perguntas e repostas -->
-        <div class="panel panel-default">
-          <!-- inicio bloco pergunta e resposta -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            			<a data-toggle="collapse" data-parent="#accordion" href="#collapse14">14. Confirmação de cadastro. Não recebi o link para confirmação.</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
-            		</h4>
-          </div>
-          <div id="collapse14" class="panel-collapse collapse">
-            <div class="panel-body">
-              <p>1. Cheque em sua caixa de spam a possibilidade do link ter sido direcionado como spam.
-              </p>
-
-              <p>2. Não localizou? Solicite a liberação, via e-mail, pelo endereço eletrônico ilbead@senado.leg.br ou entre em contato pelo telefone (61) 3303-1475.</p>
-            </div>
-          </div>
-        </div>
-        <!-- fim bloco perguntas e repostas -->
-        <div class="panel panel-default">
-          <!-- inicio bloco pergunta e resposta -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            		<a data-toggle="collapse" data-parent="#accordion" href="#collapse15">15. Fiz minha matrícula num curso sem tutoria oferecidopelo ILB. Quanto tempo eu
-            tenho para a conclusão do curso?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
-            	</h4>
-          </div>
-          <div id="collapse15" class="panel-collapse collapse">
-            <div class="panel-body">
-              <p>1. Você terá até 60 (sessenta) dias para a conclusão do curso.</p>
-
-              <p>2. O curso poderá ser concluído antes desse prazo, mas o certificado só será liberado 21 (vinte e um) dias após a data de matrícula.</p>
-            </div>
-          </div>
-        </div>
-        <!-- fim bloco perguntas e repostas -->
-        <div class="panel panel-default">
-          <!-- inicio bloco pergunta e resposta -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            		<a data-toggle="collapse" data-parent="#accordion" href="#collapse16">16. Acessei o curso e tenho dificuldade na utilização da plataforma. O que fazer?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
-            	</h4>
-          </div>
-          <div id="collapse16" class="panel-collapse collapse">
-            <div class="panel-body">
-              <p>1. Ao acessar a página inicial do curso, clique na opção Guia do Estudante.</p>
-
-              <p>2. Nele você encontrará informações importantes para que você entenda os ícones existentes e sua respectiva função.</p>
-
-              <p>3. É importante que sua leitura seja feita na íntegra para a completa informação quanto à navegação dentro da plataforma.e.</p>
-            </div>
-          </div>
-        </div>
-        <!-- fim bloco perguntas e repostas -->
-        <div class="panel panel-default">
-          <!-- inicio bloco pergunta e resposta -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            		<a data-toggle="collapse" data-parent="#accordion" href="#collapse17">17. Como posso alterar meu cadastro na plataforma de ensino (complementar nome,
-            alterar e-mail, mudar telefone, etc.)?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
-            	</h4>
-          </div>
-          <div id="collapse17" class="panel-collapse collapse">
-            <div class="panel-body">
-              <p>1. Acesse o Saberes no endereço http://saberes.senado.leg.br</p>
-
-              <p>2. Digite sua identificação de usuário e senha.</p>
-
-              <p>3. Na página principal, no canto superior direito, digite no seu nome.</p>
-
-              <p>4. Na opção Detalhes do Usuário, clique em Modificar Perfil.</p>
-
-              <p>5. Faça as alterações necessárias e ao final da página clique em Atualizar Perfil.</p>
-
-              <p>6. Você poderá alterartodos os seus dados, com exceção do CPF.</p>
-            </div>
-          </div>
-        </div>
-        <!-- fim bloco perguntas e repostas -->
-        <div class="panel panel-default">
-          <!-- inicio bloco pergunta e resposta -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            			<a data-toggle="collapse" data-parent="#accordion" href="#collapse18">18. Esqueci minha senha, o que fazer?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
-            		</h4>
-          </div>
-          <div id="collapse18" class="panel-collapse collapse">
-            <div class="panel-body">
-              <p>1. Acesse o Saberes no endereço http://saberes.senado.leg.br</p>
-
-              <p>2. Na página inicial, abaixo da opção Acessar, clique em: Perdeu a senha?</p>
-
-              <p>3. Preencha as informações solicitadas (Identificação de Usuário ou E-mail).</p>
-
-              <p>4. Clique em Buscar.</p>
-
-              <p>5. Será encaminhado um link para sua caixa de entrada para a criação de uma nova senha.
-              </p>
-
-              <p>6. Não recebeu o link? Entre em contato com o ILB pelo endereço eletrônico ilbead@senado.leg.br ou pelo telefone (61) 3303-1475.</p>
-            </div>
-          </div>
-        </div>
-        <!-- fim bloco perguntas e repostas -->
-        <div class="panel panel-default">
-          <!-- inicio bloco pergunta e resposta -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            				<a data-toggle="collapse" data-parent="#accordion" href="#collapse19">19. Não consigo acessar o conteúdo do curso. O que fazer?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
-            			</h4>
-          </div>
-          <div id="collapse19" class="panel-collapse collapse">
-            <div class="panel-body">Provavelmente você excedeu o prazo de conclusão do curso, que é de 60 (sessenta) dias a contar da data de matrícula. Seu status no curso ficará como abandono. Por isso, sua vaga ficará bloqueada por 30 (trinta) dias a contar da data limite para
-              finalização do curso. Caso você não saiba a data limite, solicite a informação via e-mail ilbead@senado.leg.br ou pelo telefone (61) 3303-1475.</div>
-          </div>
-        </div>
-        <!-- fim bloco perguntas e repostas -->
-        <div class="panel panel-default">
-          <!-- inicio bloco pergunta e resposta -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            					<a data-toggle="collapse" data-parent="#accordion" href="#collapse20">20. Quero refazer um curso que fui reprovado ou que abandonei. O que fazer?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
-            				</h4>
-          </div>
-          <div id="collapse20" class="panel-collapse collapse">
-            <div class="panel-body">É preciso aguardar a abertura de uma nova turma para que você possa se matricular novamente. Não é possível a rematrícula dentro da turma em que o aluno não obteve êxito.</div>
-          </div>
-        </div>
-        <!-- fim bloco perguntas e repostas -->
-        <div class="panel panel-default">
-          <!-- inicio bloco pergunta e resposta -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            						<a data-toggle="collapse" data-parent="#accordion" href="#collapse21">21. Não sei quanto tempo ainda tenho para concluir o curso. Como posso saber?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
-            					</h4>
-          </div>
-          <div id="collapse21" class="panel-collapse collapse">
-            <div class="panel-body">
-              <p>1. Acesse o Saberes pelo endereço eletrônico http://saberes.senado.leg.br.</p>
-
-              <p>2. Entre no curso em questão.</p>
-
-              <p>3. Na página inicial, na lateral esquerda, em Andamento do Curso/Mais detalhes/Status, você poderá verificar o tempo decorrido desde a data de matrícula.
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- fim bloco perguntas e repostas -->
-        <div class="panel panel-default">
-          <!-- inicio bloco pergunta e resposta -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            							<a data-toggle="collapse" data-parent="#accordion" href="#collapse22">22. Gostaria de colocar uma foto no meu perfil. Como fazer?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
-            						</h4>
-          </div>
-          <div id="collapse22" class="panel-collapse collapse">
-            <div class="panel-body">
-              <p>1. Entre na plataforma Saberes, http://saberes.senado.leg.br, digitando sua Identificação de Usuário e Senha.</p>
-
-              <p>2. Na página inicial, no canto superior direito, clique no seu nome para acessar o campo Detalhes do Usuário.</p>
-
-              <p>3. Clique em Modificar perfil.</p>
-
-              <p>4. Nesta página, existem inúmeras opções (caixas), como por exemplo: Geral, Imagem do Usuário, Interesses, Opcional, Dados Pessoais .... Selecionar a opção Imagem do Usuário.</p>
-
-              <p>5. Dentro da opção Imagem doUsuário, clique em Adicionar(primeiro ícone abaixo da opção Nova Imagem).</p>
-
-              <p>6. Clique em Selecionar arquivo.</p>
-
-              <p>7. Busque em seu computador a fotografia que deverá serincluída na plataforma.</p>
-
-              <p>8. Depois de selecionada, clique em Enviar este arquivo.</p>
-
-              <p>9. Em seguida, vá até o final da página e selecione Atualizar perfil.</p>
-            </div>
-          </div>
-        </div>
-        <!-- fim bloco perguntas e repostas -->
-        <div class="panel panel-default">
-          <!-- inicio bloco pergunta e resposta -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            								<a data-toggle="collapse" data-parent="#accordion" href="#collapse23">23. Não gostei do curso e quero cancelar a minha matrícula. O que fazer?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
-            							</h4>
-          </div>
-          <div id="collapse23" class="panel-collapse collapse">
-            <div class="panel-body">
-              <p>1. O Instituto Legislativo Brasileiro não trabalha com o cancelamento de matrícula.</p>
-
-              <p>2. Você terá que aguardar o prazo de finalização do curso e cumprir a punição, que é de 30 (trinta) dias a contar da data final do curso, para ter a sua vaga liberada para uma nova matrícula.</p>
-            </div>
-          </div>
-        </div>
-        <!-- fim bloco perguntas e repostas -->
-        <div class="panel panel-default">
-          <!-- inicio bloco pergunta e resposta -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            										<a data-toggle="collapse" data-parent="#accordion" href="#collapse24">24. Fui reprovado no curso. O que acontece?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
-            									</h4>
-          </div>
-          <div id="collapse24" class="panel-collapse collapse">
-            <div class="panel-body">O aluno reprovado, cumpre uma suspenção de 30 (trinta) dias a contar da data final de realização do curso. Após esse prazo, ele deve aguardar a liberação de uma nova turma para a realização de uma nova matrícula no curso de interesse.</div>
-          </div>
-        </div>
-        <!-- fim bloco perguntas e repostas -->
-        <div class="panel panel-default">
-          <!-- inicio bloco pergunta e resposta -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            										<a data-toggle="collapse" data-parent="#accordion" href="#collapse25">25. Qual a diferença entre os cursos com e sem tutoria?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
-            									</h4>
-          </div>
-          <div id="collapse25" class="panel-collapse collapse">
-            <div class="panel-body">
-              <p>"Curso com tutoria" é aquele que conta com o acompanhamento de tutores e tem a duração de 40 dias. A carga horária é de 60 horas e o público-alvo são os trabalhadores do legistativo federal, estadual e municipal. O cidadão comum poderá se candidatar,
-                mas só será inscrito caso o número de vagas não tenha sido atingido.</p>
-
-              <p>Fique atento, através do nosso site, para a publicação das ofertas!</p>
-
-              <p>"Curso semtutoria" tem a característica de ser autoinstrucional, isto é, não conta com o acompanhamento e orientação de tutores. A carga horária dos cursos é variável e cada usuário pode se candidatar a até dois cursos simutaneamente.</p>
-
-              <p>Todos os nossos cursos oferecem certificados.</p>
-            </div>
-          </div>
-        </div>
-        <!-- fim bloco perguntas e repostas -->
-        <div class="panel panel-default">
-          <!-- inicio bloco pergunta e resposta -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            									<a data-toggle="collapse" data-parent="#accordion" href="#collapse26">26. Qual o processo de inscrição para os cursos com tutoria?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
-            								</h4>
-          </div>
-          <div id="collapse26" class="panel-collapse collapse">
-            <div class="panel-body">
-              </p>Os cursos com tutoria são específicos para os servidores do legislativo federal, estadual e municipal, ou para órgãos conveniados. Havendo a disponibilidade de vagas, as mesmas serão ofertadas à população.</p>
-              <p>Nesse caso, existe um período de pré-matrícula onde todas as inscrições serão recebidas. Na fase de matrícula, a plataforma realiza a seleção dos candidatos. Habendo a disponibilidade de vagas, a população será contemplada de acordo com a ordem
-                de chegada das pré-matrículas.</p>
-              <p>Ao final do período de matrícula, haverá a emissão de uma carta de confirmação ou de negativa de matrícula.</p>
-              <p>Se você realizou uma pré-matrícula, fique atendo ao cronograma do curso para verificar o recebimento das referidas cartas.</p>
-            </div>
-          </div>
-        </div>
-        <!-- fim bloco perguntas e repostas -->
-        <div class="panel panel-default">
-          <!-- inicio bloco pergunta e resposta -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            										<a data-toggle="collapse" data-parent="#accordion" href="#collapse27">27. Após a conclusão do curso eu recebo algum certificado de participação?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
-            									</h4>
-          </div>
-          <div id="collapse27" class="panel-collapse collapse">
-            <div class="panel-body">Sim. Todos os cursos são certificados. Para tanto, o aluno deverá obter 70 pontos, como nota mínima, na avaliação final.</div>
-          </div>
-        </div>
-        <!-- fim bloco perguntas e repostas -->
-        <div class="panel panel-default">
-          <!-- inicio bloco pergunta e resposta -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            											<a data-toggle="collapse" data-parent="#accordion" href="#collapse28">28. Como eu posso emitir o meu certificado?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
-            										</h4>
-          </div>
-          <div id="collapse28" class="panel-collapse collapse">
-            <div class="panel-body">
-              <p>Ao concluir o curso com média superior a 70, seu certificado é emitido automaticamente. Para imprimi-lo, faça o seguinte:</p>
-
-              <p>1. Entre na plataforma Saberes, http://saberes.senado.leg.br, digitando Identificação de Usuário e Senha.</p>
-
-              <p>2. Na página inicial, na lateral direita, selecione Obter Certificado.</p>
-
-              <p>3. Todos os certificados obtidos estarão listados para impressão. Sugerimos que o papel utilizado seja um papel com uma maior gramatura e que a impressão seja realizada a cores.</p>
-            </div>
-          </div>
-        </div>
-        <!-- fim bloco perguntas e repostas -->
-        <div class="panel panel-default">
-          <!-- inicio bloco pergunta e resposta -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            												<a data-toggle="collapse" data-parent="#accordion" href="#collapse29">29. O certificado especifica que o curso foi feito a distância?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
-            											</h4>
-          </div>
-          <div id="collapse29" class="panel-collapse collapse">
-            <div class="panel-body">Sim. O certificado especifica que o curso foi feito na modalidade a distância.</div>
-          </div>
-        </div>
-        <!-- fim bloco perguntas e repostas -->
-        <div class="panel panel-default">
-          <!-- inicio bloco pergunta e resposta -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            													<a data-toggle="collapse" data-parent="#accordion" href="#collapse30">30.  verso do certificado existe um código que pode conter letras
-            														e números. Para que serve?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
-            												</h4>
-          </div>
-          <div id="collapse30" class="panel-collapse collapse">
-            <div class="panel-body">
-              <p>Todos os certificados emitidos pela plataforma Saberes possuem um código de validação. Esse código possibilita que qualquer pessoa verifique a autenticidade do documento. Para confirmar sua veracidade, faça o seguinte.</p>
-
-              <p>1. Acesse a plataforma pelo endereço http://saberes.senado.leg.br.</p>
-
-              <p>2. Não é necessário possuir identificação de usuário e senha.</p>
-
-              <p>3. A opção Validar Certificado encontra-se na lateral direita da página.</p>
-
-              <p>4. Digite o código constante no verso do certificado na caixa de digitação.</p>
-
-              <p>5. Em seguida, clique em Verificar.</p>
-
-              <p>6. Na tela seguinte,será exibida uma tela contendo o código de verificação, o nome do aluno, CPF, curso realizado, data de emissão, período de realização, carga horária e programa do curso.</p>
-
-              <p>7. Este documento poderá ser impresso. Para isso, clique no ícone da impressora que aparece no início da tela.</p>
-            </div>
-          </div>
-        </div>
-        <!-- fim bloco perguntas e repostas -->
-        <div class="panel panel-default">
-          <!-- inicio bloco pergunta e resposta -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            														<a data-toggle="collapse" data-parent="#accordion" href="#collapse31">31. Possuo um certificado emitido pela antiga Plataforma
-            															Educacional do ILB, a Trilhas. É possível validar seus certificados na Plataforma Saberes?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
-            													</h4>
-          </div>
-          <div id="collapse31" class="panel-collapse collapse">
-            <div class="panel-body">
-              <p>Sim.</p>
-
-              <p>1. Na lateral direita, abaixo da opção Obter Certificados, existe a opção Certificados Antigos.</p>
-
-              <p>2. Clique em obter certificados, você será direcionado para o endereço eletrônico da plataforma Trilhas que é http://www17.senado.gov.br/user/login.</p>
-
-              <p>3. Clique na opção Autenticar Certificado. Não é necessária identificaçãode usuário ou senha.</p>
-
-              <p>4. Digite o código de validação na caixa de digitação. Em seguida, clique em OK. É possível validar, também, fora da plataforma Saberes. Digite, no seu navegador, o endereço eletrônico constante no passo 2.</p>
-            </div>
-          </div>
-        </div>
-        <!-- fim bloco perguntas e repostas -->
-        <div class="panel panel-default">
-          <!-- inicio bloco pergunta e resposta -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            	<a data-toggle="collapse" data-parent="#accordion" href="#collapse32">32. O certificado de EaD também é valido para concursos públicos e benefícios de
-            capacitação?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
-            </h4>
-          </div>
-          <div id="collapse32" class="panel-collapse collapse">
-            <div class="panel-body">Sim. Entretanto, ainda é possível encontrar editais que tentam excluir os candidatos formados por EAD. Como essa diferenciação não encontra amparo legal, nos últimos anos, os editais que fazem essa exigência têm tido a cláusula anulada judicialmente.
-            </div>
-          </div>
-        </div>
-        <!-- fim bloco perguntas e repostas -->
-        <div class="panel panel-default">
-          <!-- inicio bloco pergunta e resposta -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            															<a data-toggle="collapse" data-parent="#accordion" href="#collapse33">33. Durante o curso, como posso tirar dúvidas de conteúdo e de utilização da
-            plataforma de ensino?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
-            														</h4>
-          </div>
-          <div id="collapse33" class="panel-collapse collapse">
-            <div class="panel-body">As dúvidas deverão ser encaminhadas para o e-mail ilbead@senado.leg.br. Para maior agilidade, informe o curso, a turma, a cópia do conteúdo- com a localização do módulo, unidade e página-, ou questão a serem investigados, acompanhados do número
-              do CPF e o endereço de e-mail cadastrado. As dúvidas encaminhadas via e-mail terão prioridade na resposta desde que seja informado, no campo assunto da mensagem: DÚVIDA SOBRE O CONTEÚDO.</div>
-          </div>
-        </div>
-        <!-- fim bloco perguntas e repostas -->
-      </div>
-      <!-- fim do bloco accordion -->
-    </div>
-
-    <div id="div.contato" class="container tabcontent tabcontentContatos" >
-      <ul>
-        <li>Serviço de Ensino a Distância – SEED</li>
-        <ul>
-          <li>3303-1475</li>
-          <li><a href="mailto:ilbead@senado.leg.br">ilbead@senado.leg.br</a></li>
+          </li>
+          <li class="dropdown">
+            <a href="" onclick="javascript:ativaAba(event, 'div.faq');return false;">Perguntas Frequentes</a>
+          </li>
+          <li>
+            <a href="" onclick="javascript:ativaAba(event, 'div.contato');return false;">Contatos</a>
+          </li>
         </ul>
-        <li>Facebook</li>
-        <ul>
-          <li><a href="https://www.facebook.com/ilbsenado">https://www.facebook.com/ilbsenado</a></li>
-        </ul>
-      </ul>
+      </nav>
+
+      <!-- Breadcrumbs -->
+      <div id="portal-breadcrumbs" class="portal-breadcrumbs">
+        <ol class="Breadcrumbs">
+          <li id="breadcrumbs-you-are-here">Você está aqui:</li>
+          <li id="breadcrumbs-home">
+            <a href="http://www12.senado.leg.br/institucional">Página Inicial</a>
+          </li>
+          <li id="breadcrumbs-1">
+            <span id="breadcrumbs-current">Saberes</span>
+          </li>
+        </ol>
+      </div>
     </div>
 
-    <!-- conteúdo principal -->
-    <div id="div.principal" class="container tabcontent" style="display:block">
-      <div class="row">
-        <!-- logotipo e texto -->
-        <div class="col-xs-12 col-md-4 col-lg-4 text-center">
-          <div style="background-color: #F7F7F7; border: 1px solid #E6E6E6; border-bottom: 0; padding: 10% 0 10% 0;">
-            <img src='images/logo_saberes_xl.png' width='48%' height='48%' />
-          </div>
-          <div style="background-color: #0F5688; border: 1px solid #E6E6E6;">
-            <p style=" color: #FFFFFF; font-size: 18px; padding: 9% 0 9% 0;">Cursos abertos e sem custo para a comunidade legislativa e os cidadãos</p>
+    <!-- Abas (Certificados, Perguntas frequentes e Contato) -->
+    <div class="container" style="visibility:visible">
+      <div id="div.validacert" class="container tabcontent tabcontentCert">
+
+        <div class="col-xs-12 col-lg-4">
+          <div class="col-lg-12" style="background:#F7f7f7; border: 1px solid #e6e6e6; padding-bottom: 5%;">
+              <h4 style="color: #0F5688;">Validar Certificado</h4>
+            <p style="padding-top: 5%;">Digite o código do certificado para verificar:</p>
+              <form class="loginform" name="cert" method="post" action="blocks/verify_certificate/index.php">
+                <div class="col-xs-12 col-lg-8" style="padding-left: 0;">
+                  <input type="text" name="certnumber" id="certnumber" size="10" value="" style="width:100%;">
+                  <input type="hidden" name="list" id="list" value="8">
+                </div>
+                <div class="col-lg-4">
+                  <input class="btn btn-primary" type="submit" value="Verificar">
+                </div>
+              </form>
           </div>
         </div>
 
-        <!-- video  -->
-        <div class="col-xs-12 col-md-4 col-lg-4">
-          <iframe width="360" height="215" src="https://www.youtube.com/embed/D6IMzbSh0KI" frameborder="0" allowfullscreen style="padding: 0; height: 228.5px;"></iframe>
+          <div class="col-xs-12 col-lg-4">
+          <div class="col-lg-12" style="background:#F7f7f7; border: 1px solid #e6e6e6; padding-bottom: 4%;">
+            <div class="col-lg-12">
+              <h4 style="color: #0F5688;">Obter Certificados</h4>
+            </div>
+            <div class="col-lg-12">
+              <p>Para obter o certificado de cursos já concluídos, clique no botão abaixo.</p>
+            </div>
+            <div class="col-lg-12 text-center">
+              <a class="btn btn-primary" href="">Obter certificados</a>
+            </div>
+          </div>
         </div>
 
-        <!-- bloco para login -->
-        <div class="col-xs-12 col-md-4 col-lg-4">
-          <form class="loginform" id="login" method="post" action="login/index.php">
-            <div class="col-xs-12 col-md-12 col-lg-12" style="background-color: #F7F7F7; border: 1px solid #E6E6E6; border-bottom: 0;">
-              <h4 style="color: #0F5688; border: 0;">ACESSO</h4>
-              <div class="c1 fld username">
-                <label for="login_username">Identificação de usuário</label>
-                <br />
-                <div class="input-group" style="width: 100%;">
-                  <input type="text" name="username" id="login_username" value="" class="form-control input-sm">
-                </div>
-              </div>
-              <div class="c1 fld password">
-                <label for="login_password">Senha</label>
-                <br />
-                <div class="input-group" style="width: 100%;">
-                  <input type="password" name="password" id="login_password" value="" class="form-control input-sm">
-                </div>
-              </div>
-              <div class="c1 rememberusername">
-                <input type="checkbox" name="rememberusername" id="rememberusername" value="1">
-                <label for="rememberusername">Lembrar identificação de usuário</label>
-              </div>
-            </div>
-            <div class="col-xs-12 col-md-12 col-lg-12" style="background-color: #F7F7F7; border: 1px solid #E6E6E6; border-top: 0; padding-bottom: 1%;">
-              <div class="col-xs-5 col-md-5 col-lg-5" style="padding-top: 3%; line-height: 100%; padding-left: 0;">
-                <a href="login/signup.php" style="font-size:13px;">Cadastre-se</a>
-                <br />
-                <a href="login/forgot_password.php" style="font-size:11px;">Perdeu a senha?</a>
-              </div>
-              <div class="btn col-xs-1 col-xs-offset-4 col-md-1 col-md-offset-4 col-lg-1 col-lg-offset-3">
-                <input class="btn btn-primary" type="submit" value="Acessar">
-              </div>
-            </div>
-          </form>
+        <div class="col-xs-12 col-lg-4">
+          <div class="col-lg-12" style="background:#f7f7f7; border: 1px solid #e6e6e6; padding-bottom: 8%;">
+            <h4 style="color: #0F5688;">Certificados antigos</h4>
+            <p>Emissão de certificados para alunos inscritos no período de 2010/2013.</p>
+            <a href="http://www17.senado.gov.br/user/login">Obter certificados</a>
+          </div>
         </div>
       </div>
+      </div>
 
-      <br />
+      <!-- Certificados -->
+      <div id="div.obtemcert" class="container tabcontent">
+        Página de obtenção de certificados
+      </div>
 
-      <!-- Categorias de cursos -->
-      <div class="container">
+      <!-- Perguntas frequentes -->
+      <div id="div.faq" class="container tabcontent">
+        <div class="panel-group" id="accordion">
+          <!-- inicio do bloco accordion -->
+
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                1. O que significa a sigla EaD?</a>
+              </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse">
+              <div class="panel-body">A sigla EaD significa Educação a Distância.</div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                2. O que é Educação a Distância?</a>
+              </h4>
+            </div>
+            <div id="collapse2" class="panel-collapse collapse">
+              <div class="panel-body">A Educação a Distância é a modalidade educacional na qual a mediação didáticopedagógica
+        nos processos de ensino e aprendizagem ocorre com a utilização de meios
+        e tecnologias de informação e comunicação, com estudantes e professores
+        desenvolvendo atividades educativas em lugares ou tempos diversos.
+        Esta definição está presente no Decreto 5.622, de 19.12.2005 (que revoga o
+        Decreto 2.494/98), que regulamenta o Art. 80 da Lei 9.394/96 (LDB) .</div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                3. Qual a Legislação específica para EaD?</a>
+              </h4>
+            </div>
+            <div id="collapse3" class="panel-collapse collapse">
+              <div class="panel-body">
+                  <ul>
+                      <li>Decreto Nº. 5.622, de 19 de dezembro de 2005, regualmenta o art. 80 da Lei nº9.394, de 20 de dezembro de 1996 (LDB).</li>
+                      <li>Decreto N.º 5.773, de 09 de maio de 2006, dispõe sobre o exercício das funções de regulação, supervisão e avaliação de instituições de educação superior e
+        cursos superiores de graduação e seqüenciais no sistema federal de ensino.</li>
+                      <li>Decreto N.º 6.303, de 12 de dezembro de 2007, altera dispositivos dos Decretos nos 5.622, de 19 de dezembro de 2005, que estabelece as diretrizes e bases da educação nacional, e 5.773, de 9 de maio de 2006, que dispõe sobre o exercício das funções de regulação, supervisão e avaliação de instituições de educação superior e cursos superiores de graduação e seqüenciais no sistema federal de
+                          ensino.</li>
+                      <li>Portaria nº 1, de 10 de janeiro de 2007.</li>
+                      <li>Portaria nº 2 (revogada), de 10 de janeiro de 2007.</li>
+                      <li>Portaria nº 40, de 13 de dezembro de 2007.</li>
+                      <li>Portaria nº 10, de 02 julho de 2009</li>
+                      <li> Decreto Nº 9.057, de 25 de maio de 2017.</li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                4. O que significa a sigla ILB?</a>
+              </h4>
+            </div>
+            <div id="collapse4" class="panel-collapse collapse">
+                <div class="panel-body"><P>ILB é a sigla do Instituto Legislativo Brasileiro, a Escola de Governo do Senado
+        Federal, criado por meio da Resolução nº 09, de 29 de janeiro de 1997.</P></div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+                5. Quem pode se inscrever nos cursos oferecidos pelo ILB?</a>
+              </h4>
+            </div>
+            <div id="collapse5" class="panel-collapse collapse">
+              <div class="panel-body">Nos cursos EaD sem tutoria, podem se matricular servidores dos legislativos
+        federal, estadual, municipal e distrital, dos órgãos conveniados e dos parlamentos de
+        língua portuguesa, e o público em geral. Nos cursos EaD com tutoria, as matrículas são
+        destinadas a públicos segmentados conforme o curso. A definição do público é dada na
+        página de cada curso com tutoria.</div>
+            </div>
+          </div>
+                    <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+                6. Quanto custa os cursos oferecidos pelo ILB?</a>
+              </h4>
+            </div>
+            <div id="collapse6" class="panel-collapse collapse">
+              <div class="panel-body">Todos os cursos oferecidos pelo ILB, na modalidade à distância, com e sem
+        tutoria, são sem custo para os alunos.</div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+                7. Quantos cursos, ao mesmo tempo, posso fazer?</a>
+              </h4>
+            </div>
+            <div id="collapse7" class="panel-collapse collapse">
+              <div class="panel-body">O aluno pode realizar até 02 (dois) cursos simultaneamente, sem tutoria, e um
+        curso com tutoria, desde que haja vaga.</div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
+                8. Os cursos oferecidos pelo ILB são reconhecidos pelo MEC?</a>
+              </h4>
+            </div>
+            <div id="collapse8" class="panel-collapse collapse">
+              <div class="panel-body">Os cursos a distância ofertados pelo ILB são considerados cursos de educação
+        continuada e, por isso, não estão sujeitos ao reconhecimento do MEC. Conforme a lei
+        nº. 9394/96; Decreto nº. 5.154/04; Deliberação CEE 14/97 (Indicação CEE 14/97).</div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
+                8. Os cursos de EaD do ILB são totalmente à distância ou é preciso participar de aulas
+        presenciais?</a>
+              </h4>
+            </div>
+            <div id="collapse9" class="panel-collapse collapse">
+              <div class="panel-body">Não existe nenhuma atividade presencial. O curso é realizado, em sua totalidade,
+        a distância.</div>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <!-- inicio bloco pergunta e resposta -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse10">10. Preciso de um equipamento muito potente e completo para fazer os cursos?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
+                    </h4>
+            </div>
+            <div id="collapse10" class="panel-collapse collapse">
+              <div class="panel-body">Não. É necessário um computador com configurações básicas e acesso à internet banda larga e o conhecimento de procedimentos simples. Caso você tenha dúvidas em relação ao acesso e à utilização do material on-line, você pode pedir ajuda à equipe
+                de EaD pelo e-mail ilbead@senado.leg.br.</div>
+            </div>
+          </div>
+          <!-- fim bloco perguntas e repostas -->
+          <div class="panel panel-default">
+            <!-- inicio bloco pergunta e resposta -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse11">11. O ILB utiliza o Moodle como plataforma de ensino?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
+                    </h4>
+            </div>
+            <div id="collapse11" class="panel-collapse collapse">
+              <div class="panel-body">Sim. O Saberes, plataforma de ensino do ILB, foi totalmente construído sobre o software livre Moodle.</div>
+            </div>
+          </div>
+          <!-- fim bloco perguntas e repostas -->
+          <div class="panel panel-default">
+            <!-- inicio bloco pergunta e resposta -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse12">12. O que é o Saberes?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
+                    </h4>
+            </div>
+            <div id="collapse12" class="panel-collapse collapse">
+              <div class="panel-body">O Saberes é um Ambiente Virtual de Aprendizagem – AVA, baseado no Moodle, que visa facilitar a aprendizagem. É neste ambiente que o participante dos cursos à distância do ILB terá acesso aos conteúdos, realizará as atividades, enviará e receberá
+                mensagens e terá acesso às suas notas e certificado. É também por meio desse ambiente que professores tutores e coordenadores de cursos interagem com os participantes e têm acesso a informações e relatórios. O ILB passou a utilizar o Saberes em
+                fevereiro de 2014.
+              </div>
+            </div>
+          </div>
+          <!-- fim bloco perguntas e repostas -->
+          <div class="panel panel-default">
+            <!-- inicio bloco pergunta e resposta -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapse13">13. Quero fazer um curso oferecido pelo ILB. O que devo fazer?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
+                      </h4>
+            </div>
+            <div id="collapse13" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>1. Se você já tem o cadastro na nossa plataforma, Saberes, acesse pelo endereço eletrônico http://saberes .senado.leg.br, escolha o curso de sua preferência e efetue sua matrícula.</p>
+
+                <p>2. Caso você não tenha cadastro na nossa plataforma, acesse pelo endereço eletrônico http://saberes.senado.leg.br, clique em Criar uma Conta, abaixo da opção Acessar, à esquerda da tela.</p>
+
+                <p>3. Preencha as informações solicitadas e, ao final, clique em cadastrar este novo usuário.
+                </p>
+
+                <p>4. Será enviado um e-mail, para o endereço eletrônico que foi informado, para que o seu cadastro seja confirmado.</p>
+
+                <p>5. Após a confirmação, acesse a plataforma, escolha o curso do seu interesse e efetive a sua matrícula.</p>
+              </div>
+            </div>
+          </div>
+          <!-- fim bloco perguntas e repostas -->
+          <div class="panel panel-default">
+            <!-- inicio bloco pergunta e resposta -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapse14">14. Confirmação de cadastro. Não recebi o link para confirmação.</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
+                      </h4>
+            </div>
+            <div id="collapse14" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>1. Cheque em sua caixa de spam a possibilidade do link ter sido direcionado como spam.
+                </p>
+
+                <p>2. Não localizou? Solicite a liberação, via e-mail, pelo endereço eletrônico ilbead@senado.leg.br ou entre em contato pelo telefone (61) 3303-1475.</p>
+              </div>
+            </div>
+          </div>
+          <!-- fim bloco perguntas e repostas -->
+          <div class="panel panel-default">
+            <!-- inicio bloco pergunta e resposta -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse15">15. Fiz minha matrícula num curso sem tutoria oferecidopelo ILB. Quanto tempo eu
+              tenho para a conclusão do curso?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
+                  </h4>
+            </div>
+            <div id="collapse15" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>1. Você terá até 60 (sessenta) dias para a conclusão do curso.</p>
+
+                <p>2. O curso poderá ser concluído antes desse prazo, mas o certificado só será liberado 21 (vinte e um) dias após a data de matrícula.</p>
+              </div>
+            </div>
+          </div>
+          <!-- fim bloco perguntas e repostas -->
+          <div class="panel panel-default">
+            <!-- inicio bloco pergunta e resposta -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse16">16. Acessei o curso e tenho dificuldade na utilização da plataforma. O que fazer?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
+                  </h4>
+            </div>
+            <div id="collapse16" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>1. Ao acessar a página inicial do curso, clique na opção Guia do Estudante.</p>
+
+                <p>2. Nele você encontrará informações importantes para que você entenda os ícones existentes e sua respectiva função.</p>
+
+                <p>3. É importante que sua leitura seja feita na íntegra para a completa informação quanto à navegação dentro da plataforma.e.</p>
+              </div>
+            </div>
+          </div>
+          <!-- fim bloco perguntas e repostas -->
+          <div class="panel panel-default">
+            <!-- inicio bloco pergunta e resposta -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse17">17. Como posso alterar meu cadastro na plataforma de ensino (complementar nome,
+              alterar e-mail, mudar telefone, etc.)?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
+                  </h4>
+            </div>
+            <div id="collapse17" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>1. Acesse o Saberes no endereço http://saberes.senado.leg.br</p>
+
+                <p>2. Digite sua identificação de usuário e senha.</p>
+
+                <p>3. Na página principal, no canto superior direito, digite no seu nome.</p>
+
+                <p>4. Na opção Detalhes do Usuário, clique em Modificar Perfil.</p>
+
+                <p>5. Faça as alterações necessárias e ao final da página clique em Atualizar Perfil.</p>
+
+                <p>6. Você poderá alterartodos os seus dados, com exceção do CPF.</p>
+              </div>
+            </div>
+          </div>
+          <!-- fim bloco perguntas e repostas -->
+          <div class="panel panel-default">
+            <!-- inicio bloco pergunta e resposta -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapse18">18. Esqueci minha senha, o que fazer?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
+                      </h4>
+            </div>
+            <div id="collapse18" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>1. Acesse o Saberes no endereço http://saberes.senado.leg.br</p>
+
+                <p>2. Na página inicial, abaixo da opção Acessar, clique em: Perdeu a senha?</p>
+
+                <p>3. Preencha as informações solicitadas (Identificação de Usuário ou E-mail).</p>
+
+                <p>4. Clique em Buscar.</p>
+
+                <p>5. Será encaminhado um link para sua caixa de entrada para a criação de uma nova senha.
+                </p>
+
+                <p>6. Não recebeu o link? Entre em contato com o ILB pelo endereço eletrônico ilbead@senado.leg.br ou pelo telefone (61) 3303-1475.</p>
+              </div>
+            </div>
+          </div>
+          <!-- fim bloco perguntas e repostas -->
+          <div class="panel panel-default">
+            <!-- inicio bloco pergunta e resposta -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapse19">19. Não consigo acessar o conteúdo do curso. O que fazer?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
+                          </h4>
+            </div>
+            <div id="collapse19" class="panel-collapse collapse">
+              <div class="panel-body">Provavelmente você excedeu o prazo de conclusão do curso, que é de 60 (sessenta) dias a contar da data de matrícula. Seu status no curso ficará como abandono. Por isso, sua vaga ficará bloqueada por 30 (trinta) dias a contar da data limite para
+                finalização do curso. Caso você não saiba a data limite, solicite a informação via e-mail ilbead@senado.leg.br ou pelo telefone (61) 3303-1475.</div>
+            </div>
+          </div>
+          <!-- fim bloco perguntas e repostas -->
+          <div class="panel panel-default">
+            <!-- inicio bloco pergunta e resposta -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse20">20. Quero refazer um curso que fui reprovado ou que abandonei. O que fazer?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
+                              </h4>
+            </div>
+            <div id="collapse20" class="panel-collapse collapse">
+              <div class="panel-body">É preciso aguardar a abertura de uma nova turma para que você possa se matricular novamente. Não é possível a rematrícula dentro da turma em que o aluno não obteve êxito.</div>
+            </div>
+          </div>
+          <!-- fim bloco perguntas e repostas -->
+          <div class="panel panel-default">
+            <!-- inicio bloco pergunta e resposta -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse21">21. Não sei quanto tempo ainda tenho para concluir o curso. Como posso saber?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
+                                  </h4>
+            </div>
+            <div id="collapse21" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>1. Acesse o Saberes pelo endereço eletrônico http://saberes.senado.leg.br.</p>
+
+                <p>2. Entre no curso em questão.</p>
+
+                <p>3. Na página inicial, na lateral esquerda, em Andamento do Curso/Mais detalhes/Status, você poderá verificar o tempo decorrido desde a data de matrícula.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- fim bloco perguntas e repostas -->
+          <div class="panel panel-default">
+            <!-- inicio bloco pergunta e resposta -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#collapse22">22. Gostaria de colocar uma foto no meu perfil. Como fazer?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
+                                      </h4>
+            </div>
+            <div id="collapse22" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>1. Entre na plataforma Saberes, http://saberes.senado.leg.br, digitando sua Identificação de Usuário e Senha.</p>
+
+                <p>2. Na página inicial, no canto superior direito, clique no seu nome para acessar o campo Detalhes do Usuário.</p>
+
+                <p>3. Clique em Modificar perfil.</p>
+
+                <p>4. Nesta página, existem inúmeras opções (caixas), como por exemplo: Geral, Imagem do Usuário, Interesses, Opcional, Dados Pessoais .... Selecionar a opção Imagem do Usuário.</p>
+
+                <p>5. Dentro da opção Imagem doUsuário, clique em Adicionar(primeiro ícone abaixo da opção Nova Imagem).</p>
+
+                <p>6. Clique em Selecionar arquivo.</p>
+
+                <p>7. Busque em seu computador a fotografia que deverá serincluída na plataforma.</p>
+
+                <p>8. Depois de selecionada, clique em Enviar este arquivo.</p>
+
+                <p>9. Em seguida, vá até o final da página e selecione Atualizar perfil.</p>
+              </div>
+            </div>
+          </div>
+          <!-- fim bloco perguntas e repostas -->
+          <div class="panel panel-default">
+            <!-- inicio bloco pergunta e resposta -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                                              <a data-toggle="collapse" data-parent="#accordion" href="#collapse23">23. Não gostei do curso e quero cancelar a minha matrícula. O que fazer?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
+                                          </h4>
+            </div>
+            <div id="collapse23" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>1. O Instituto Legislativo Brasileiro não trabalha com o cancelamento de matrícula.</p>
+
+                <p>2. Você terá que aguardar o prazo de finalização do curso e cumprir a punição, que é de 30 (trinta) dias a contar da data final do curso, para ter a sua vaga liberada para uma nova matrícula.</p>
+              </div>
+            </div>
+          </div>
+          <!-- fim bloco perguntas e repostas -->
+          <div class="panel panel-default">
+            <!-- inicio bloco pergunta e resposta -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                                                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse24">24. Fui reprovado no curso. O que acontece?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
+                                                  </h4>
+            </div>
+            <div id="collapse24" class="panel-collapse collapse">
+              <div class="panel-body">O aluno reprovado, cumpre uma suspenção de 30 (trinta) dias a contar da data final de realização do curso. Após esse prazo, ele deve aguardar a liberação de uma nova turma para a realização de uma nova matrícula no curso de interesse.</div>
+            </div>
+          </div>
+          <!-- fim bloco perguntas e repostas -->
+          <div class="panel panel-default">
+            <!-- inicio bloco pergunta e resposta -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                                                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse25">25. Qual a diferença entre os cursos com e sem tutoria?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
+                                                  </h4>
+            </div>
+            <div id="collapse25" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>"Curso com tutoria" é aquele que conta com o acompanhamento de tutores e tem a duração de 40 dias. A carga horária é de 60 horas e o público-alvo são os trabalhadores do legistativo federal, estadual e municipal. O cidadão comum poderá se candidatar,
+                  mas só será inscrito caso o número de vagas não tenha sido atingido.</p>
+
+                <p>Fique atento, através do nosso site, para a publicação das ofertas!</p>
+
+                <p>"Curso semtutoria" tem a característica de ser autoinstrucional, isto é, não conta com o acompanhamento e orientação de tutores. A carga horária dos cursos é variável e cada usuário pode se candidatar a até dois cursos simutaneamente.</p>
+
+                <p>Todos os nossos cursos oferecem certificados.</p>
+              </div>
+            </div>
+          </div>
+          <!-- fim bloco perguntas e repostas -->
+          <div class="panel panel-default">
+            <!-- inicio bloco pergunta e resposta -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                                                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse26">26. Qual o processo de inscrição para os cursos com tutoria?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
+                                              </h4>
+            </div>
+            <div id="collapse26" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>Os cursos com tutoria são específicos para os servidores do legislativo federal, estadual e municipal, ou para órgãos conveniados. Havendo a disponibilidade de vagas, as mesmas serão ofertadas à população.</p>
+                <p>Nesse caso, existe um período de pré-matrícula onde todas as inscrições serão recebidas. Na fase de matrícula, a plataforma realiza a seleção dos candidatos. Habendo a disponibilidade de vagas, a população será contemplada de acordo com a ordem
+                  de chegada das pré-matrículas.</p>
+                <p>Ao final do período de matrícula, haverá a emissão de uma carta de confirmação ou de negativa de matrícula.</p>
+                <p>Se você realizou uma pré-matrícula, fique atendo ao cronograma do curso para verificar o recebimento das referidas cartas.</p>
+              </div>
+            </div>
+          </div>
+          <!-- fim bloco perguntas e repostas -->
+          <div class="panel panel-default">
+            <!-- inicio bloco pergunta e resposta -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                                                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse27">27. Após a conclusão do curso eu recebo algum certificado de participação?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
+                                                  </h4>
+            </div>
+            <div id="collapse27" class="panel-collapse collapse">
+              <div class="panel-body">Sim. Todos os cursos são certificados. Para tanto, o aluno deverá obter 70 pontos, como nota mínima, na avaliação final.</div>
+            </div>
+          </div>
+          <!-- fim bloco perguntas e repostas -->
+          <div class="panel panel-default">
+            <!-- inicio bloco pergunta e resposta -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                                                          <a data-toggle="collapse" data-parent="#accordion" href="#collapse28">28. Como eu posso emitir o meu certificado?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
+                                                      </h4>
+            </div>
+            <div id="collapse28" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>Ao concluir o curso com média superior a 70, seu certificado é emitido automaticamente. Para imprimi-lo, faça o seguinte:</p>
+
+                <p>1. Entre na plataforma Saberes, http://saberes.senado.leg.br, digitando Identificação de Usuário e Senha.</p>
+
+                <p>2. Na página inicial, na lateral direita, selecione Obter Certificado.</p>
+
+                <p>3. Todos os certificados obtidos estarão listados para impressão. Sugerimos que o papel utilizado seja um papel com uma maior gramatura e que a impressão seja realizada a cores.</p>
+              </div>
+            </div>
+          </div>
+          <!-- fim bloco perguntas e repostas -->
+          <div class="panel panel-default">
+            <!-- inicio bloco pergunta e resposta -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                                                              <a data-toggle="collapse" data-parent="#accordion" href="#collapse29">29. O certificado especifica que o curso foi feito a distância?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
+                                                          </h4>
+            </div>
+            <div id="collapse29" class="panel-collapse collapse">
+              <div class="panel-body">Sim. O certificado especifica que o curso foi feito na modalidade a distância.</div>
+            </div>
+          </div>
+          <!-- fim bloco perguntas e repostas -->
+          <div class="panel panel-default">
+            <!-- inicio bloco pergunta e resposta -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                                                                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse30">30.  verso do certificado existe um código que pode conter letras
+                                                                      e números. Para que serve?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
+                                                              </h4>
+            </div>
+            <div id="collapse30" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>Todos os certificados emitidos pela plataforma Saberes possuem um código de validação. Esse código possibilita que qualquer pessoa verifique a autenticidade do documento. Para confirmar sua veracidade, faça o seguinte.</p>
+
+                <p>1. Acesse a plataforma pelo endereço http://saberes.senado.leg.br.</p>
+
+                <p>2. Não é necessário possuir identificação de usuário e senha.</p>
+
+                <p>3. A opção Validar Certificado encontra-se na lateral direita da página.</p>
+
+                <p>4. Digite o código constante no verso do certificado na caixa de digitação.</p>
+
+                <p>5. Em seguida, clique em Verificar.</p>
+
+                <p>6. Na tela seguinte,será exibida uma tela contendo o código de verificação, o nome do aluno, CPF, curso realizado, data de emissão, período de realização, carga horária e programa do curso.</p>
+
+                <p>7. Este documento poderá ser impresso. Para isso, clique no ícone da impressora que aparece no início da tela.</p>
+              </div>
+            </div>
+          </div>
+          <!-- fim bloco perguntas e repostas -->
+          <div class="panel panel-default">
+            <!-- inicio bloco pergunta e resposta -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse31">31. Possuo um certificado emitido pela antiga Plataforma Educacional do ILB, a Trilhas. É possível validar seus certificados na Plataforma Saberes?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta -->
+              </h4>
+            </div>
+            <div id="collapse31" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>Sim.</p>
+
+                <p>1. Na lateral direita, abaixo da opção Obter Certificados, existe a opção Certificados Antigos.</p>
+
+                <p>2. Clique em obter certificados, você será direcionado para o endereço eletrônico da plataforma Trilhas que é http://www17.senado.gov.br/user/login.</p>
+
+                <p>3. Clique na opção Autenticar Certificado. Não é necessária identificaçãode usuário ou senha.</p>
+
+                <p>4. Digite o código de validação na caixa de digitação. Em seguida, clique em OK. É possível validar, também, fora da plataforma Saberes. Digite, no seu navegador, o endereço eletrônico constante no passo 2.</p>
+              </div>
+            </div>
+          </div>
+          <!-- fim bloco perguntas e repostas -->
+          <div class="panel panel-default">
+            <!-- inicio bloco pergunta e resposta -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse32">32. O certificado de EaD também é valido para concursos públicos e benefícios de
+              capacitação?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
+              </h4>
+            </div>
+            <div id="collapse32" class="panel-collapse collapse">
+              <div class="panel-body">Sim. Entretanto, ainda é possível encontrar editais que tentam excluir os candidatos formados por EAD. Como essa diferenciação não encontra amparo legal, nos últimos anos, os editais que fazem essa exigência têm tido a cláusula anulada judicialmente.
+              </div>
+            </div>
+          </div>
+          <!-- fim bloco perguntas e repostas -->
+          <div class="panel panel-default">
+            <!-- inicio bloco pergunta e resposta -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                                                                          <a data-toggle="collapse" data-parent="#accordion" href="#collapse33">33. Durante o curso, como posso tirar dúvidas de conteúdo e de utilização da
+              plataforma de ensino?</a><!-- a Referencia do link tem que ser a mesma da ID da div da resposta   -->
+                                                                      </h4>
+            </div>
+            <div id="collapse33" class="panel-collapse collapse">
+              <div class="panel-body">As dúvidas deverão ser encaminhadas para o e-mail ilbead@senado.leg.br. Para maior agilidade, informe o curso, a turma, a cópia do conteúdo- com a localização do módulo, unidade e página-, ou questão a serem investigados, acompanhados do número
+                do CPF e o endereço de e-mail cadastrado. As dúvidas encaminhadas via e-mail terão prioridade na resposta desde que seja informado, no campo assunto da mensagem: DÚVIDA SOBRE O CONTEÚDO.</div>
+            </div>
+          </div>
+          <!-- fim bloco perguntas e repostas -->
+        </div>
+        <!-- fim do bloco accordion -->
+      </div>
+
+      <!-- Contato -->
+      <div id="div.contato" class="container tabcontent tabcontentContatos" >
+        <ul>
+          <li>Serviço de Ensino a Distância – SEED</li>
+          <ul>
+            <li>3303-1475</li>
+            <li><a href="mailto:ilbead@senado.leg.br">ilbead@senado.leg.br</a></li>
+          </ul>
+          <li>Facebook</li>
+          <ul>
+            <li><a href="https://www.facebook.com/ilbsenado">https://www.facebook.com/ilbsenado</a></li>
+          </ul>
+        </ul>
+      </div>
+
+      <!-- Conteúdo Principal -->
+      <div id="div.principal" class="container tabcontent" style="display:block">
         <div class="row">
-          <div class="col-lg-12">
-            <div class="col-lg-11 col-lg-offset-1">
-              <h3 style="border: 0;">Categoria de cursos</h3>
+
+          <!-- logotipo e texto -->
+          <div class="col-xs-12 col-md-4 col-lg-4 text-center">
+            <div style="background-color: #F7F7F7; border: 1px solid #E6E6E6; border-bottom: 0; padding: 10% 0 10% 0;">
+              <img src='images/logo_saberes_xl.png' width='48%' height='48%' />
+            </div>
+            <div style="background-color: #0F5688; border: 1px solid #E6E6E6;">
+              <p style=" color: #FFFFFF; font-size: 18px; padding: 9% 0 9% 0;">Cursos abertos e sem custo para a comunidade legislativa e os cidadãos</p>
             </div>
           </div>
 
-          <div class="col-lg-12" style="border: 1px solid grey;"></div>
+          <!-- video  -->
+          <div class="col-xs-12 col-md-4 col-lg-4">
+            <iframe width="360" height="215" src="https://www.youtube.com/embed/D6IMzbSh0KI" frameborder="0" allowfullscreen style="padding: 0; height: 228.5px;"></iframe>
+          </div>
 
-          <div class="col-md-2 text-center"><a href='course/index.php?categoryid=130'><img src="images/Cursos-on-line.png"></a>
-            <p>Cursos on-line com tutoria</div>
-          <div class="col-md-2 text-center"><a href='course/index.php?categoryid=128'><img src="images/Cursos-on-line-sem-tutor.png"></a>
-            <p>Cursos on-line sem tutoria</div>
-          <div class="col-md-2 text-center"><a href='course/index.php?categoryid=102'><img src="images/formacao_interna.png"></a>
-            <p>Formação interna continuada</div>
-          <div class="col-md-2 text-center"><a href='course/index.php?categoryid=127'><img src="images/video-aula.png"></a>
-            <p>Videoaulas</div>
-          <div class="col-md-2 text-center"><a href='course/index.php?categoryid=46'><img src="images/pos-graduacao.png"></a>
-            <p>Pós-graduação</div>
-          <div class="col-md-2 text-center"><a href='course/index.php?categoryid=112'><img src="images/oficinas-interlegis.png"></a>
-            <p>Oficinas Interlegis</div>
+          <!-- bloco para login -->
+          <div class="col-xs-12 col-md-4 col-lg-4">
+            <form class="loginform" id="login" method="post" action="login/index.php">
+              <div class="col-xs-12 col-md-12 col-lg-12" style="background-color: #F7F7F7; border: 1px solid #E6E6E6; border-bottom: 0;">
+                <h4 style="color: #0F5688; border: 0;">ACESSO</h4>
+                <div class="c1 fld username">
+                  <label for="login_username">Identificação de usuário</label>
+                  <br />
+                  <div class="input-group" style="width: 100%;">
+                    <input type="text" name="username" id="login_username" value="" class="form-control input-sm">
+                  </div>
+                </div>
+                <div class="c1 fld password">
+                  <label for="login_password">Senha</label>
+                  <br />
+                  <div class="input-group" style="width: 100%;">
+                    <input type="password" name="password" id="login_password" value="" class="form-control input-sm">
+                  </div>
+                </div>
+                <div class="c1 rememberusername">
+                  <input type="checkbox" name="rememberusername" id="rememberusername" value="1">
+                  <label for="rememberusername">Lembrar identificação de usuário</label>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-12 col-lg-12" style="background-color: #F7F7F7; border: 1px solid #E6E6E6; border-top: 0; padding-bottom: 3%;">
+                <div class="col-xs-5 col-md-5 col-lg-5" style="padding-top: 3%; line-height: 100%; padding-left: 0;">
+                  <a href="login/signup.php" style="font-size:13px;">Cadastre-se</a>
+                  <br />
+                  <a href="login/forgot_password.php" style="font-size:11px;">Perdeu a senha?</a>
+                </div>
+                <div class="pull-right">
+                  <input class="btn btn-primary" type="submit" value="Acessar">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
 
-          <div class="col-lg-12" style="border: 1px solid grey;"></div>
+        <br />
 
+        <!-- Categorias de cursos -->
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-md-11 col-md-offset-1 col-lg-3 col-lg-offset-1">
+              <h3 class="text-uppercase" style="border: 0; font-weight: lighter;">C<span class="text-uppercase" style="font-size: 0.65em;">ategoria de cursos</span></h3>
+            </div>
+
+            <div class="col-xs-12 col-md-12 col-lg-12" style="border: 1px solid grey;"></div>
+
+            <div class="col-xs-6 col-md-2 text-center"><a href='course/index.php?categoryid=130'><img src="images/Cursos-on-line.png"></a>
+              <p>Cursos on-line com tutoria</p></div>
+            <div class="col-xs-6 col-md-2 text-center"><a href='course/index.php?categoryid=128'><img src="images/Cursos-on-line-sem-tutor.png"></a>
+              <p>Cursos on-line sem tutoria</p></div>
+            <div class="col-xs-6 col-md-2 text-center"><a href='course/index.php?categoryid=102'><img src="images/formacao_interna.png"></a>
+              <p>Formação interna </p></div>
+            <div class="col-xs-6 col-md-2 text-center"><a href='course/index.php?categoryid=127'><img src="images/video-aula.png"></a>
+              <p>Videoaulas</p></div>
+            <div class="col-xs-6 col-md-2 text-center"><a href='course/index.php?categoryid=46'><img src="images/pos-graduacao.png"></a>
+              <p>Pós-graduação</p></div>
+            <div class="col-xs-6 col-md-2 text-center"><a href='course/index.php?categoryid=112'><img src="images/oficinas-interlegis.png"></a>
+              <p>Oficinas Interlegis</p></div>
+
+            <div class="col-xs-12 col-md-12 col-lg-12" style="border: 1px solid grey;"></div>
+
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- Rodapé completo -->
-
-  {{>theme_boost/footer}}
-
-</body>
+    <!-- Rodapé completo -->
+    
+    {{>theme_boost/footer}}
+    
+  </body>
 </html>
 {{#js}}
 require(['theme_boost/loader']);
