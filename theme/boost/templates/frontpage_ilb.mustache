@@ -795,6 +795,7 @@
           </div>
 
           <!-- bloco para login -->
+          {{^username}}
           <div class="col-xs-12 col-md-4 col-lg-4">
             <form class="loginform" id="login" method="post" action="login/index.php">
               <div class="col-xs-12 col-md-12 col-lg-12" style="background-color: #F7F7F7; border: 1px solid #E6E6E6; border-bottom: 0;">
@@ -831,6 +832,16 @@
             </form>
           </div>
         </div>
+        {{/username}}
+
+        <!-- se está logado, exibe nome do usuário, login, boas vindas e opção para sair -->
+        {{#username}}
+        <div>
+          Você está logado como {{{ username }}}
+
+          <form...> Sair </form>
+        </div>
+        {{/username}}
 
         <br />
 
@@ -862,9 +873,9 @@
         </div>
       </div>
     <!-- Rodapé completo -->
-    
+
     {{>theme_boost/footer}}
-    
+
   </body>
 </html>
 {{#js}}

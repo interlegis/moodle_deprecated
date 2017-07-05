@@ -45,12 +45,14 @@ if (isloggedin()) {
 	    'bodyattributes' => $bodyattributes,
 	 //	'navdraweropen' => $navdraweropen,
 	  	'regionmainsettingsmenu' => $regionmainsettingsmenu,
-	  	'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu)
+	  	'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
+      'username' => 'como obter usuário logado no saberes'
 	];
 
 	$templatecontext['flatnavigation'] = $PAGE->flatnav;
 	//	echo $OUTPUT->render_from_template('theme_boost/frontpage_ilblogado', $templatecontext);
-	echo $OUTPUT->render_from_template('theme_boost/columns2', $templatecontext);
+	//echo $OUTPUT->render_from_template('theme_boost/columns2', $templatecontext);
+  echo $OUTPUT->render_from_template('theme_boost/frontpage_ilb', $templatecontext);
 
 } else {
 	$bodyattributes = $OUTPUT->body_attributes([]);
