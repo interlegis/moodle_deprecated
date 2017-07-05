@@ -831,17 +831,21 @@
               </div>
             </form>
           </div>
-        </div>
         {{/username}}
-
         <!-- se está logado, exibe nome do usuário, login, boas vindas e opção para sair -->
         {{#username}}
-        <div>
+        <div class="col-xs-12 col-md-4 col-lg-4">
           Você está logado como {{{ username }}}
+          
+          {{{ output.user_menu }}}
+
+          {{{ output.username}}}
 
           <form...> Sair </form>
         </div>
         {{/username}}
+        </div>
+
 
         <br />
 
