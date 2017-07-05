@@ -43,10 +43,10 @@ if (isloggedin()) {
 	   	'sidepreblocks' => $blockshtml,
 	 		'hasblocks' => $hasblocks,
 	    'bodyattributes' => $bodyattributes,
-	 //	'navdraweropen' => $navdraweropen,
-	  	'regionmainsettingsmenu' => $regionmainsettingsmenu,
-	  	'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
-      'username' => 'como obter usuário logado no saberes'
+	  //'navdraweropen' => $navdraweropen,
+	  //'regionmainsettingsmenu' => $regionmainsettingsmenu,
+	  //'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
+      'username' => 'nao consegui encontrar'
 	];
 
 	$templatecontext['flatnavigation'] = $PAGE->flatnav;
