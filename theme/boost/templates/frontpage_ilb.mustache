@@ -65,9 +65,6 @@
 
     {{>theme_boost/header}}
 
-Seu sesskey é {{{sessKey}}}
-
-
     <!-- Logo e busca -->
     <div class="container">
       <section id="cabecalhoTopo">
@@ -135,22 +132,34 @@ Seu sesskey é {{{sessKey}}}
 
     <!-- Abas (Certificados, Perguntas frequentes e Contato) -->
     <div class="container" style="visibility:visible">
-	
-	
+
+
+
 
       <div id="div.validacert" class="container tabcontent tabcontentCert">
 
       <!-- Breadcrumbs -->
-      <div id="portal-breadcrumbs" class="portal-breadcrumbs">
-	<ol class="Breadcrumbs">
-	  <li id="breadcrumbs-you-are-here">Você está aqui:</li>
-	  <li id="breadcrumbs-home">
-	    <a href="http://www12.senado.leg.br/institucional">Página Inicial</a>
-	  </li>
-	  <li id="breadcrumbs-1">
-	    <span id="breadcrumbs-current">Saberes</span>
-	  </li>
-	</ol>
+
+      <!-- Pagina Inicial > Escola de Governo > Saberes > Certificados -->
+
+      <div id="portal-breadcrumbs" class="portal-breadcrumbs col-xs-12 col-md-12 col-lg-12">
+      	<ol class="Breadcrumbs">
+      	  <li id="breadcrumbs-you-are-here">Você está aqui:</li>
+      	  <li id="breadcrumbs-home">
+      	    <a href="https://www12.senado.leg.br/institucional">Página Inicial</a>
+      	  </li>
+      	  <li id="breadcrumbs-escola-de-governo">
+      	    <a href="https://www12.senado.leg.br/institucional/escola-de-governo">Escola de Governo</a>
+      	  </li>
+      	  <li id="breadcrumbs-saberes">
+
+            <!-- Alterar este link quando o Saberes de homologação estiver em produção -->
+      	    <a href="http://127.0.0.1/moodle/">Saberes</a>
+      	  </li>
+      	  <li id="breadcrumbs-certificados">
+      	    <span id="breadcrumbs-current">Certificados</span>
+      	  </li>
+      	</ol>
       </div>
 
         <div class="col-xs-12 col-lg-4">
@@ -195,30 +204,34 @@ Seu sesskey é {{{sessKey}}}
 
 
 
-
-
-
-
       <!-- Perguntas frequentes -->
       <div id="div.faq" class="container tabcontent">
 
-	Pagina Inicial > Escola de Governo > Saberes > Perguntas Frequentes
-
-
       <!-- Breadcrumbs -->
-      <div id="portal-breadcrumbs" class="portal-breadcrumbs">
-        <ol class="Breadcrumbs">
-          <li id="breadcrumbs-you-are-here">Você está aqui:</li>
-          <li id="breadcrumbs-home">
-            <a href="http://www12.senado.leg.br/institucional">Página Inicial</a>
-          </li>
-          <li id="breadcrumbs-1">
-            <span id="breadcrumbs-current">Saberes</span>
-          </li>
-        </ol>
-      </div>
-      <br/>
 
+      <!-- Pagina Inicial > Escola de Governo > Saberes > Perguntas Frequentes -->
+
+      <div id="portal-breadcrumbs" class="portal-breadcrumbs col-xs-12 col-md-12 col-lg-12">
+      	<ol class="Breadcrumbs">
+      	  <li id="breadcrumbs-you-are-here">Você está aqui:</li>
+      	  <li id="breadcrumbs-home">
+      	    <a href="https://www12.senado.leg.br/institucional">Página Inicial</a>
+      	  </li>
+      	  <li id="breadcrumbs-escola-de-governo">
+      	    <a href="https://www12.senado.leg.br/institucional/escola-de-governo">Escola de Governo</a>
+      	  </li>
+      	  <li id="breadcrumbs-saberes">
+
+            <!-- Alterar este link quando o Saberes de homologação estiver em produção -->
+      	    <a href="http://127.0.0.1/moodle/">Saberes</a>
+      	  </li>
+      	  <li id="breadcrumbs-faq">
+      	    <span id="breadcrumbs-current">Perguntas Frequentes</span>
+      	  </li>
+      	</ol>
+      </div>
+
+      <div class="col-xs-12 col-md-12 col-lg-12">
         <div class="panel-group" id="accordion">
           <!-- inicio do bloco accordion -->
 
@@ -784,12 +797,40 @@ Seu sesskey é {{{sessKey}}}
         </div>
         <!-- fim do bloco accordion -->
       </div>
+    </div>
+
+
 
       <!-- Contato -->
 
 
-
       <div id="div.contato" class="container tabcontent tabcontentContatos" >
+
+        <!-- Breadcrumbs -->
+
+        <!-- Pagina Inicial > Escola de Governo > Saberes > Contatos -->
+
+        <div id="portal-breadcrumbs" class="portal-breadcrumbs col-xs-12 col-md-12 col-lg-12">
+          <ol class="Breadcrumbs">
+            <li id="breadcrumbs-you-are-here">Você está aqui:</li>
+            <li id="breadcrumbs-home">
+              <a href="https://www12.senado.leg.br/institucional">Página Inicial</a>
+            </li>
+            <li id="breadcrumbs-escola-de-governo">
+              <a href="https://www12.senado.leg.br/institucional/escola-de-governo">Escola de Governo</a>
+            </li>
+            <li id="breadcrumbs-saberes">
+
+              <!-- Alterar este link quando o Saberes de homologação estiver em produção -->
+              <a href="http://127.0.0.1/moodle/">Saberes</a>
+            </li>
+            <li id="breadcrumbs-contatos">
+              <span id="breadcrumbs-current">Contatos</span>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Conteúdo da aba CONTATOS -->
         <ul>
           <li>Serviço de Ensino a Distância – SEED</li>
           <ul>
@@ -801,6 +842,9 @@ Seu sesskey é {{{sessKey}}}
             <li><a href="https://www.facebook.com/ilbsenado">https://www.facebook.com/ilbsenado</a></li>
           </ul>
         </ul>
+
+        <!-- FIM do conteúdo da aba CONTATOS -->
+
       </div>
 
 
@@ -808,6 +852,25 @@ Seu sesskey é {{{sessKey}}}
       <!-- Conteúdo Principal -->
       <div id="div.principal" class="container tabcontent" style="display:block">
         <div class="row">
+
+          <!-- Pagina Inicial > Escola de Governo > Saberes -->
+
+
+          <!-- Breadcrumbs -->
+          <div id="portal-breadcrumbs" class="portal-breadcrumbs col-xs-12 col-md-12 col-lg-12">
+           <ol class="Breadcrumbs">
+             <li id="breadcrumbs-you-are-here">Você está aqui:</li>
+             <li id="breadcrumbs-home">
+               <a href="https://www12.senado.leg.br/institucional">Página Inicial</a>
+             </li>
+             <li id="breadcrumbs-escola-de-governo">
+               <a href="https://www12.senado.leg.br/institucional/escola-de-governo">Escola de Governo</a>
+             </li>
+             <li id="breadcrumbs-saberes">
+               <span id="breadcrumbs-current">Saberes</span>
+             </li>
+           </ol>
+          </div>
 
           <!-- logotipo e texto -->
           <div class="col-xs-12 col-md-4 col-lg-4 text-center">
@@ -865,14 +928,30 @@ Seu sesskey é {{{sessKey}}}
         {{/username}}
          <!-- se está logado, exibe nome do usuário, login, boas vindas e opção para sair -->
         {{#username}}
-        <div class="col-xs-12 col-md-4 col-lg-4" style="background:#f7f7f7; border:1px solid #e6e6e6; padding:67px;">
-          Você está logado como {{{ username }}}
-          
-          {{{ output.user_menu }}}
+        <div class="col-xs-12 col-md-4 col-lg-4">
+          <div class="col-xs-12 col-md-12 col-lg-12" style="background:#f7f7f7; border:1px solid #e6e6e6; padding-top: 3%;">
+            <h3 style="margin-top: auto; margin-bottom: 11%;">Bem-vindo ao Saberes!</h3>
 
-          {{{ output.username}}}
+            <div class="col-xs-12 col-md-4 col-lg-4">
+               <div class="img-circle text-center" style="background-color: #0F5688; width: 100px; height: 100px; color: white; padding-top: 50%;" src="..." alt="Foto do Perfil">FOTO</div>
+            </div>
 
-          <form...> Sair </form>
+            <div class="col-xs-12 col-md-8 col-lg-8">
+              <p>
+                Nome: {{{ username }}}
+              </p>
+
+              <p>
+                E-mail: {{{ username }}}
+              </p>
+            </div>
+
+            <!-- {{{ output.user_menu }}} -->
+
+            <div class="col-xs-12 col-md-12 col-lg-12" style="padding-bottom: 3%; padding-right: 0;">
+              <a class="btn btn-danger pull-right" href="http://127.0.0.1/moodle/login/logout.php?sesskey={{{ sessKey }}}">Sair</a>
+            </div>
+          </div>
         </div>
         {{/username}}
         </div>
