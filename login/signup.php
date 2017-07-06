@@ -58,7 +58,6 @@ if (empty($SESSION->wantsurl)) {
 if (isloggedin() and !isguestuser()) {
     // Prevent signing up when already logged in.
     echo $OUTPUT->header();
-    //echo "<div style="width:300px">TesteXXXXXX</div>";
     echo $OUTPUT->box_start();
     $logout = new single_button(new moodle_url($CFG->httpswwwroot . '/login/logout.php',
         array('sesskey' => sesskey(), 'loginpage' => 1)), get_string('logout'), 'post');
@@ -92,7 +91,7 @@ $login      = get_string('login');
 $PAGE->navbar->add($login);
 $PAGE->navbar->add($newaccount);
 
-$PAGE->set_pagelayout('login_nova_conta');
+$PAGE->set_pagelayout('login');
 $PAGE->set_title($newaccount);
 $PAGE->set_heading($SITE->fullname);
 

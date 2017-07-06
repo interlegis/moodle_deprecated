@@ -39,7 +39,17 @@ if (isloggedin()) {
 	$blockshtml = $OUTPUT->blocks('side-pre');
 	$hasblocks = strpos($blockshtml, 'data-block=') !== false;
 	$regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
-	$templatecontext = [
+
+  //$user_picture = false;
+  //if ($user->picture) {
+    //$user_picture = get_file_url($USER->id.'/'.$size['large'].'.jpg', null, 'user');
+  //}
+  global $USER,$PAGE;
+  $user_picture=new user_picture($USER);
+  $user_picture_url=$user_picture->get_url($PAGE);
+  $user_profile_url=$CFG->wwwroot . "/user/edit.php?id=" . $USER->id . "&course=1";
+
+  $templatecontext = [
 	    'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
 	    'output' => $OUTPUT,
 	   	'sidepreblocks' => $blockshtml,
@@ -48,9 +58,11 @@ if (isloggedin()) {
 	  //'navdraweropen' => $navdraweropen,
 	  //'regionmainsettingsmenu' => $regionmainsettingsmenu,
 	  //'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
-         'username' => 'S',
-	 'sessKey' => $USER->sesskey,
-         'moodle_url' => $CFG->wwwroot
+         'username' => $USER->firstname,
+	       'sessKey' => $USER->sesskey,
+         'moodle_url' => $CFG->wwwroot,
+         'userpictureurl' => $user_picture_url,
+         'userprofileurl' => $user_profile_url
 	];
 
 	$templatecontext['flatnavigation'] = $PAGE->flatnav;
