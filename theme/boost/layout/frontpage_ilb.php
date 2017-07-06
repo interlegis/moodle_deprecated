@@ -24,6 +24,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+require_once($CFG->libdir . '/../config.php');
+
 if (isloggedin()) {
 	user_preference_allow_ajax_update('drawer-open-nav', PARAM_ALPHA);
 	require_once($CFG->libdir . '/behat/lib.php');
@@ -46,7 +48,9 @@ if (isloggedin()) {
 	  //'navdraweropen' => $navdraweropen,
 	  //'regionmainsettingsmenu' => $regionmainsettingsmenu,
 	  //'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
-      'username' => 'nao consegui encontrar'
+         'username' => 'S',
+	 'sessKey' => $USER->sesskey,
+         'moodle_url' => $CFG->wwwroot
 	];
 
 	$templatecontext['flatnavigation'] = $PAGE->flatnav;
@@ -60,7 +64,8 @@ if (isloggedin()) {
 	$templatecontext = [
     	'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
 	    'output' => $OUTPUT,
-	    'bodyattributes' => $bodyattributes
+	    'bodyattributes' => $bodyattributes,
+	    'moodle_url' => $CFG->wwwroot
 	];
 	echo $OUTPUT->render_from_template('theme_boost/frontpage_ilb', $templatecontext);
 }

@@ -16,6 +16,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+require_once($CFG->libdir . '/../config.php');
+
 /**
  * A login page layout for the boost theme.
  *
@@ -29,7 +31,8 @@ $bodyattributes = $OUTPUT->body_attributes();
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
-    'bodyattributes' => $bodyattributes
+    'bodyattributes' => $bodyattributes,
+    'moodle_url' => $CFG->wwwroot
 ];
 
 echo $OUTPUT->render_from_template('theme_boost/login', $templatecontext);
