@@ -47,7 +47,7 @@ if (isloggedin()) {
   global $USER,$PAGE;
   $user_picture=new user_picture($USER);
   $user_picture_url=$user_picture->get_url($PAGE);
-  $user_profile_url=$CFG->wwwroot . "/user/edit.php?id=" . $USER->id . "&course=1";
+  $user_profile_url=$CFG->wwwroot . "/user/profile.php?id=" . $USER->id . "&course=1";
 
   $templatecontext = [
 	    'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
@@ -58,11 +58,14 @@ if (isloggedin()) {
 	  //'navdraweropen' => $navdraweropen,
 	  //'regionmainsettingsmenu' => $regionmainsettingsmenu,
 	  //'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
-         'username' => $USER->firstname,
-	       'sessKey' => $USER->sesskey,
-         'moodle_url' => $CFG->wwwroot,
-         'userpictureurl' => $user_picture_url,
-         'userprofileurl' => $user_profile_url
+			'username' => $USER->username,
+			'firstname' => $USER->firstname,
+			'lastname' => $USER->lastname,
+			'sessKey' => $USER->sesskey,
+			'moodle_url' => $CFG->wwwroot,
+			'userpictureurl' => $user_picture_url,
+			'userprofileurl' => $user_profile_url,
+			'email' => $USER->email
 	];
 
 	$templatecontext['flatnavigation'] = $PAGE->flatnav;
