@@ -6,7 +6,7 @@ $CFG = new stdClass();
 
 $CFG->dbtype    = 'pgsql';
 $CFG->dblibrary = 'native';
-$CFG->dbhost    = '10.1.2.47';
+$CFG->dbhost    = '10.1.15.61';
 $CFG->dbname    = 'moodle';
 $CFG->dbuser    = 'saberes';
 $CFG->dbpass    = 'senhas@beres';
@@ -43,4 +43,3 @@ require_once(dirname(__FILE__) . '/lib/setup.php');
 
 // for these users only.
 # $CFG->debugusers = '2';
-
