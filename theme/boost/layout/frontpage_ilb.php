@@ -55,9 +55,9 @@ if (isloggedin()) {
 	   	'sidepreblocks' => $blockshtml,
 	 		'hasblocks' => $hasblocks,
 	    'bodyattributes' => $bodyattributes,
-	  //'navdraweropen' => $navdraweropen,
-	  //'regionmainsettingsmenu' => $regionmainsettingsmenu,
-	  //'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
+	  	'navdraweropen' => $navdraweropen,
+	  	'regionmainsettingsmenu' => $regionmainsettingsmenu,
+	  	'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
 			'username' => $USER->username,
 			'firstname' => $USER->firstname,
 			'lastname' => $USER->lastname,
@@ -65,7 +65,6 @@ if (isloggedin()) {
 			'moodle_url' => $CFG->wwwroot,
 			'userpictureurl' => $user_picture_url,
 			'userprofileurl' => $user_profile_url,
-			'email' => $USER->email
 	];
 
 	$templatecontext['flatnavigation'] = $PAGE->flatnav;
