@@ -44,7 +44,13 @@ class profile_field_cpf extends profile_field_base {
         Se existir, retorna falso, do contrário retorna verdadeiro.
     */
     private function exists($cpf = null, $userid = 0) {
-        global $DB;
+	global $DB;
+
+	// Por definição, se for admin, aceita 00000000000
+	if( is_siteadmin() && $cpf == '00000000000') {
+	    return true;
+	}
+	                             	    
         // Verifica se um número foi informado.
         if (is_null($cpf)) {
             return false;
@@ -69,7 +75,12 @@ class profile_field_cpf extends profile_field_base {
         Retorna verdadeiro apenas se DV bater com esperado 
     */
     private function validatecpf($cpf = null) {
-        // Verifica se um numero foi informado.
+        // Por definição, se for admin, aceita 00000000000
+	if( is_siteadmin() && $cpf == '00000000000') {
+	    return true;    
+	}
+       
+       // Verifica se um numero foi informado.
         if (is_null($cpf)) {
             return false;
         }
