@@ -57,8 +57,9 @@ class profile_field_cpf extends profile_field_base {
 	}
 
         $sql = "SELECT uid.data FROM {user_info_data} uid
-                INNER JOIN {user_info_field} uif ON uid.fieldid = uif.id
-                WHERE uif.datatype = 'cpf' AND uid.data = :cpf AND uid.userid <> :userid";
+		INNER JOIN {user_info_field} uif ON uid.fieldid = uif.id
+                INNER JOIN {user} u on uid.userid = u.id
+                WHERE uif.datatype = 'cpf' AND u.deleted = 0 AND uid.data = :cpf AND uid.userid <> :userid";
         $params['cpf'] = $cpf;
         $params['userid'] = $userid;
         $dbcpf = current($DB->get_records_sql($sql, $params));
