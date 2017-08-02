@@ -2209,9 +2209,37 @@ function format_time($totalsecs, $str = null) {
  * @return string the formatted date/time.
  */
 function userdate($date, $format = '', $timezone = 99, $fixday = true, $fixhour = true) {
-    $calendartype = \core_calendar\type_factory::get_calendar_instance();
-    return $calendartype->timestamp_to_date_string($date, $format, $timezone, $fixday, $fixhour);
+   $calendartype = \core_calendar\type_factory::get_calendar_instance();
+   return trocaMes($calendartype->timestamp_to_date_string($date, $format, $timezone, $fixday, $fixhour));
+}                                                         
+  
+function trocaMes($data) {
+    $dataPt = $data;
+    $dataPt = str_replace("January", "Janeiro", $dataPt);     
+    $dataPt = str_replace("February", "Fevereiro", $dataPt);       
+    $dataPt = str_replace("March", "Mar&ccedil;o", $dataPt);
+    $dataPt = str_replace("April", "Abril", $dataPt);
+    $dataPt = str_replace("May", "Maio", $dataPt);
+    $dataPt = str_replace("June", "Junho", $dataPt);        
+    $dataPt = str_replace("July", "Julho", $dataPt);
+    $dataPt = str_replace("August", "Agosto", $dataPt);
+    $dataPt = str_replace("September", "Setembro", $dataPt);
+    $dataPt = str_replace("October", "Outubro", $dataPt);
+    $dataPt = str_replace("November", "Novembro", $dataPt);
+    $dataPt = str_replace("December", "Dezembro", $dataPt);
+					                             
+    $dataPt = str_replace("Sunday", "Domingo", $dataPt);
+    $dataPt = str_replace("Monday", "Segunda-feira", $dataPt);
+    $dataPt = str_replace("Tuesday", "Ter&ccedil;a-feira", $dataPt);
+    $dataPt = str_replace("Thursday", "Quinta-feira", $dataPt);
+    $dataPt = str_replace("Friday", "Sexta-feira", $dataPt);
+    $dataPt = str_replace("Wednesday", "Quarta-feira", $dataPt);
+    $dataPt = str_replace("Saturday", "S&aacute;bado", $dataPt);
+							                                                 
+									   
+    return $dataPt;  
 }
+   
 
 /**
  * Returns a formatted date ensuring it is UTF-8.
