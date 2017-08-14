@@ -182,8 +182,12 @@ FROM {user} u
   JOIN {role_assignments} ra ON (ra.userid = u.id AND ra.contextid {$in_contexts})
   LEFT OUTER JOIN {user_info_data} uid ON (uid.userid = u.id AND uid.fieldid {$in_fields})";
 
-$sql_role_summary = ereg_replace('SELECT(.*)FROM', 'SELECT ra.roleid, count(distinct ue.id) FROM', $sql);
-$sql_role_summary .= ' GROUP BY ra.roleid';
+$sql_role_summary = "SELECT ra.roleid, count(distinct ue.id)
+FROM {user} u
+  JOIN {user_enrolments} ue ON (ue.userid = u.id AND ue.enrolid {$in_instances})
+  JOIN {role_assignments} ra ON (ra.userid = u.id AND ra.contextid {$in_contexts})
+  LEFT OUTER JOIN {user_info_data} uid ON (uid.userid = u.id AND uid.fieldid {$in_fields})
+ GROUP BY ra.roleid";
 
 $dados_role_summary = $DB->get_records_sql($sql_role_summary, $params);
 
@@ -197,8 +201,12 @@ if ($sort == 'timecreated') {
     $sql .= " ORDER BY u.{$sort}";
 }
 
-$sql_count = ereg_replace('SELECT(.*)FROM', 'SELECT COUNT(DISTINCT u.id) FROM', $sql);
-$sql_count = ereg_replace('ORDER BY(.*)','',$sql_count);
+$sql_count = "SELECT COUNT(DISTINCT u.id)
+FROM {user} u
+  JOIN {user_enrolments} ue ON (ue.userid = u.id AND ue.enrolid {$in_instances})
+  JOIN {role_assignments} ra ON (ra.userid = u.id AND ra.contextid {$in_contexts})
+  LEFT OUTER JOIN {user_info_data} uid ON (uid.userid = u.id AND uid.fieldid {$in_fields})";
+
 $total = $DB->count_records_sql($sql_count, $params + $where_params);
 $userlist = $DB->get_records_sql($sql, $params + $where_params, $start, ILBENROL_REPORT_PAGE);
  
