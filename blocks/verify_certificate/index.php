@@ -33,6 +33,8 @@
 require_once("../../config.php");
 require_once($CFG->dirroot . '/mod/certificate/lib.php');
 require_once($CFG->dirroot.'/mod/certificate/locallib.php');
+require_once("$CFG->dirroot/completion/completion_completion.php");
+require_once("$CFG->dirroot/enrol/locallib.php");
 
 $id = required_param('certnumber', PARAM_ALPHANUM);   // Certificate code to verify.
 
@@ -88,32 +90,78 @@ if (! $certificates) {
         echo '</div>';
         echo '</td><td>';
         echo '<p><b>' . get_string('to', 'block_verify_certificate') . ': </b>' . fullname($certdata) . '<br />';
-
-        $course = $DB->get_record('course', array('id' => $certdata->course));
-        if ($course) {
-            echo '<p><b>' . get_string('course', 'block_verify_certificate') . ': </b>' . $course->fullname . '<br />';
-        }
-
         // Date format.
         $dateformat = get_string('strftimedate', 'langconfig');
 
-        // Modify printdate so that date is always printed.
+	
         $certdata->printdate = 1;
         $certrecord = new stdClass();
         $certrecord->timecreated = $certdata->citimecreated;
         $certrecord->code = $certdata->code;
         $certrecord->userid = $certdata->userid;
-        $userid = $certrecord->id = $certdata->id;
+        $certrecord->id = $certdata->id;
+	$userid = $certrecord->userid;
 
+	// Exibe CPF, se definido        
+	require_once("$CFG->dirroot/user/profile/lib.php");
+	require_once("$CFG->dirroot/user/profile/field/cpf/field.class.php");
+	$formfield = new profile_field_cpf('8', $certdata->userid);
+	$cpf = $formfield->display_data();
+	if ($cpf) {
+            echo '<p><b>' . "CPF" . ': </b>' . $cpf . '<br /></p>';
+        } 
+
+	// Exibe  curso        
+	$course = $DB->get_record('course', array('id' => $certdata->course));
+        if ($course) {
+            echo '<p><b>' . get_string('course', 'block_verify_certificate') . ': </b>' . $course->fullname . '<br />';
+        }
+	
+	// Curso sem tutoria: início é matrícula, final é timeend de course_completions
+	// Curso com tutoria com turma: início e fim vem da matrícula da turma
+	// Curso com tutoria sem turma: início e fim vem da configuração do curso
+	// Demais cursos: início e fim vem da configuração do curso
+
+	$enrol_manager = new course_enrolment_manager($PAGE, $course);
+	$user_enrol = end($enrol_manager->get_user_enrolments($userid));
+	$enrol = $DB->get_record('enrol', array('id' => $user_enrol->enrolid));
+	if(substr( $course->idnumber, 0, 3 ) == 'ST-' ) {
+		$cc = new completion_completion(array('userid'=>$certrecord->userid, 'course'=>$certdata->course));
+		$start_date = $user_enrol->timestart;
+		$end_date   = $cc->timecompleted;
+		$type = 'ST';
+	} elseif(substr( $course->idnumber, 0, 3 ) == 'CT-') {
+		/*$group = $DB->get_record('groups', array('courseid' => $course->id));
+		if( $group ) {
+			$start_date = $enrol->enrolstartdate;
+			$end_date = $enrol->enrolenddate;
+		} else {
+			$start_date = $course->startdate;
+			$end_date   = $course->enddate;
+		}*/
+		$type = 'CT';
+	} else {
+		$type = '';
+//		$start_date = $course->startdate;
+//		$end_date   = $course->enddate;
+	}
+	
         // Retrieving grade and date for each certificate.
         $grade = certificate_get_grade($certdata, $course, $userid, $valueonly = true);
-        $date = $certrecord->timecreated = $certdata->citimecreated;
+        //$date = $start_date; //$certrecord->timecreated = $certdata->citimecreated;
 
-        if ($date) {
-            echo '<p><b>' . get_string('date', 'block_verify_certificate') . ': </b>' . userdate($date, $dateformat) . '<br /></p>';
-        }
+        if ($type = 'ST' && $start_date && $end_date) {
+            echo "<p><b>PERÍODO: </b>" . userdate($start_date, $dateformat) . " a " . userdate($end_date, $dateformat) . '<br /></p>';
+        } else {
+            echo "<p><b>DATA: </b>" . userdate($certdata->timecreated, $dateformat) . '<br /></p>';
+	}
+
+
         if ($course && $certdata->printgrade > 0) {
             echo '<p><b>' . get_string('grade', 'block_verify_certificate') . ': </b>' . $grade . '<br /></p>';
+        }
+        if ($course->summary) {
+            echo "<br /><p>$course->summary</p>";
         }
         echo '</td><td>';
         echo "<img src=\"pix/certverified.png\" border=\"0\" align=\"center\"></img>";
