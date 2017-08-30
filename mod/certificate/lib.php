@@ -25,6 +25,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+require_once($CFG->dirroot.'/mod/certificate/locallib.php');
+
 /**
  * Add certificate instance.
  *
