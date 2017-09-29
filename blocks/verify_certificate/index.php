@@ -140,17 +140,19 @@ if (! $certificates) {
 			$end_date   = $course->enddate;
 		}*/
 		$type = 'CT';
+		$start_date = $course->startdate;
+		$end_date   = $course->enddate;
 	} else {
 		$type = '';
-//		$start_date = $course->startdate;
-//		$end_date   = $course->enddate;
+		$start_date = $course->startdate;
+		$end_date   = $course->enddate;
 	}
 	
         // Retrieving grade and date for each certificate.
         $grade = certificate_get_grade($certdata, $course, $userid, $valueonly = true);
         //$date = $start_date; //$certrecord->timecreated = $certdata->citimecreated;
 
-        if ($type = 'ST' && $start_date && $end_date) {
+        if (($type = 'ST' || $type = 'CT') && $start_date && $end_date) {
             echo "<p><b>PERÍODO: </b>" . userdate($start_date, $dateformat) . " a " . userdate($end_date, $dateformat) . '<br /></p>';
         } else {
             echo "<p><b>DATA: </b>" . userdate($certdata->timecreated, $dateformat) . '<br /></p>';
