@@ -16,8 +16,8 @@ $CFG->dboptions = array (
   'dbsocket' => '',
 );
 
-$CFG->wwwroot   = 'http://127.0.0.1/moodle';
-$CFG->dataroot  = '/var/www/html/moodledata';
+$CFG->wwwroot   = 'https://saberesh.interlegis.leg.br';
+$CFG->dataroot  = '/var/www/moodledata';
 //'/var/aplicacoes/saberes/moodledata';
 $CFG->admin     = 'admin';
 
