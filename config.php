@@ -6,17 +6,17 @@ $CFG = new stdClass();
 
 $CFG->dbtype    = 'pgsql';
 $CFG->dblibrary = 'native';
-$CFG->dbhost    = 'bdsaberes01a.interlegis.leg.br';
+$CFG->dbhost    = '10.1.15.239';
 $CFG->dbname    = 'moodle';
-$CFG->dbuser    = 'matheusg';
-$CFG->dbpass    = 'akmtmd552182';
+$CFG->dbuser    = 'saberes';
+$CFG->dbpass    = 'jpaPok7JDAr26nZRbgfd';
 $CFG->prefix    = 'mdl_';
 $CFG->dboptions = array (
   'dbpersist' => 0,
   'dbsocket' => '',
 );
 
-$CFG->wwwroot   = 'http://127.0.0.1/moodle';
+$CFG->wwwroot   = 'https://saberesh.interlegis.leg.br';
 $CFG->dataroot  = '/var/www/moodledata';
 //'/var/aplicacoes/saberes/moodledata';
 $CFG->admin     = 'admin';
