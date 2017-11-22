@@ -81,10 +81,10 @@ class block_enrol_duration extends block_base {
             $this->content->text  = '<p>'.get_string('enrolmentin', 'block_enrol_duration').' <em>'.$coursename.'</em> '.
                                     get_string('expiresin', 'block_enrol_duration').'<br>';
             $this->content->text .= '<strong>'.$days.' '.get_string('days', 'block_enrol_duration').'</strong>';
-            $this->content->text .= ': '.$fulldate.'.</p>';
+            $this->content->text .= ': '.$fulldate.'.</p>'.'<p>Hor&aacute;rio de Bras&iacute;lia, DF.</p>';
         } else {
             $this->content->text  = '<p>'.get_string('enrolmentin', 'block_enrol_duration').' <em>'.$this->page->course->fullname.
-                                    '</em> '.get_string('noexpiration', 'block_enrol_duration').'.</p>';
+                                    '</em> '.get_string('noexpiration', 'block_enrol_duration').'.</p>'.'<p>Hor&aacute;rio de Bras&iacute;lia, DF.</p>';
         }
         $this->content->footer = '';
 
