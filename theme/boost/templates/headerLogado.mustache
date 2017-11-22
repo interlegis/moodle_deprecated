@@ -21,6 +21,7 @@
 
     <div class="container-fluid navbar-nav">
 
+      <!-- Ícone do hambúrguer <i> inserido a partir do CSS externo do Font Awesome em head2.mustache -->
         <div data-region="drawer-toggle">
             <button aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}" aria-controls="nav-drawer" type="button" class="btn pull-xs-left m-r-1 btn-secondary" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav"><i class="fa fa-bars"></i></span></button>
         </div>
@@ -39,8 +40,9 @@
         </a>
 
         <!-- user_menu -->
-        {{{ output.user_menu }}}
-
+        <div class="linkCorBranco">
+          {{{ output.user_menu }}}
+        </div>
         <!-- navbar_plugin_output -->
         {{{ output.navbar_plugin_output }}}
 
