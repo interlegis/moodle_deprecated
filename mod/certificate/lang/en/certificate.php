@@ -62,6 +62,7 @@ $string['certify'] = 'This is to certify that';
 $string['certifyilb'] = 'This is to certify that';
 $string['code'] = 'Code';
 $string['completiondate'] = 'Course Completion';
+$string['completionrequired'] = '<p><strong>You have not completed the course.</strong></p><br/>/n<p>While the criteria for course completion are not met, the certificate can not be issued.</p>';
 $string['course'] = 'For';
 $string['coursegrade'] = 'Course Grade';
 $string['coursename'] = 'Course';
