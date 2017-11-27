@@ -74,6 +74,8 @@ class core_renderer extends \core_renderer {
      */
     public function full_header() {
         global $PAGE;
+        global $CFG;
+
 
         $html = html_writer::start_tag('header', array('id' => 'page-header', 'class' => 'row'));
         $html .= html_writer::start_div('col-xs-12 p-a-1');
@@ -152,7 +154,16 @@ class core_renderer extends \core_renderer {
                 'src' => $this->get_logo_url(null, 150), 'alt' => $sitename]), 'logo');
         }
 
-        return parent::context_header($headerinfo, $headinglevel);
+        $titulo = parent::context_header($headerinfo, $headinglevel);
+
+        $pos = strpos($titulo, "-", 70);
+
+        echo "<script>alert('" . substr($titulo, 0, $pos) ."');</script>";
+
+        $titulo = substr($titulo, 0, $pos) . "<br>" . "<small>"  . substr($titulo, $pos+1) . "</small>";
+
+        return $titulo;
+        // string substr ( string $string , int $start [, int $length ] )
     }
 
     /**

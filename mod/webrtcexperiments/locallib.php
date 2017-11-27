@@ -1,6 +1,5 @@
 <?php
-
-// This file is part of the Certificate module for Moodle - http://moodle.org/
+// This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -16,19 +15,14 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Code fragment to define the version of the certificate module
+ * Internal library of functions for module webrtcexperiments
  *
- * @package    mod_certificate
- * @copyright  Mark Nelson <markn@moodle.com>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or late
+ * All the webrtc specific functions, needed to implement the module
+ * logic, should go here. Never include this file from your lib.php!
+ *
+ * @package    mod_webrtcexperiments
+ * @copyright  2014 Daniel Neis Araujo
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
-
-$plugin->version   = 2017112300; // The current module version (Date: YYYYMMDDXX)
-$plugin->requires  = 2016052300; // Requires this Moodle version (3.1)
-$plugin->cron      = 12*60*20; // Period for cron to check this module (secs)
-$plugin->component = 'mod_certificate';
-
-$plugin->maturity  = MATURITY_STABLE;
-$plugin->release   = "Master (Build: 2017112300)"; // User-friendly version number
