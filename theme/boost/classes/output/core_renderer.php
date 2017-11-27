@@ -75,11 +75,20 @@ class core_renderer extends \core_renderer {
     public function full_header() {
         global $PAGE;
         global $CFG;
+        global $DB;
 
+        require_once("../config.php");
+
+        // echo "<script>alert('" .  $PAGE->course->idnumber  . "');</script>";
+
+        $filename = $PAGE->course->idnumber . ".png";
+        $table_files = "files";
+        $results = $DB->get_record($table_files, array('filename' => $filename, 'sortorder' => 0, 'component' => 'course'));
+        $baseurl = "$CFG->wwwroot/pluginfile.php/$results->contextid/$results->component/$results->filearea/$filename";
 
         $html = html_writer::start_tag('header', array('id' => 'page-header', 'class' => 'row'));
         $html .= html_writer::start_div('col-xs-12 p-a-1');
-        $html .= html_writer::start_div('card');
+        $html .= html_writer::start_div('card',array('style' => 'background-image:url(' . $baseurl .')'));
         $html .= html_writer::start_div('card-block');
         $html .= html_writer::div($this->context_header_settings_menu(), 'pull-xs-right context-header-settings-menu');
         $html .= html_writer::start_div('pull-xs-left');
@@ -157,9 +166,9 @@ class core_renderer extends \core_renderer {
         $titulo = parent::context_header($headerinfo, $headinglevel);
 
         $pos = strpos($titulo, "-", 70);
-
-        $titulo = substr($titulo, 0, $pos) . "<br>" . "<small>"  . substr($titulo, $pos+1) . "</small>";
-
+        if($pos != false){
+            $titulo = substr($titulo, 0, $pos) . "<br>" . "<small>"  . substr($titulo, $pos+1) . "</small>";
+        }
         return $titulo;
         // string substr ( string $string , int $start [, int $length ] )
     }
