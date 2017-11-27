@@ -158,8 +158,6 @@ class core_renderer extends \core_renderer {
 
         $pos = strpos($titulo, "-", 70);
 
-        echo "<script>alert('" . substr($titulo, 0, $pos) ."');</script>";
-
         $titulo = substr($titulo, 0, $pos) . "<br>" . "<small>"  . substr($titulo, $pos+1) . "</small>";
 
         return $titulo;
