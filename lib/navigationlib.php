@@ -2771,6 +2771,10 @@ class global_navigation extends navigation_node {
             $node->showinflatnavigation = true;
         }
 
+        $saeurl = new moodle_url('/sae/view.php');
+        $node = $coursenode->add(get_string('sae', 'sae'), $saeurl, self::TYPE_CUSTOM, null, 'sae');
+        $node->showinflatnavigation = true;
+
         if (isloggedin()) {
             $usercontext = context_user::instance($USER->id);
             if (has_capability('moodle/user:manageownfiles', $usercontext)) {

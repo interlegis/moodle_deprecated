@@ -78,6 +78,11 @@ function make_log_url($module, $url) {
         case 'calendar':
             $url = "/calendar/$url";
             break;
+        ///////////////////////////////////////
+        case 'sae':
+            $url ="/sae/$url";
+            break;
+        ///////////////////////////////////////
         case 'user':
         case 'blog':
             $url = "/$module/$url";
