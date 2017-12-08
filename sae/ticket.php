@@ -60,6 +60,53 @@ if (!empty($assunto4)) {
   }
 }
 
+if ($assunto == "Dúvidas sobre certificados") {
+  $topicId = 17;
+}
+if ($assunto == "Dúvidas sobre cursos"){
+  $topicId = 18;
+}
+if ($assunto == "Reclamações sobre certificados") {
+  $topicId = 21;
+}
+if ($assunto == "Reclamações sobre cursos") {
+  $topicId = 22;
+}
+if ($assunto == "Dúvidas") {
+  $topicId = 13;
+}
+if ($assunto == "Dúvidas sobre dados cadastrais") {
+  $topicId = 19;
+}
+if ($assunto == "Outras dúvidas") {
+  $topicId = 20;
+}
+if ($assunto == "Elogios") {
+  $topicId = 16;
+}
+if ($assunto == "Reclamações") {
+  $topicId = 14;
+}
+if ($assunto == "Outras reclamações") {
+  $topicId = 25;
+}
+if ($assunto == "Reclamações sobre dados cadastrais") {
+  $topicId = 24;
+}
+if ($assunto == "Reclamações sobre tutor") {
+  $topicId = 23;
+}
+if ($assunto == "Sugestões") {
+  $topicId = 15;
+}
+if ($assunto == "Meu certificado não foi gerado") {
+  $topicId = 28;
+}
+if ($assunto == "Meu certificado está com dados incorretos") {
+  $topicId = 27;
+}
+
+
 
 $data = array(
     'name'      =>      $name,  // from name aka User/Client Name
@@ -68,7 +115,7 @@ $data = array(
     'subject'   =>      $assunto,  // test subject, aka Issue Summary
     'message'   =>      $mensagem,  // test ticket body, aka Issue Details.
     'ip'        =>      $_SERVER['REMOTE_ADDR'], // Should be IP address of the machine thats trying to open the ticket.
-  'topicId'   =>      '1', // the help Topic that you want to use for the ticket 
+  'topicId'   =>      $topicId, // the help Topic that you want to use for the ticket 
   //'Agency'  =>    '58', //this is an example of a custom list entry. This should be the number of the entry.
   //'Site'  =>    'Bermuda'; // this is an example of a custom text field.  You can push anything into here you want. 
     'attachments' => array()
