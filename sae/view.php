@@ -2,29 +2,20 @@
 
 /**
  * Display the calendar page.
- * @copyright 2017 Bruno Cordeiro
+ * @copyright 2003 Jon Papaioannou
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @package core_calendar
  */
 
 require_once('../config.php');
 require_once($CFG->dirroot.'/course/lib.php');
-require_once($CFG->dirroot.'/calendar/lib.php');
-
-define('AJAX_SCRIPT', true);
-
-global $USER;
+// require_once($CFG->dirroot.'/calendar/lib.php');
 
 $courseid = optional_param('course', SITEID, PARAM_INT);
 $view = optional_param('view', 'upcoming', PARAM_ALPHA);
-$time = optional_param('time', 0, PARAM_INT);
+
 
 $url = new moodle_url('/sae/view.php');
-
-// If a day, month and year were passed then convert it to a timestamp. If these were passed
-// then we can assume the day, month and year are passed as Gregorian, as no where in core
-// should we be passing these values rather than the time. This is done for BC.
-
 
 // $url->param('time', $time);
 
@@ -37,27 +28,29 @@ if ($courseid != SITEID && !empty($courseid)) {
     navigation_node::override_active_url(new moodle_url('/course/view.php', array('id' => $course->id)));
 } else {
     $course = get_site();
-    $courses = calendar_get_default_courses();
+    // $courses = calendar_get_default_courses();
     $issite = true;
 }
 
 require_course_login($course);
 
-
-
 $pagetitle = '';
 
-$strsae = get_string('sae', 'sae');
+$strcalendar = get_string('sae', 'sae');
+
 
 // Print title and header
 $PAGE->set_pagelayout('standard');
-$PAGE->set_title("$course->shortname: 'Ticket': $pagetitle");
+$PAGE->set_title("$course->shortname: $strcalendar: $pagetitle");
 $PAGE->set_heading($COURSE->fullname);
 
+$renderer = $PAGE->get_renderer('core_calendar');
+// $calendar->add_sidecalendar_blocks($renderer, true, $view);
 
 echo $OUTPUT->header();
-
+echo $renderer->start_layout();
 echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
+// echo $OUTPUT->heading(get_string('sae', 'sae'));
 
 ?>
 
@@ -72,14 +65,16 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
       <h3 class=""><strong>Sistema de Atendimento ao aluno</strong></h3>
       <br>
 
-       
-        <input  name="id" placeholder="Id" style="display: none;" class="form-control" value="<?php echo $USER->id; ?>"  type="text">
-    
-       
-        <input  name="nome" placeholder="Nome" style="display: none;" class="form-control" value="<?php echo $USER->username; ?>"  type="text">
-             
-        <input name="email" placeholder="E-Mail Address" style="display: none;"  class="form-control" value="<?php echo $USER->email; ?>" type="text">
- 
+       <?php  
+        echo "<input  name='id' placeholder='Id' style='display: none;' class='form-control' value='".$USER->id ."'  type='text'>"
+        ?>
+       <?php 
+        echo "<input  name='nome' placeholder='Nome' style='display: none;' class='form-control' value='" . $USER->username ."'  type='text'>"
+        ?>   
+          
+        <?php   
+        echo "<input name='email' placeholder='E-Mail Address' style='display: none;'  class='form-control' value='" . $USER->email . "' type='text'>"
+        ?>
             <!-- Text input-->
              
       <div class="form-group">
@@ -185,8 +180,10 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
               });
 
           });
+          
           // mensagem confirmando envio fica escondida ate que seja enviado o ticket
           $(".alert-success").hide();
+
           function change_select(sel) {
           
             if ($('.camada1').val() == "Reclamações") {
@@ -267,9 +264,15 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
 
 <?php 
 
-echo $OUTPUT->container_end();
-echo html_writer::end_tag('div');
 
+
+//Link to calendar export page.
+// echo $OUTPUT->container_start('bottom');
+
+
+// echo $OUTPUT->container_end();
+echo html_writer::end_tag('div');
+echo $renderer->complete_layout();
 echo $OUTPUT->footer();
 
-?>
+
