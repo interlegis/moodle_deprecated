@@ -77,7 +77,7 @@ class core_renderer extends \core_renderer {
         global $CFG;
         global $DB;
 
-        require_once("../config.php");
+        //require_once("../config.php");
 
         // echo "<script>alert('" .  $PAGE->course->idnumber  . "');</script>";
 

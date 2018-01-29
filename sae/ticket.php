@@ -15,23 +15,12 @@ $debug="0";
 // You must configure the url and key in the array below.
 
 $config = array(
-        'url'=>'10.1.2.242/osticket/upload/api/http.php/tickets.json',  // URL to site.tld/api/tickets.json
+        //'url'=>'10.1.2.242/osticket/upload/api/http.php/tickets.json',  // URL to site.tld/api/tickets.json
+    'url'=>'http://10.1.2.242/osticket/upload/api/http.php/tickets.json',
     'key'=>'B154D35D63E7A4ADAE8BA8282C6490CD'  // API Key goes here
 );
 # NOTE: some people have reported having to use "http://your.domain.tld/api/http.php/tickets.json" instead.
 
-if($config['url'] === 'asld') {
-  echo "<p style=\"color:red;\"><b>Error: No URL</b><br>You have not configured this script with your URL!</p>";
-  echo "Please edit this file ".__FILE__." and add your URL at line 18.</p>";
-  die();  
-}   
-if(IsNullOrEmptyString($config['key']) || ($config['key'] === 'açsdfçlas'))  {
-  echo "<p style=\"color:red;\"><b>Error: No API Key</b><br>You have not configured this script with an API Key!</p>";
-  echo "<p>Please log into osticket as an admin and navigate to: Admin panel -> Manage -> Api Keys then add a new API Key.<br>";
-  echo "Once you have your key edit this file ".__FILE__." and add the key at line 19.</p>";
-  die();
-}
-    
 # Fill in the data for the new ticket, this will likely come from $_POST.
 # NOTE: your variable names in osT are case sensiTive. 
 # So when adding custom lists or fields make sure you use the same case
@@ -43,70 +32,76 @@ $phone = $_POST['telefone'];
 $assunto1 = $_POST['assunto1'];
 $assunto2 = $_POST['assunto2'];
 $assunto3 = $_POST['assunto3'];
-$assunto4 = $_POST['assunto4'];
 $mensagem = $_POST['mensagem'];
 
-if (!empty($assunto4)) {
-  $assunto = $assunto4;
-}else{
+if (!empty($assunto3) || !empty($assunto2)) {
   if (!empty($assunto3)) {
     $assunto = $assunto3;
-  }else{
-    if (!empty($assunto2)) {
-      $assunto = $assunto2;
-    }else{
-      $assunto = $assunto1;
-    }
   }
+  if(!empty($assunto2)){
+   $assunto = $assunto2; 
+  }
+}else{
+  $assunto = $assunto1;
 }
 
-if ($assunto == "Dúvidas sobre certificados") {
-  $topicId = 17;
-}
-if ($assunto == "Dúvidas sobre cursos"){
-  $topicId = 18;
-}
-if ($assunto == "Reclamações sobre certificados") {
-  $topicId = 21;
-}
-if ($assunto == "Reclamações sobre cursos") {
-  $topicId = 22;
-}
-if ($assunto == "Dúvidas") {
-  $topicId = 13;
-}
-if ($assunto == "Dúvidas sobre dados cadastrais") {
-  $topicId = 19;
-}
-if ($assunto == "Outras dúvidas") {
-  $topicId = 20;
-}
-if ($assunto == "Elogios") {
-  $topicId = 16;
-}
-if ($assunto == "Reclamações") {
-  $topicId = 14;
-}
-if ($assunto == "Outras reclamações") {
-  $topicId = 25;
-}
-if ($assunto == "Reclamações sobre dados cadastrais") {
-  $topicId = 24;
-}
-if ($assunto == "Reclamações sobre tutor") {
-  $topicId = 23;
-}
-if ($assunto == "Sugestões") {
-  $topicId = 15;
-}
-if ($assunto == "Meu certificado não foi gerado") {
-  $topicId = 28;
-}
-if ($assunto == "Meu certificado está com dados incorretos") {
-  $topicId = 27;
-}
+switch ($assunto) {
+  case 'Dúvidas sobre certificados':
+    $topicId = 17;
+    break;
 
+  case 'Dúvidas sobre cursos':
+    $topicId = 18;
+    break;
 
+  case 'Reclamações sobre certificados':
+    $topicId = 21;
+    break;
+
+  case 'Reclamações sobre cursos':
+    $topicId = 22;
+    break;
+
+  case 'Dúvidas':
+    $topicId = 13;
+    break;
+
+  case 'Dúvidas sobre dados cadastrais':
+    $topicId = 19;
+    break;
+
+  case 'Outras dúvidas':
+    $topicId = 20;
+    break;
+
+  case 'Elogios':
+    $topicId = 16;
+    break;
+
+  case 'Reclamações':
+    $topicId = 14;
+    break;
+
+  case 'Outras reclamações':
+    $topicId = 25;
+    break;
+
+  case 'Reclamações sobre dados cadastrais':
+    $topicId = 24;
+    break;
+
+  case 'Reclamações sobre tutor':
+    $topicId = 23;
+    break;
+
+  case 'Sugestões':
+    $topicId = 15;
+    break;
+  
+  default:
+    $topicId = 13;
+    break;
+}
 
 $data = array(
     'name'      =>      $name,  // from name aka User/Client Name
@@ -124,17 +119,17 @@ $data = array(
 # more fields are available and are documented at:
 # https://github.com/osTicket/osTicket-1.8/blob/develop/setup/doc/api/tickets.md
 
-if($debug=='1') {
+
   print_r($data);
-  die();
-}
+  // die();
+
 
 # Add in attachments here if necessary
 # Note: there is something with this wrong with the file attachment here it does not work.
-$data['attachments'][] =
-array('file.txt' =>
-        'data:text/plain;base64;'
-            .base64_encode(file_get_contents('/file.txt')));  // replace ./file.txt with /path/to/your/test/filename.txt
+//$data['attachments'][] =
+//array('file.txt' =>
+  //      'data:text/plain;base64;'
+    //        .base64_encode(file_get_contents('/file.txt')));  // replace ./file.txt with /path/to/your/test/filename.txt
  
 
 #pre-checks
@@ -157,6 +152,8 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 $result=curl_exec($ch);
 $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 curl_close($ch);
+
+echo $code;
 
 if ($code != 201)
     die('Unable to create ticket: '.$result);
