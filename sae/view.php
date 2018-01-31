@@ -180,7 +180,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
 
 
       <p id="resposta1" style="margin-top: 12px; margin-bottom: 12px; display: none;">Para se matricular em um curso sem tutoria, siga os seguintes passos:
-      Na página inicial da plataforma Saberes, escolha a categoria Cursos on-line sem tutoria.
+      Na página inicial da plataforma Saberes, escolha a categoria <strong>Cursos on-line sem tutoria</strong>.
       Clique no curso de seu interesse para ver o conteúdo programático e a carga horário. Caso seja do seu interessa, leia as regras e critérios com atenção e clique em “MATRICULAR-SE”. O curso tem início assim que a matrícula é efetuada. 
       </p>
 
@@ -188,7 +188,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
       Caso você tenha se matriculado em um curso e não queira cursar, você terá que aguardar o prazo de finalização do curso, 60 dias, e cumprir a punição de 30 (trinta) dias, a contar da data final do curso, para ter a sua vaga liberada para uma nova matrícula.
       </p>
 
-      <p id="resposta3" style="margin-top: 12px; margin-bottom: 12px; display: none;">Na página inicial da plataforma clique em Cursos on-line sem tutoria. Em seguida, clique na mais recente oferta de Cursos sem tutoria. Identifique o curso de seu interesse e clique no ícone do Sumário, localizado na lateral direita do nome do curso.
+      <p id="resposta3" style="margin-top: 12px; margin-bottom: 12px; display: none;">Na página inicial da plataforma clique em <strong>Cursos on-line sem tutoria</strong>. Em seguida, clique na mais recente oferta de Cursos sem tutoria. Identifique o curso de seu interesse e clique no <strong>ícone do Sumário</strong>, localizado na lateral direita do nome do curso.
       </p>
 
       <p id="resposta4" style="margin-top: 12px; margin-bottom: 12px; display: none;">Cada aluno pode realizar simultaneamente até dois cursos sem tutoria e um curso com tutoria, desde que haja vaga.
@@ -209,7 +209,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
       O curso poderá ser concluído antes desse prazo, mas o certificado só será emitido 21 (vinte e um) dias após a data de matrícula.
       </p>
 
-      <p id="resposta8" style="margin-top: 12px; margin-bottom: 12px; display: none;">Para acessar a versão em PDF com o conteúdo do curso, acesse a página inicial do curso, na seção Módulo de Apoio/ Biblioteca e clique em Conteúdo do curso em PDF. 
+      <p id="resposta8" style="margin-top: 12px; margin-bottom: 12px; display: none;">Para acessar a versão em PDF com o conteúdo do curso, acesse a página inicial do curso, na seção <strong>Módulo de Apoio/ Biblioteca</strong> e clique em <strong>Conteúdo do curso em PDF</strong>. 
       Lembramos que ao concluir o curso você perderá o acesso ao conteúdo geral do curso
       </p>
 
@@ -219,7 +219,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
       <p id="resposta10" style="margin-top: 12px; margin-bottom: 12px; display: none;">Para acessar o Avalie o curso e a Avaliação final, você deve fazer os exercícios de fixação de cada módulo. Observe se os quadradinhos ao lado dos exercícios estão sinalados. Caso não estejam, você pode marcá-los manualmente. Esse procedimento lhe dará acesso ao Avalie o curso. Assim, a plataforma libera o próximo passo para você continuar o curso.
       </p>
 
-      <p id="resposta11" style="margin-top: 12px; margin-bottom: 12px; display: none;">Provavelmente você excedeu o prazo de conclusão do curso, que é de 60 (sessenta) dias a contar da data da matrícula. Seu status no curso ficará como abandono. Por isso, sua vaga ficará bloqueada por 30 (trinta) dias a contar da data limite para finalização do curso. Caso você não saiba a data limite, solicite a informação via e-mail para ilbead@senado.leg.br. 
+      <p id="resposta11" style="margin-top: 12px; margin-bottom: 12px; display: none;">Provavelmente você excedeu o prazo de conclusão do curso, que é de 60 (sessenta) dias a contar da data da matrícula. Seu status no curso ficará como abandono. Por isso, sua vaga ficará bloqueada por 30 (trinta) dias a contar da data limite para finalização do curso. Caso você não saiba a data limite, solicite a informação via e-mail para <u>ilbead@senado.leg.br.</u> 
       </p>
 
       <p id="resposta12" style="margin-top: 12px; margin-bottom: 12px; display: none;">Em caso de reprovação, a vaga fica bloqueada por 30 dias, a partir da data limite de conclusão do curso, para fazer o mesmo ou outro curso.
@@ -227,7 +227,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
       </p>
 
       <p id="resposta13" style="margin-top: 12px; margin-bottom: 12px; display: none;">Os cursos com tutoria têm um número de vagas limitadas e, para realizar o curso, você deve primeiro fazer a pré-matrícula, seguindo os seguintes passos: 
-      Na página inicial da plataforma Saberes, escolha a categoria Cursos on-line com tutoria.
+      Na página inicial da plataforma Saberes, escolha a categoria <strong>Cursos on-line com tutoria</strong>.
       Clique no curso de seu interesse para ver o conteúdo programático e carga horário. Caso seja do seu interessa, leia as regras e critérios com atenção e clique em “MATRICULAR-SE”. Você receberá uma mensagem informando a pré-matrícula e o período em que a matrícula será confirmada ou declinada.
       As vagas são destinas aos alunos conforme ordem de inscrição, observando a prioridade dos servidores do Legislativo Federal, Estadual e Municipal e órgão conveniados.
       </p>
@@ -247,15 +247,17 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
 
       <p id="resposta1-3" style="margin-top: 12px; margin-bottom: 12px; display: none;">No certificado constam o nome e CPF do aluno; modalidade do curso, nome do curso; nota de aprovação; período de realização; carga horária; conteúdo programático; código de verificação do certificado e CNPJ do Senado Federal.
 
-      <p id="resposta1-4" style="margin-top: 12px; margin-bottom: 12px; display: none;">Todos os certificados emitidos pela plataforma Saberes possuem um código de validação. Esse código possibilita que qualquer pessoa verifique a autenticidade do documento. Para confirmar sua veracidade, faça o seguinte.
-      1. Acesse http://saberes.senado.leg.br.
-      2. Não é necessário inserir a identificação de usuário e senha.
-      3. Nessa página, clique em Certificados, localizado na barra superior.
-      4. Na opção Validar Certificado, digite o código constante no verso do certificado.
-      5. Em seguida, clique em Verificar.
-      6. Na tela seguinte, serão exibidos o código de verificação, o nome do aluno, o CPF, o nome do curso realizado, data de emissão do certificado, o período de realização, a carga horária e o programa do curso.
-      7. Este documento poderá ser impresso. Para isso, clique no ícone da impressora que aparece no início da tela.
-      </p>
+      <div id="resposta1-4" style="margin-top: 12px; margin-bottom: 12px; display: none;">Todos os certificados emitidos pela plataforma Saberes possuem um código de validação. Esse código possibilita que qualquer pessoa verifique a autenticidade do documento. Para confirmar sua veracidade, faça o seguinte.
+      <ol>
+        <li>Acesse <a href="http://saberes.senado.leg.br" target="_blank">http://saberes.senado.leg.br.</a></li>
+        <li>Não é necessário inserir a identificação de usuário e senha.</li>
+        <li>Nessa página, clique em Certificados, localizado na barra superior.</li>
+        <li>Na opção Validar Certificado, digite o código constante no verso do certificado.</li>
+        <li>Em seguida, clique em Verificar.</li>
+        <li>Na tela seguinte, serão exibidos o código de verificação, o nome do aluno, o CPF, o nome do curso realizado, data de emissão do certificado, o período de realização, a carga horária e o programa do curso.</li>
+        <li>Este documento poderá ser impresso. Para isso, clique no ícone da impressora que aparece no início da tela.</li>
+      </ol>
+      </div>
 
       <p id="resposta1-5" style="margin-top: 12px; margin-bottom: 12px; display: none;">Certifique-se que você concluiu o curso com média superior a 70 pontos e que está há mais de 20 dias matriculado no curso.
       O certificado pode levar até 4 horas para ser gerado, após o envido da avaliação final. Caso seu certificado não seja gerado após esse período, entre em contato conosco pelo ilbead@senado.leg.br.
@@ -265,12 +267,15 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
       Todas as informações podem ser alteradas, menos o CPF.
       </p>
 
-      <p id="resposta2-1" style="margin-top: 12px; margin-bottom: 12px; display: none;">1. Acesse o Saberes e no bloco Bem-vindo ao Saberes, clique em: Perdeu a senha?
-      3. Preencha as informações solicitadas (Identificação de Usuário ou E-mail).
-      4. Clique em Buscar.
-      5. Será encaminhado um link para o seu correio eletrônico, cadastrado na plataforma para a criação de uma nova senha.
-      6. Não recebeu o link? Entre em contato com o ILB pelo endereço eletrônico ilbead@senado.leg.br. 
-      </p>
+      <div id="resposta2-1" style="margin-top: 12px; margin-bottom: 12px; display: none;">
+        <ol>  
+          <li>Acesse o Saberes e no bloco <strong>Bem-vindo ao Saberes</strong>, clique em: <strong>Perdeu a senha?</strong></li>
+          <li>Preencha as informações solicitadas (Identificação de Usuário ou E-mail).</li>
+          <li>Clique em Buscar.</li>
+          <li>Será encaminhado um link para o seu correio eletrônico, cadastrado na plataforma para a criação de uma nova senha.</li>
+          <li>Não recebeu o link? Entre em contato com o ILB pelo endereço eletrônico ilbead@senado.leg.br.</li> 
+        </ol>
+      </div>
 
       <p id="resposta2-2" style="margin-top: 12px; margin-bottom: 12px; display: none;">Escreva para ilbead@senado.leg.br, informando seu nome completo e número do CPF, e solicite a redefinição da sua senha.
       </p>
@@ -278,7 +283,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
       <p id="resposta2-3" style="margin-top: 12px; margin-bottom: 12px; display: none;">Acesse o saberes, clique na sua imagem de perfil ou no boneco(caso não tenha uma). Depois clique na sua imagem de perfil ou no boneco(caso não tenha uma) localizado no canto superior direito. Vá em “Preferências” em seguida clique em “Mudar senha”.
       </p>
 
-      <p id="resposta3-1" style="margin-top: 12px; margin-bottom: 12px; display: none;">Para alterar dados cadastrais, acesse o Saberes e clique no campo da foto. Em seguida, clique em Modificar perfil, faça as alterações necessárias e no, final da página, clique em Atualizar perfil.
+      <p id="resposta3-1" style="margin-top: 12px; margin-bottom: 12px; display: none;">Para alterar dados cadastrais, acesse o Saberes e <strong>clique no campo da foto</strong>. Em seguida, clique em Modificar perfil, faça as alterações necessárias e no, final da página, clique em Atualizar perfil.
       Todas as informações podem ser alteradas, menos o CPF.
       </p>
 
@@ -480,8 +485,8 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                   $(".duvidas_curso").css('display', 'none');
                   $('.duvidas').css('display', 'none');
                   
-                  // $('select[name=assunto2]').val(null);
-                  // $('select[name=assunto3]').val(null);
+                  $('select[name=assunto2]').val(null);
+                  $('select[name=assunto3]').val(null);
                 }
             } 
           }
