@@ -9,6 +9,11 @@
 #  Originally authored by jared@osTicket.com
 #  Modified by ntozier@osTicket / tmib.net
 
+require('../config.php');
+
+$apiKey = $CFG->urlTicketAPIKey;
+$apiURL = $CFG->urlTicketAPIURL;
+
 // If 1, display things to debug.
 $debug="0";
 
@@ -16,8 +21,8 @@ $debug="0";
 
 $config = array(
         //'url'=>'10.1.2.242/osticket/upload/api/http.php/tickets.json',  // URL to site.tld/api/tickets.json
-    'url'=>'http://10.1.2.242/osticket/upload/api/http.php/tickets.json',
-    'key'=>'B154D35D63E7A4ADAE8BA8282C6490CD'  // API Key goes here
+	'url'=> $apiURL,
+	'key'=> $apiKey 
 );
 # NOTE: some people have reported having to use "http://your.domain.tld/api/http.php/tickets.json" instead.
 
