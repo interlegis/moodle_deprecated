@@ -36,7 +36,7 @@ require_course_login($course);
 
 $pagetitle = '';
 
-$strcalendar = get_string('sae', 'sae');
+// $strcalendar = get_string('sae', 'sae');
 
 
 // Print title and header
@@ -53,10 +53,6 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
 // echo $OUTPUT->heading(get_string('sae', 'sae'));
 
 ?>
-
-      <div class="alert alert-success">
-        <strong>Sucesso!</strong> Mensagem enviada para o sistema de atendimento.
-      </div>
 
     <form class="well form-horizontal" action="ticket.php" method="post"  id="ticket_form" ">
       <fieldset>
@@ -333,6 +329,9 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                   </div>
                 </div>
 
+                <div class="alert alert-success">
+                  <strong>Sucesso!</strong> Mensagem enviada para o sistema de atendimento.
+                </div>
                 <!-- Button -->
                 <div class="form-group">
                   <label class=" control-label"></label>
@@ -340,6 +339,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                     <button type="submit" class="btn btn-primary" >Enviar <span class="glyphicon glyphicon-send"></span></button>
                   </div>
                 </div>
+
               
           </div>
       </div>
