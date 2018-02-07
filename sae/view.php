@@ -109,9 +109,10 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
         <option value="Outras Dúvidas">Outras Dúvidas</option>
       </select>
 
-      <select name="assunto3" class="form-control reclamacoes" style="display: none; margin-bottom: 12px;">
+      <select name="assunto3" class="form-control reclamacoes" style="display: none; margin-bottom: 12px;" onchange="change_select(this);">
         <option selected="selected" value=""></option>
         <option value="Reclamações sobre certificados">Reclamações sobre certificados</option>
+        <option value="Reclamações sobre matrícula">Reclamações sobre matrícula</option>
         <option value="Reclamações sobre cursos">Reclamações sobre cursos</option>
         <option value="Reclamações sobre dados cadastrais">Reclamações sobre dados cadastrais</option>
         <option value="Reclamações sobre tutor">Reclamações sobre tutor</option>
@@ -145,7 +146,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
       <select name="assunto6"  class="form-control duvidas_cadastro" style="display: none; margin-bottom: 12px;" onchange="change_select_cadastro(this);">
         <option selected="selected" value=""></option>
         <option value="Como posso alterar meus dados cadastrais?">Como posso alterar meus dados cadastrais?</option>
-        <option value="Não consigo alterar meu CPF">Não consigo alterar meu CPF</option>
+        <!-- <option value="Não consigo alterar meu CPF">Não consigo alterar meu CPF</option> -->
         <option value="Como faço para cancelar meu cadastro?">Como faço para cancelar meu cadastro?</option>
         <option value="Não consigo acessar o saberes, posso fazer um novo cadastro?">Não consigo acessar o saberes, posso fazer um novo cadastro?</option>
       </select>
@@ -158,12 +159,12 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
 
       <select name="assunto8"  class="form-control duvidas_certificado" style="display: none; margin-bottom: 12px;" onchange="change_select_certificados(this);">
         <option selected="selected" value=""></option>
-        <option value="Como faço para imprimir meu certificado?">Como faço para imprimir meu certificado?</option>
+        <option value="Como faço para imprimir meu certificado? Fora do curso">Como faço para imprimir meu certificado? Fora do curso</option>
         <option value="Como faço para imprimir certificados antigos?(Entre 2010 e 2013)">Como faço para imprimir certificados antigos?(Entre 2010 e 2013)</option>
         <option value="Quais informações constam no certificado?">Quais informações constam no certificado?</option>
         <option value="No verso do certificado existe um código com letras e números. Para que serve?">No verso do certificado existe um código com letras e números. Para que serve?</option>
-        <option value="Meu certificado não foi gerado">Meu certificado não foi gerado</option>
-        <option value="Meu certificado está com dados errados">Meu certificado está com dados errados</option>
+<!--         <option value="Meu certificado não foi gerado">Meu certificado não foi gerado</option>
+        <option value="Meu certificado está com dados errados">Meu certificado está com dados errados</option> -->
       </select>
 
       <select name="assunto9"  class="form-control duvidas_outras" style="display: none; margin-bottom: 12px;" onchange="change_select_outras();" >
@@ -172,6 +173,30 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
         <option value="Os cursos a distância oferecidos pelo ILB são reconhecidos pelo MEC?">Os cursos a distância oferecidos pelo ILB são reconhecidos pelo MEC?</option>
         <option value="Os certificados do ILB podem ser utilizados como crédito para curso de graduação?">Os certificados do ILB podem ser utilizados como crédito para curso de graduação?</option>
         <option value="Posso usar os cursos do ILB para licença capacitação">Posso usar os cursos do ILB para licença capacitação?</option>
+      </select>
+
+      <select name="assunto10"  class="form-control recl_certificado" style="display: none; margin-bottom: 12px;" onchange="change_select_recl_certificado();" >
+        <option selected="selected" value=""></option>
+        <option value="Meu certificado não foi gerado">Meu certificado não foi gerado</option>
+      </select>
+
+      <select name="assunto11"  class="form-control recl_cadastro" style="display: none; margin-bottom: 12px;" onchange="change_select_recl_cadastro();" >
+        <option selected="selected" value=""></option>
+        <option value="Não consigo alterar meu CPF">Não consigo alterar meu CPF</option>
+        <option value="Erro no meu cadastro">Erro no meu cadastro</option>
+      </select>
+
+      <select name="assunto12"  class="form-control recl_matricula" style="display: none; margin-bottom: 12px;" onchange="change_select_recl_matricula();" >
+        <option selected="selected" value=""></option>
+        <option value="Concluí o curso mas não consigo me matricular em outro">Concluí o curso mas não consigo me matricular em outro</option>
+      </select>
+
+      <select name="assunto13"  class="form-control recl_curso" style="display: none; margin-bottom: 12px;" onchange="change_select_recl_curso();" >
+        <option selected="selected" value=""></option>
+        <option value="Não consigo acessar o Avalie o Curso e a Avaliação Final">Não consigo acessar o Avalie o Curso e a Avaliação Final</option>
+        <option value="Erro no conteúdo do curso">Erro no conteúdo do curso</option>
+        <option value="Erro nos exercícios de fixação">Erro nos exercícios de fixação</option>
+        <option value="Erro na avaliação final">Erro na avaliação final</option>
       </select>
 
 
@@ -255,14 +280,6 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
       </ol>
       </div>
 
-      <p id="resposta1-5" style="margin-top: 12px; margin-bottom: 12px; display: none;">Certifique-se que você concluiu o curso com média superior a 70 pontos e que está há mais de 20 dias matriculado no curso.
-      O certificado pode levar até 4 horas para ser gerado, após o envido da avaliação final. Caso seu certificado não seja gerado após esse período, entre em contato conosco pelo ilbead@senado.leg.br.
-      </p>
-
-      <p id="resposta1-6" style="margin-top: 12px; margin-bottom: 12px; display: none;">Para alterar dados cadastrais, acesse o Saberes e clique no campo da foto. Em seguida, clique em Modificar perfil, faça as alterações necessárias e no, final da página, clique em Atualizar perfil.
-      Todas as informações podem ser alteradas, menos o CPF.
-      </p>
-
       <div id="resposta2-1" style="margin-top: 12px; margin-bottom: 12px; display: none;">
         <ol>  
           <li>Acesse o Saberes e no bloco <strong>Bem-vindo ao Saberes</strong>, clique em: <strong>Perdeu a senha?</strong></li>
@@ -276,20 +293,18 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
       <p id="resposta2-2" style="margin-top: 12px; margin-bottom: 12px; display: none;">Escreva para ilbead@senado.leg.br, informando seu nome completo e número do CPF, e solicite a redefinição da sua senha.
       </p>
 
-      <p id="resposta2-3" style="margin-top: 12px; margin-bottom: 12px; display: none;">Acesse o saberes, clique na sua imagem de perfil ou no boneco(caso não tenha uma). Depois clique na sua imagem de perfil ou no boneco(caso não tenha uma) localizado no canto superior direito. Vá em “Preferências” em seguida clique em “Mudar senha”.
+      <p id="resposta2-3" style="margin-top: 12px; margin-bottom: 12px; display: none;">Para alterar sua senha, clique no campo da foto. Clique na engrenagem localizada no canto superior direito da página do perfil e, em seguida, em Mudar senha.
+      Faça a redefinição da senha e clique em Salvar senha.
       </p>
 
       <p id="resposta3-1" style="margin-top: 12px; margin-bottom: 12px; display: none;">Para alterar dados cadastrais, acesse o Saberes e <strong>clique no campo da foto</strong>. Em seguida, clique em Modificar perfil, faça as alterações necessárias e no, final da página, clique em Atualizar perfil.
       Todas as informações podem ser alteradas, menos o CPF.
       </p>
 
-      <p id="resposta3-2" style="margin-top: 12px; margin-bottom: 12px; display: none;">O CPF é a única informação que o aluno não consegue alterar na plataforma. Caso você esteja com problemas no número do CPF, escreve para ilbead@senado.leg.br, informando qual é o problema, seu nome completo e o número do seu CPF.
+      <p id="resposta3-2" style="margin-top: 12px; margin-bottom: 12px; display: none;">Cadastro não pode ser cancelado para que o histórico do aluno não seja perdido. Entretanto, você pode solicitar que ele seja inativado pelo período que desejar escrevendo para ilbead@senado.leg.br. 
       </p>
 
-      <p id="resposta3-3" style="margin-top: 12px; margin-bottom: 12px; display: none;">Cadastro não pode ser cancelado para que o histórico do aluno não seja perdido. Entretanto, você pode solicitar que ele seja inativado pelo período que desejar escrevendo para ilbead@senado.leg.br. 
-      </p>
-
-      <p id="resposta3-4" style="margin-top: 12px; margin-bottom: 12px; display: none;">Não, cada aluno pode ter apenas um cadastro na plataforma. Solicite sua Identificação de usuário e/ou senha ao ilbead@senado.leg.br. 
+      <p id="resposta3-3" style="margin-top: 12px; margin-bottom: 12px; display: none;">Não, cada aluno pode ter apenas um cadastro na plataforma. Solicite sua Identificação de usuário e/ou senha ao ilbead@senado.leg.br. 
       </p>
 
       <p id="resposta4-1" style="margin-top: 12px; margin-bottom: 12px; display: none;">O ILB não emite declarações. Caso seja do seu interesse, você pode salvar a página inicial do curso em PDF que contém as informações das atividades realizadas para entregar ao órgão solicitante.
@@ -313,6 +328,34 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
       O curso tem início no ato da matrícula e o aluno tem até 60 dias para conclui-lo.
       O período de realização do curso que figura no certificado é a data da inscrição a data que o aluno realiza a avalição final.
       Caso o aluno faça a avalição final antes de 20 dias da matriculado no curso, a data de conclusão será a do 20º dia da data da matrícula.
+      </p>
+
+      <p id="resposta6-1" style="margin-top: 12px; margin-bottom: 12px; display: none;">Certifique-se que você concluiu o curso com média superior a 70 pontos e que está há mais de 20 dias matriculado no curso.
+      O certificado pode levar até 4 horas para ser gerado, após o envido da avaliação final.
+      Caso seu certificado não seja gerado após esse período, envie-nos uma mensagem informado o nome do curso.
+      </p>
+
+      <p id="resposta7-1" style="margin-top: 12px; margin-bottom: 12px; display: none;">O CPF é a única informação que o aluno não consegue alterar na plataforma. Caso você esteja com problemas no número do CPF, escreve para ilbead@senado.leg.br, informando qual é o problema, seu nome completo e o número do seu CPF.
+      </p>
+
+      <p id="resposta7-2" style="margin-top: 12px; margin-bottom: 12px; display: none;">Para alterar dados cadastrais, acesse o Saberes e clique no campo da foto. Em seguida, clique em Modificar perfil, faça as alterações necessárias e no, final da página, clique em Atualizar perfil.
+      Todas as informações podem ser alteradas, menos o CPF.
+      </p>
+
+      <p id="resposta8-1" style="margin-top: 12px; margin-bottom: 12px; display: none;">Cada aluno pode estar matriculado em até dois cursos sem tutoria ao mesmo tempo.
+      Ao concluir o curso, a vaga só é liberada quando o certificado for emitido.
+      Em caso de abando ou reprovação, a vaga só é liberada 90 dias após a matrícula no curso.
+      </p>
+
+      <p id="resposta9-1" style="margin-top: 12px; margin-bottom: 12px; display: none;">Para acessar o Avalie o curso e a Avaliação final, você deve fazer os exercícios de fixação de cada módulo. Observe se os quadradinhos ao lado dos exercícios estão sinalados. Caso não estejam, você pode marcá-los manualmente. Esse procedimento lhe dará acesso ao Avalie o curso. Assim, a plataforma libera o próximo passo para você continuar o curso.
+
+      <p id="resposta9-2" style="margin-top: 12px; margin-bottom: 12px; display: none;">Caso você tenha identificado algum problema no conteúdo de algum curso, escreva para nós indicando seus questionamentos com o nome, o módulo, a unidade e página do curso.
+      </p>
+
+      <p id="resposta9-3" style="margin-top: 12px; margin-bottom: 12px; display: none;">Caso você queira questionar/contestar algum item dos exercícios de fixação, escreva para nós indicando o nome e modulo do curso descrevendo suas observações/objeções.
+      </p>
+
+      <p id="resposta9-4" style="margin-top: 12px; margin-bottom: 12px; display: none;">Caso você queira questionar/contestar algum item da avaliação final, escreva para nós indicando o nome e modulo do curso descrevendo suas observações/objeções.
       </p>
     
       <button type="button" class="btn header"><span>Escrever email</span></button>
@@ -376,6 +419,23 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
           // mensagem confirmando envio fica escondida ate que seja enviado o ticket
           $(".alert-success").hide();
 
+          function duvidas_null(){
+            $(".duvidas_curso").css('display', 'none');
+            $('.duvidas').css('display', 'none');
+            $(".duvidas_certificado").css('display', 'none');
+            $(".duvidas_senha").css('display', 'none');
+            $(".duvidas_cadastro").css('display', 'none');
+            $(".duvidas_outras").css('display', 'none');
+            $(".duvidas_declaracao").css('display', 'none');
+          }
+
+          function recl_null(){
+            $(".recl_certificado").css('display', 'none');
+            $(".recl_matricula").css('display', 'none');
+            $(".recl_curso").css('display', 'none');
+            $(".recl_cadastro").css('display', 'none');
+          }
+
           function change_select(sel) {
           
             <?php for ($i = 1; $i <= 14; $i++) {
@@ -386,12 +446,17 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                 echo "$('#resposta3-" . $i ."').css('display', 'none');";
                 echo "$('#resposta4-" . $i ."').css('display', 'none');";
                 echo "$('#resposta5-" . $i ."').css('display', 'none');";
+                echo "$('#resposta6-" . $i ."').css('display', 'none');";
+                echo "$('#resposta7-" . $i ."').css('display', 'none');";
+                echo "$('#resposta8-" . $i ."').css('display', 'none');";
+                echo "$('#resposta9-" . $i ."').css('display', 'none');";
                                
               } ?>
             
             if ($('.camada1').val() == "Dúvidas") {
                 $(".duvidas").css('display', 'block');
-                
+                $(".reclamacoes").css('display', 'none');
+                recl_null();
                 // $('select[name=assunto4]').val(null);
                 
                 if ($('.duvidas').val() == "Dúvidas sobre cursos") {
@@ -402,6 +467,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                   $(".duvidas_outras").css('display', 'none');
                   $(".duvidas_declaracao").css('display', 'none');
                   $('.reclamacoes').css('display', 'none');
+                  recl_null();
                   // $('#resposta1').slideToggle(300);
                   //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
                 }
@@ -414,6 +480,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                   $(".duvidas_outras").css('display', 'none');
                   $(".duvidas_declaracao").css('display', 'none');
                   $('.reclamacoes').css('display', 'none');
+                  recl_null();
                   // $('#resposta1').slideToggle(300);
                   //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
                 }
@@ -426,6 +493,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                   $(".duvidas_outras").css('display', 'none');
                   $(".duvidas_declaracao").css('display', 'none');
                   $('.reclamacoes').css('display', 'none');
+                  recl_null();
                   // $('#resposta1').slideToggle(300);
                   //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
                 }
@@ -437,6 +505,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                   $(".duvidas_outras").css('display', 'none');
                   $(".duvidas_declaracao").css('display', 'none');
                   $('.reclamacoes').css('display', 'none');
+                  recl_null();
                   // $('#resposta1').slideToggle(300);
                   //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
                 }
@@ -448,6 +517,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                   $(".duvidas_curso").css('display', 'none');
                   $(".duvidas_outras").css('display', 'none');
                   $('.reclamacoes').css('display', 'none');
+                  recl_null();
                   // $('#resposta1').slideToggle(300);
                   //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
                 }
@@ -459,31 +529,59 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                   $(".duvidas_certificado").css('display', 'none');
                   $(".duvidas_curso").css('display', 'none');
                   $('.reclamacoes').css('display', 'none');
+                  recl_null();
                 }
                 // $('select[name=assunto1]').val(null);
                 // $('select[name=assunto3]').val(null);
             }else{
               if ($('.camada1').val() == "Reclamações") {
-                $('.reclamacoes').css('display', 'block');
-                $(".duvidas_curso").css('display', 'none');
-                $('.duvidas').css('display', 'none');
-                $(".duvidas_certificado").css('display', 'none');
-                $(".duvidas_senha").css('display', 'none');
-                $(".duvidas_cadastro").css('display', 'none');
-                $(".duvidas_outras").css('display', 'none');
-                $(".duvidas_declaracao").css('display', 'none');
+                  $('.reclamacoes').css('display', 'block');
+                  $('.duvidas').css('display', 'none');
+                  duvidas_null();
                 
+                if ($('.reclamacoes').val() == "Reclamações sobre certificados") {
+                  $(".recl_certificado").css('display', 'block');
+                  $(".recl_matricula").css('display', 'none');
+                  $(".recl_curso").css('display', 'none');
+                  $(".recl_cadastro").css('display', 'none');
+                    duvidas_null();
+                }
+
+                if ($('.reclamacoes').val() == "Reclamações sobre matrícula") {
+                  $(".recl_matricula").css('display', 'block');
+                  $(".recl_certificado").css('display', 'none');
+                  $(".recl_curso").css('display', 'none');
+                  $(".recl_cadastro").css('display', 'none');
+                  duvidas_null();
+                }
+
+                if ($('.reclamacoes').val() == "Reclamações sobre cursos") {
+                  $(".recl_curso").css('display', 'block');
+                  $(".recl_certificado").css('display', 'none');
+                  $(".recl_matricula").css('display', 'none');
+                  $(".recl_cadastro").css('display', 'none');
+                  duvidas_null();
+                }
+
+                if ($('.reclamacoes').val() == "Reclamações sobre dados cadastrais") {
+                  $(".recl_cadastro").css('display', 'block');
+                  $(".recl_certificado").css('display', 'none');
+                  $(".recl_matricula").css('display', 'none');
+                  $(".recl_curso").css('display', 'none');
+                  duvidas_null();
+                }
+
+                if ($('.reclamacoes').val() == "Reclamações sobre tutor") {
+                  recl_null();
+                  duvidas_null();
+                }
                 // $('select[name=assunto1]').val(null);
                 // $('select[name=assunto2]').val(null);
               }else{
                   $('.reclamacoes').css('display', 'none');
-                  $(".duvidas_outras").css('display', 'none');
-                  $(".duvidas_declaracao").css('display', 'none');
-                  $(".duvidas_cadastro").css('display', 'none');
-                  $(".duvidas_senha").css('display', 'none');
-                  $(".duvidas_certificado").css('display', 'none');
-                  $(".duvidas_curso").css('display', 'none');
                   $('.duvidas').css('display', 'none');
+                  duvidas_null();
+                  recl_null();
                   
                   $('select[name=assunto2]').val(null);
                   $('select[name=assunto3]').val(null);
@@ -506,7 +604,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                 if ($i != 1) {
                   echo "$('#resposta" . $i ."').css('display', 'none');";
                 }
-                echo $none1;
+              
               } ?>
             }
             if($(".duvidas_curso").val() == "Como faço para cancelar a matrícula no curso?"){
@@ -515,7 +613,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                 if ($i != 2) {
                   echo "$('#resposta" . $i ."').css('display', 'none');";
                 }
-                echo $none1;
+              
               } ?>            }
             if($(".duvidas_curso").val() == "Onde posso obter informações sobre carga horária e o conteúdo programático dos cursos?"){
               $('#resposta3').slideToggle(300);
@@ -523,7 +621,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                 if ($i != 3) {
                   echo "$('#resposta" . $i ."').css('display', 'none');";
                 }
-                echo $none1;
+              
               } ?>
             }
             if($(".duvidas_curso").val() == "Quantos cursos posso fazer ao mesmo tempo?"){
@@ -532,7 +630,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                 if ($i != 4) {
                   echo "$('#resposta" . $i ."').css('display', 'none');";
                 }
-                echo $none1;
+              
               } ?>
             }
             if($(".duvidas_curso").val() == "Concluí um curso mas não consigo me matricular em outro"){
@@ -541,7 +639,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                 if ($i != 5) {
                   echo "$('#resposta" . $i ."').css('display', 'none');";
                 }
-                echo $none1;
+              
               } ?>
             }
             if($(".duvidas_curso").val() == "Como faço para não receber mensagens no mural de avisos"){
@@ -550,7 +648,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                 if ($i != 6) {
                   echo "$('#resposta" . $i ."').css('display', 'none');";
                 }
-                echo $none1;
+              
               } ?>
             }
             if($(".duvidas_curso").val() == "Quantos dias ainda tenho para concluir o curso?"){
@@ -559,7 +657,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                 if ($i != 7) {
                   echo "$('#resposta" . $i ."').css('display', 'none');";
                 }
-                echo $none1;
+              
               } ?>
             }
             if($(".duvidas_curso").val() == "Como faço para imprimir o conteúdo do curso?"){
@@ -568,7 +666,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                 if ($i != 8) {
                   echo "$('#resposta" . $i ."').css('display', 'none');";
                 }
-                echo $none1;
+              
               } ?>
             }
             if($(".duvidas_curso").val() == "Concluí o curso e quero imprimir o conteúdo, como faço?"){
@@ -577,7 +675,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                 if ($i != 9) {
                   echo "$('#resposta" . $i ."').css('display', 'none');";
                 }
-                echo $none1;
+              
               } ?>
             }
             if($(".duvidas_curso").val() == "Não consigo acessar o avalie o curso e a avaliação final"){
@@ -586,7 +684,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                 if ($i != 10) {
                   echo "$('#resposta" . $i ."').css('display', 'none');";
                 }
-                echo $none1;
+              
               } ?>
             }
             if($(".duvidas_curso").val() == "Não consigo acessar o conteúdo do curso, o que fazer?"){
@@ -595,7 +693,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                 if ($i != 11) {
                   echo "$('#resposta" . $i ."').css('display', 'none');";
                 }
-                echo $none1;
+              
               } ?>
             }
             if($(".duvidas_curso").val() == "Não fui aprovado no curso, e agora?"){
@@ -604,7 +702,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                 if ($i != 12) {
                   echo "$('#resposta" . $i ."').css('display', 'none');";
                 }
-                echo $none1;
+              
               } ?>
             }
             if($(".duvidas_curso").val() == "Como faço para me matricular em cursos COM TUTORIA?"){
@@ -613,7 +711,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                 if ($i != 13) {
                   echo "$('#resposta" . $i ."').css('display', 'none');";
                 }
-                echo $none1;
+              
               } ?>
             }
             if($(".duvidas_curso").val() == "Como faço para me inscrever em cursos de pós graduação?"){
@@ -622,13 +720,13 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                 if ($i != 14) {
                   echo "$('#resposta" . $i ."').css('display', 'none');";
                 }
-                echo $none1;
+              
               } ?>
             }
           }
 
           function change_select_certificados(sel){
-            if($(".duvidas_certificado").val() == "Como faço para imprimir meu certificado?"){
+            if($(".duvidas_certificado").val() == "Como faço para imprimir meu certificado? Fora do curso"){
               $('#resposta1-1').slideToggle(300);
               <?php for ($i = 1; $i <= 6; $i++) {
                 if ($i != 1) {
@@ -660,22 +758,6 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                 }
               } ?>
             }
-            if($(".duvidas_certificado").val() == "Meu certificado não foi gerado"){
-              $('#resposta1-5').slideToggle(300);
-              <?php for ($i = 1; $i <= 6; $i++) {
-                if ($i != 5) {
-                  echo "$('#resposta1-" . $i ."').css('display', 'none');";
-                }
-              } ?>
-            }
-            if($(".duvidas_certificado").val() == "Meu certificado está com dados errados"){
-              $('#resposta1-6').slideToggle(300);
-              <?php for ($i = 1; $i <= 6; $i++) {
-                if ($i != 6) {
-                  echo "$('#resposta1-" . $i ."').css('display', 'none');";
-                }
-              } ?>
-            } 
           }
 
          function change_select_senha(sel){
@@ -714,7 +796,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
               }
             } ?>
           }
-          if($(".duvidas_cadastro").val() == "Não consigo alterar meu CPF"){
+          if($(".duvidas_cadastro").val() == "Como faço para cancelar meu cadastro?"){
             $('#resposta3-2').slideToggle(300);
             <?php for ($i = 1; $i <= 4; $i++) {
               if ($i != 2) {
@@ -722,18 +804,10 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
               }
             } ?>
           }
-          if($(".duvidas_cadastro").val() == "Como faço para cancelar meu cadastro?"){
+          if($(".duvidas_cadastro").val() == "Não consigo acessar o saberes, posso fazer um novo cadastro?"){
             $('#resposta3-3').slideToggle(300);
             <?php for ($i = 1; $i <= 4; $i++) {
               if ($i != 3) {
-                echo "$('#resposta3-" . $i ."').css('display', 'none');";
-              }
-            } ?>
-          }
-          if($(".duvidas_cadastro").val() == "Não consigo acessar o saberes, posso fazer um novo cadastro?"){
-            $('#resposta3-4').slideToggle(300);
-            <?php for ($i = 1; $i <= 4; $i++) {
-              if ($i != 4) {
                 echo "$('#resposta3-" . $i ."').css('display', 'none');";
               }
             } ?>
@@ -789,6 +863,72 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
               <?php for ($i = 1; $i <= 4; $i++) {
                 if ($i != 4) {
                   echo "$('#resposta5-" . $i ."').css('display', 'none');";
+                }
+              } ?>
+            }
+          }
+
+          function change_select_recl_certificado(){
+            if($(".recl_certificado").val() == "Meu certificado não foi gerado"){
+              $('#resposta6-1').slideToggle(300);
+            }
+          }
+
+          function change_select_recl_cadastro(){
+            if($(".recl_cadastro").val() == "Não consigo alterar meu CPF"){
+              $('#resposta7-1').slideToggle(300);
+              <?php for ($i = 1; $i <= 2; $i++) {
+                if ($i != 1) {
+                  echo "$('#resposta7-" . $i ."').css('display', 'none');";
+                }
+              } ?>
+            }
+             if($(".recl_cadastro").val() == "Erro no meu cadastro"){
+              $('#resposta7-2').slideToggle(300);
+              <?php for ($i = 1; $i <= 2; $i++) {
+                if ($i != 2) {
+                  echo "$('#resposta7-" . $i ."').css('display', 'none');";
+                }
+              } ?>
+            }
+          }
+
+          function change_select_recl_matricula(){
+            if($(".recl_matricula").val() == "Concluí o curso mas não consigo me matricular em outro"){
+              $('#resposta8-1').slideToggle(300);
+            }
+          }
+
+          function change_select_recl_curso(){
+            if($(".recl_curso").val() == "Não consigo acessar o Avalie o Curso e a Avaliação Final"){
+              $('#resposta9-1').slideToggle(300);
+              <?php for ($i = 1; $i <= 4; $i++) {
+                if ($i != 1) {
+                  echo "$('#resposta9-" . $i ."').css('display', 'none');";
+                }
+              } ?>
+            }
+             if($(".recl_curso").val() == "Erro no conteúdo do curso"){
+              $('#resposta9-2').slideToggle(300);
+              <?php for ($i = 1; $i <= 4; $i++) {
+                if ($i != 2) {
+                  echo "$('#resposta9-" . $i ."').css('display', 'none');";
+                }
+              } ?>
+            }
+            if($(".recl_curso").val() == "Erro nos exercícios de fixação"){
+              $('#resposta9-3').slideToggle(300);
+              <?php for ($i = 1; $i <= 4; $i++) {
+                if ($i != 3) {
+                  echo "$('#resposta9-" . $i ."').css('display', 'none');";
+                }
+              } ?>
+            }
+            if($(".recl_curso").val() == "Erro na avaliação final"){
+              $('#resposta9-4').slideToggle(300);
+              <?php for ($i = 1; $i <= 4; $i++) {
+                if ($i != 4) {
+                  echo "$('#resposta9-" . $i ."').css('display', 'none');";
                 }
               } ?>
             }
