@@ -58,7 +58,7 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
       <fieldset>
 
       <!-- Form Name -->
-      <h3 class=""><strong>Sistema de Atendimento ao aluno</strong></h3>
+      <h3 class=""><strong>Sistema de Atendimento ao Aluno</strong></h3>
       <br>
 
        <?php  
