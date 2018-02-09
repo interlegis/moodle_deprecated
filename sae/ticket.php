@@ -19,6 +19,7 @@ $config = array(
     'url'=>'http://10.1.2.242/osticket/upload/api/http.php/tickets.json',
     'key'=>'B154D35D63E7A4ADAE8BA8282C6490CD'  // API Key goes here
 );
+
 # NOTE: some people have reported having to use "http://your.domain.tld/api/http.php/tickets.json" instead.
 
 # Fill in the data for the new ticket, this will likely come from $_POST.
@@ -155,8 +156,10 @@ curl_close($ch);
 
 echo $code;
 
-if ($code != 201)
-    die('Unable to create ticket: '.$result);
+if ($code != 201){
+    header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error', true, 500);
+    echo 'Unable to create ticket: '.$result;
+}
 
 $ticket_id = (int) $result;
 

@@ -375,6 +375,11 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
                 <div class="alert alert-success">
                   <strong>Sucesso!</strong> Mensagem enviada para o sistema de atendimento.
                 </div>
+
+                <div class="alert alert-danger">
+                  <strong>Erro!</strong> Não foi possível enviar sua mensagem.
+                </div>
+
                 <!-- Button -->
                 <div class="form-group">
                   <label class=" control-label"></label>
@@ -418,6 +423,8 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
           
           // mensagem confirmando envio fica escondida ate que seja enviado o ticket
           $(".alert-success").hide();
+          $(".alert-danger").hide();
+
 
           function duvidas_null(){
             $(".duvidas_curso").css('display', 'none');
@@ -956,12 +963,19 @@ echo html_writer::start_tag('div', array('class'=>'heightcontainer'));
               {
               // alert("Ticket enviado com sucesso"); // show response from the php script.
                 $(".alert-success").fadeTo(1000, 0.9);
+              },
+              error: function(data)
+              {
+              // alert("Ticket enviado com sucesso"); // show response from the php script.
+                $(".alert-danger").fadeTo(1000, 0.9);
               }
             });
 
             e.preventDefault(); // avoid to execute the actual submit of the form.
             setTimeout(function() {
               $('.alert-success').fadeOut('slow');
+              $('.alert-danger').fadeOut('slow');
+
             }, 4000); // <-- time in milliseconds
           });
       </script>
