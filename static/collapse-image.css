@@ -2,7 +2,8 @@
 	display: none;
 	padding : 5px;
 	background: url(../images/bg_saiba_mais_9tr_curso.png) right top no-repeat, url(../images/bg_saiba_mais_9br_curso.png) right bottom no-repeat, url(../images/bg_saiba_mais_9bl_curso.png) left bottom no-repeat, url(../images/bg_saiba_mais_9tl_curso.png) left top no-repeat, url(../images/bg_saiba_mais_9r_curso.png) right repeat-y, url(../images/bg_saiba_mais_9l_curso.png) left repeat-y, url(../images/bg_saiba_mais_9meio_curso.png) repeat;
-	font-size: 18px;
+	font-size: 16px;
+	text-align: justify;
 	padding: 20px 14% 6% 13%;
 	margin: 40px auto;
 	position: relative;
