@@ -43,3 +43,5 @@ $string['pluginname_help'] = 'Repository on flickr.com';
 $string['pluginname'] = 'Flickr';
 $string['secret'] = 'Secret';
 $string['username'] = 'Flickr account email';
+$string['cpf'] = 'CPF';
+

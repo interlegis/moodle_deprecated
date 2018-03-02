@@ -129,6 +129,7 @@ $string['nocapabilitytouseparameter'] = 'The user does not have the required cap
 $string['nofunctions'] = 'This service has no functions.';
 $string['norequiredcapability'] = 'No required capability';
 $string['notoken'] = 'The token list is empty.';
+$string['onlydigits'] = 'Informe apenas dígitos';
 $string['onesystemcontrolling'] = 'Allow an external system to control Moodle';
 $string['onesystemcontrollingdescription'] = 'The following steps help you to set up the Moodle web services to allow an external system to interact with Moodle. This includes setting up a token (security key) authentication method.';
 $string['operation'] = 'Operation';

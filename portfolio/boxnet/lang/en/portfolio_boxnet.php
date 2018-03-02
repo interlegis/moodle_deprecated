@@ -48,4 +48,5 @@ $string['sharefolder'] = 'Share this new folder?';
 $string['targetfolder'] = 'Target folder';
 $string['tobecreated'] = 'To be created';
 $string['username'] = 'Your Box username (will not be stored)';
+$string['cpf'] = 'CPF';
 $string['warninghttps'] = 'Box requires your website to be using HTTPS in order for the portfolio to work.';

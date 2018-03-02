@@ -39,5 +39,6 @@ $string['pluginname'] = 'Box';
 $string['saved'] = 'Box data saved';
 $string['shareurl'] = 'Share URL';
 $string['username'] = 'Username for Box';
+$string['cpf'] = 'CPF';
 $string['warninghttps'] = 'Box requires your website to be using HTTPS in order for the repository to work.';
 

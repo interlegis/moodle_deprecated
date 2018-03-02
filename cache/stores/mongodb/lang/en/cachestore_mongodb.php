@@ -38,6 +38,7 @@ $string['testserver'] = 'Test server';
 $string['testserver_desc'] = 'The connection string for a server to use for testing. If a test server has been specified then MongoDB performance can be tested using the cache performance page in the administration block.
 As an example: mongodb://127.0.0.1:27017';
 $string['username'] = 'Username';
+$string['cpf'] = 'CPF';
 $string['username_help'] = 'The username to use when making a connection.';
 $string['usesafe'] = 'Use safe';
 $string['usesafe_help'] = 'If enabled the usesafe option will be used during insert, get, and remove operations. If you\'ve specified a replica set this will be forced on anyway.';

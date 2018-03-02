@@ -52,4 +52,5 @@ $string['secret'] = 'Secret';
 $string['sharealike'] = 'Yes, as long as others share alike';
 $string['tag'] = 'Tag';
 $string['username'] = 'Flickr account email';
+$string['cpf'] = 'CPF';
 $string['watermark'] = 'Add watermark to photos';
