@@ -65,6 +65,16 @@ function game_hangman_continue( $id, $game, $attempt, $hangman, $newletter, $act
         }
 
         $answer = game_upper( $rec->answertext, $game->language);
+        $answer = str_replace('Ó', 'O', $answer);
+        $answer = str_replace('Ê', 'E', $answer);
+        $answer = str_replace('Ç', 'C', $answer);
+        $answer = str_replace('Ã', 'A', $answer);
+        $answer = str_replace('Á', 'A', $answer);
+        $answer = str_replace('Ó', 'O', $answer);
+        $answer = str_replace('Â', 'A', $answer);
+        $answer = str_replace('Í', 'I', $answer);
+
+        echo("<script>console.log('PHPX: ".$answer."');</script>");
         if ($game->language == '') {
             $game->language = game_detectlanguage( $answer);
             $answer = game_upper( $rec->answertext, $game->language);
@@ -350,6 +360,8 @@ function hangman_showpage(&$done, &$correct, &$wrong, $max, &$wordline, &$wordli
 
     $word = $query->answertext;
 
+    echo("<script>console.log('PHP: ".$word."');</script>");
+
     $newletter  = optional_param('newletter', "", PARAM_TEXT);
     if ( $newletter == '_') {
         $newletter = ' ';
@@ -442,6 +454,7 @@ function hangman_showpage(&$done, &$correct, &$wrong, $max, &$wordline, &$wordli
     }
     $finishedword = ($done or $wrong >= $max);
     $finished = false;
+
 
     $updrec = new stdClass();
     $updrec->id = $hangman->id;
@@ -569,7 +582,6 @@ function game_hangman_show_nextword( $id, $game, $attempt, $hangman) {
         echo "<a href=\"{$CFG->wwwroot}/mod/game/attempt.php?$params";
     } else {
         game_hangman_onfinishgame( $game, $attempt, $hangman);
-
         if (game_can_start_new_attempt( $game)) {
             echo "<a href=\"{$CFG->wwwroot}/mod/game/attempt.php?id=$id\">".
                 get_string( 'nextgame', 'game').'</a> &nbsp; &nbsp; &nbsp; &nbsp; ';
@@ -581,4 +593,12 @@ function game_hangman_show_nextword( $id, $game, $attempt, $hangman) {
     }
 
     echo "<a href=\"{$CFG->wwwroot}/course/view.php?id=$cm->course\">".get_string( 'finish', 'game').'</a> ';
+}
+
+function debug_to_console( $data ) {
+    $output = $data;
+    if ( is_array( $output ) )
+        $output = implode( ',', $output);
+
+    echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
 }

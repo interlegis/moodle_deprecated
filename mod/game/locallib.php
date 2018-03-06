@@ -208,7 +208,6 @@ function game_question_shortanswer_glossary( $game, $allowspaces, $userepetition
     if ( $rec->attachment != '') {
         $rec->attachment = "glossary/{$game->glossaryid}/$rec->id/$rec->attachment";
     }
-
     return $rec;
 }
 
@@ -1926,7 +1925,7 @@ foreach ($anss as $answer) {
         </tr>
 <?php
 }
-?>        
+?>
     </table>
 </div>
 <?php

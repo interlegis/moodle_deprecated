@@ -56,7 +56,7 @@ function game_check_common_problems($context, $game) {
     }
 
     $s = '<ul><b>'.get_string( 'common_problems', 'game').'</b>';
-    foreach ($warnings as $line) {
+    foreach ($warnings as $line) {game_question_shortanswer_glossary
         $s .= '<li>'.$line.'</li>';
     }
 
@@ -280,12 +280,20 @@ function game_check_common_problems_shortanswer_hangman( $game, &$warnings, $a) 
     foreach ($a as $word) {
 
         $word = game_upper( str_replace( ' ', '', $word), $game->language);
+        $word = str_replace('Ó', 'O', $word);
+        $word = str_replace('Ê', 'E', $word);
+        $word = str_replace('Ç', 'C', $word);
+        $word = str_replace('Ã', 'A', $word);
+        $word = str_replace('Á', 'A', $word);
+        $word = str_replace('Ó', 'O', $word);
+        $word = str_replace('Â', 'A', $word);
+        $word = str_replace('Í', 'I', $word);
         if ($game->language == '') {
             $game->language = game_detectlanguage( $word);
             $word = game_upper( $word, $game->language);
+
         }
         $allletters = game_getallletters( $word, $game->language, $game->userlanguage);
-
         if ($allletters != '') {
             continue;
         }
@@ -295,6 +303,7 @@ function game_check_common_problems_shortanswer_hangman( $game, &$warnings, $a) 
 
     if (count( $ret) != 0) {
         $warnings[] = get_string( 'common_problems_shortanswer_hangman', 'game').': '.count($ret).' ('.implode( ', ', $ret).')';
+
     }
 }
 
@@ -312,4 +321,3 @@ function game_check_common_problems_crossword_cryptex($game, &$warnings) {
         $warnings[] = get_string( 'common_problems_crossword_param1', 'game').' (='.$game->param1.')';
     }
 }
-
