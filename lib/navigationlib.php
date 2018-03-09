@@ -2772,7 +2772,7 @@ class global_navigation extends navigation_node {
         }
 
         $saeurl = new moodle_url('/sae/view.php');
-        $node = $coursenode->add(get_string('sae', 'sae'), $saeurl, self::TYPE_CUSTOM, null, 'sae');
+        $node = $coursenode->add('Sistema de Atendimento ao Estudante', $saeurl, self::TYPE_CUSTOM, null, 'sae');
         $node->showinflatnavigation = true;
 
         if (isloggedin()) {

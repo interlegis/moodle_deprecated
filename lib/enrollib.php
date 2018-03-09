@@ -501,8 +501,11 @@ function enrol_add_course_navigation(navigation_node $coursenode, $course) {
                 if (!isset($plugins[$instance->enrol])) {
                     continue;
                 }
+
                 $plugin = $plugins[$instance->enrol];
-                if ($unenrollink = $plugin->get_unenrolself_link($instance)) {
+
+                //HABILITA DESINSCRIÇÃO DO CURSO
+                if ($unenrollink == $plugin->get_unenrolself_link($instance)) {
                     $shortname = format_string($course->shortname, true, array('context' => $coursecontext));
                     $coursenode->add(get_string('unenrolme', 'core_enrol', $shortname), $unenrollink, navigation_node::TYPE_SETTING, null, 'unenrolself', new pix_icon('i/user', ''));
                     break;

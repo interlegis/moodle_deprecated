@@ -48,6 +48,8 @@ $PAGE->navbar->add($title);
 echo $OUTPUT->header();
 echo $OUTPUT->heading($title);
 
+echo "<script>alert(" . $node .")</script>";
+
 if ($node) {
     echo $OUTPUT->render_from_template('core/settings_link_page', ['node' => $node]);
 }
