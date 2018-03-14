@@ -138,7 +138,7 @@
                     <input type="text" name="username" id="username"
                         class="form-control"
                         value="{{username}}"
-                        placeholder={{#quote}}{{^canloginbyemail}}CPF{{/canloginbyemail}}{{#canloginbyemail}}{{#str}}usernameemail{{/str}}{{/canloginbyemail}}{{/quote}}>
+                        placeholder={{#quote}}{{^canloginbyemail}}{{#str}}username{{/str}}{{/canloginbyemail}}{{#canloginbyemail}}{{#str}}usernameemail{{/str}}{{/canloginbyemail}}{{/quote}}>
                     <label for="password" class="sr-only">{{#str}} password {{/str}}</label>
                     <input type="password" name="password" id="password" value=""
                         class="form-control"
@@ -148,7 +148,7 @@
                     {{#rememberusername}}
                         <div class="rememberpass m-t-1">
                             <input type="checkbox" name="rememberusername" id="rememberusername" value="1" {{#username}}checked="checked"{{/username}} />
-                            <label for="rememberusername">rememberCPF</label>
+                            <label for="rememberusername">{{#str}} rememberusername, admin {{/str}}</label> 
                         </div>
                     {{/rememberusername}}
 

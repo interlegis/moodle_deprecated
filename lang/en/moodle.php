@@ -1167,8 +1167,8 @@ $string['missingsummary'] = 'Missing summary';
 $string['missingteacher'] = 'Must choose something';
 $string['missingurl'] = 'Missing URL';
 
-// $string['missingusername'] = 'Missing username';
-$string['missingusername'] = 'Missing CPF';
+$string['missingusername'] = 'Missing username';
+// $string['missingusername'] = 'Missing CPF';
 
 $string['moddoesnotsupporttype'] = 'Module {$a->modname} does not support uploads of type {$a->type}';
 $string['moodlelogo'] = 'Moodle logo';
