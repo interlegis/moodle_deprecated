@@ -1,17 +1,25 @@
-$( document ).ready(function() {
+$(document).ready(function(){
+	$(".div-collapse").click(function () {
+	    //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+	    $(".caixa-collapse").slideToggle(2, function () {
+	        //execute this after slideToggle is done
+	        //change text of header based on visibility of content div
 
-	var acc = document.getElementsByClassName("sanfona");
-	var i;
 
-	for (i = 0; i < acc.length; i++) {
-	    acc[i].addEventListener("click", function() {
-	        this.classList.toggle("active-sanfona");
-	        var painel = this.nextElementSibling;
-	        if (painel.style.display === "block") {
-	            painel.style.display = "none";
-	        } else {
-	            painel.style.display = "block";
-	        }
 	    });
-	}
+
+		if ($("#img_click").attr("src") == "../../images/bg_saiba_mais_header2_curso.png") {
+	    	$('#img_click').attr('src','../../images/bg_saiba_mais_fechado2.png');
+	    }
+	    else{
+	    	$('#img_click').attr('src','../../images/bg_saiba_mais_header2_curso.png');
+	    	$(".caixa-collapse").css("margin-top", "0");
+
+	    }
+
+	    $header = $(this);
+	    //getting the next element
+
+
+	});
 });
