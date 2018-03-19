@@ -56,7 +56,7 @@ function game_check_common_problems($context, $game) {
     }
 
     $s = '<ul><b>'.get_string( 'common_problems', 'game').'</b>';
-    foreach ($warnings as $line) {game_question_shortanswer_glossary
+    foreach ($warnings as $line) {
         $s .= '<li>'.$line.'</li>';
     }
 
