@@ -1404,9 +1404,9 @@ class core_course_renderer extends plugin_renderer_base {
         // Courses
         if ($chelper->get_show_courses() > core_course_renderer::COURSECAT_SHOW_COURSES_COUNT) {
             $courses = array();
-            if ($chelper->get_courses_display_option('nodisplay')) {
+            
                 $courses = $coursecat->get_courses($chelper->get_courses_display_options());
-            }
+            
             if ($viewmoreurl = $chelper->get_courses_display_option('viewmoreurl')) {
                 // the option for 'View more' link was specified, display more link (if it is link to category view page, add category id)
                 if ($viewmoreurl->compare(new moodle_url('/course/index.php'), URL_MATCH_BASE)) {
