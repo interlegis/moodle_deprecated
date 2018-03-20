@@ -1404,7 +1404,7 @@ class core_course_renderer extends plugin_renderer_base {
         // Courses
         if ($chelper->get_show_courses() > core_course_renderer::COURSECAT_SHOW_COURSES_COUNT) {
             $courses = array();
-            if (!$chelper->get_courses_display_option('nodisplay')) {
+            if ($chelper->get_courses_display_option('nodisplay')) {
                 $courses = $coursecat->get_courses($chelper->get_courses_display_options());
             }
             if ($viewmoreurl = $chelper->get_courses_display_option('viewmoreurl')) {
@@ -1435,7 +1435,7 @@ class core_course_renderer extends plugin_renderer_base {
      * @param int $depth depth of this category in the current tree
      * @return string
      */
-    protected function coursecat_category($key, coursecat_helper $chelper, $coursecat, $depth) {        // open category tag
+     protected function coursecat_category($key, coursecat_helper $chelper, $coursecat, $depth) {        // open category tag
         $classes = array('category');
         if (empty($coursecat->visible)) {
             $classes[] = 'dimmed_category';
