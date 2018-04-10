@@ -11,6 +11,10 @@
     transition: 0.4s;
 }
 
+.sanfona_div p{
+    padding-top: 10px;
+}
+
 .sanfona:after {
     content: '\02795'; /* Unicode character for "plus" sign (+) */
     font-size: 13px;

@@ -143,7 +143,7 @@ else if ($mform->no_submit_button_pressed()) {
                         " .$arr[0]."\n\t</div>\n";
         }
 
-        $content2 = '<div>'.$in2."\n".'</div>' . "\n";
+        $content2 = '<div class="sanfona_div">'.$in2."\n".'</div>' . "\n";
 
 
 
