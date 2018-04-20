@@ -154,4 +154,3 @@ class cohort_existing_selector extends user_selector_base {
         return $options;
     }
 }
-
