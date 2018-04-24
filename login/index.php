@@ -313,7 +313,7 @@ if (!isset($frm) or !is_object($frm)) {
 if (empty($frm->username) && $authsequence[0] != 'shibboleth') {  // See bug 5184
     if (!empty($_GET["username"])) {
         // we do not want data from _POST here
-        $frm->username = clean_param($_GET["username"], PARAM_RAW); // we do not want data from _POST here
+        $frm->username = clean_param("CPF", PARAM_RAW); // we do not want data from _POST here
     } else {
         $frm->username = get_moodle_cookie();
     }

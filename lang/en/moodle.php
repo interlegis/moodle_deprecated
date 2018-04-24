@@ -1167,8 +1167,8 @@ $string['missingsummary'] = 'Missing summary';
 $string['missingteacher'] = 'Must choose something';
 $string['missingurl'] = 'Missing URL';
 
-$string['missingusername'] = 'Missing username';
-// $string['missingusername'] = 'Missing CPF';
+// $string['missingusername'] = 'Missing username'; 
+$string['missingusername'] = 'Missing CPF'; 
 
 $string['moddoesnotsupporttype'] = 'Module {$a->modname} does not support uploads of type {$a->type}';
 $string['moodlelogo'] = 'Moodle logo';
@@ -1384,7 +1384,7 @@ $string['numyears'] = '{$a} years';
 $string['ok'] = 'OK';
 $string['oldpassword'] = 'Current password';
 $string['olduserdirectory'] = 'This is the OLD users directory, and is no longer needed. You may safely delete it. The files it contains have been copied to the NEW user directory.';
-$string['onlydigits'] = 'Informe apenas dígitos';
+$string['onlydigits'] = 'Informe apenas dígitos'; 
 $string['optional'] = 'optional';
 $string['options'] = 'options';
 $string['order'] = 'Order';
