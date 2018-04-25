@@ -2664,6 +2664,34 @@ function require_login($courseorid = null, $autologinguest = true, $cm = null, $
         }
     }
 
+
+    // Verifica se o usuário tem que trocar o CPF.
+    if (get_user_preferences('auth_forcecpfchange') && !\core\session\manager::is_loggedinas()) {
+        $userauth = get_auth_plugin($USER->auth);
+        if ($userauth->can_change_password() and !$preventredirect) {
+            if ($setwantsurltome) {
+                $SESSION->wantsurl = qualified_me();
+            }
+            if ($changeurl = $userauth->change_password_url()) {
+                // Use plugin custom url.
+                redirect($changeurl);
+            } else {
+                // Use moodle internal method.
+                if (empty($CFG->loginhttps)) {
+                    redirect($CFG->wwwroot .'/login/change_cpf.php');
+                } else {
+                    $wwwroot = str_replace('http:', 'https:', $CFG->wwwroot);
+                    redirect($wwwroot .'/login/change_cpf.php');
+                }
+            }
+        } else if ($userauth->can_change_password()) {
+            throw new moodle_exception('forcepasswordchangenotice');
+        } else {
+            throw new moodle_exception('nopasswordchangeforced', 'auth');
+        }
+    }
+
+
     // Check whether the user should be changing password (but only if it is REALLY them).
     if (get_user_preferences('auth_forcepasswordchange') && !\core\session\manager::is_loggedinas()) {
         $userauth = get_auth_plugin($USER->auth);
@@ -2677,10 +2705,10 @@ function require_login($courseorid = null, $autologinguest = true, $cm = null, $
             } else {
                 // Use moodle internal method.
                 if (empty($CFG->loginhttps)) {
-                    redirect($CFG->wwwroot .'/login/change_password.php');
+                    redirect($CFG->wwwroot .'/login/change_paaaaassword.php');
                 } else {
                     $wwwroot = str_replace('http:', 'https:', $CFG->wwwroot);
-                    redirect($wwwroot .'/login/change_password.php');
+                    redirect($wwwroot .'/login/changdddddde_password.php');
                 }
             }
         } else if ($userauth->can_change_password()) {
@@ -4470,6 +4498,13 @@ function complete_user_login($user) {
     // Select password change url.
     $userauth = get_auth_plugin($USER->auth);
 
+    // Verifica se o usuário tem que trocar o CPF.
+    if (get_user_preferences('auth_forcecpfchange', false)) {
+        require_once($CFG->dirroot . '/login/lib.php');
+        $SESSION->wantsurl = core_login_get_return_url();
+        redirect($CFG->httpswwwroot.'/login/change_cpf.php');
+    }
+
     // Check whether the user should be changing password.
     if (get_user_preferences('auth_forcepasswordchange', false)) {
         if ($userauth->can_change_password()) {
@@ -4483,7 +4518,7 @@ function complete_user_login($user) {
         } else {
             print_error('nopasswordchangeforced', 'auth');
         }
-    }
+    }    
     return $USER;
 }
 

@@ -1025,6 +1025,34 @@ function user_is_previously_used_password($userid, $password) {
     return $reused;
 }
 
+function user_cpf_is_available($userid, $cpf) {
+    global $CFG, $DB;
+
+    if (empty($CFG->passwordreuselimit) or $CFG->passwordreuselimit < 0) {
+        return false;
+    }
+
+    $reused = false;
+
+    $i = 0;
+    $records = $DB->get_records('user_password_history', array('userid' => $userid), 'timecreated DESC, id DESC');
+    foreach ($records as $record) {
+        $i++;
+        if ($i > $CFG->passwordreuselimit) {
+            $DB->delete_records('user_password_history', array('id' => $record->id));
+            continue;
+        }
+        // NOTE: this is slow but we cannot compare the hashes directly any more.
+        if (password_verify($password, $record->hash)) {
+            $reused = true;
+        }
+    }
+
+    return $reused;
+}
+
+
+
 /**
  * Remove a user device from the Moodle database (for PUSH notifications usually).
  *
