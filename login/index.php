@@ -220,10 +220,10 @@ if ($frm and isset($frm->username)) {                             // Login WITH 
             if ($userauth->can_change_password()) {
                 $passwordchangeurl = $userauth->change_password_url();
                 if (!$passwordchangeurl) {
-                    $passwordchangeurl = $CFG->httpswwwroot.'/login/change_password.php';
+                    $passwordchangeurl = $CFG->httpswwwroot.'/login/aaa.php';
                 }
             } else {
-                $passwordchangeurl = $CFG->httpswwwroot.'/login/change_password.php';
+                $passwordchangeurl = $CFG->httpswwwroot.'/login/bbb.php';
             }
             $days2expire = $userauth->password_expire($USER->username);
             $PAGE->set_title("$site->fullname: $loginsite");

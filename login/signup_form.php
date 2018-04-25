@@ -55,9 +55,9 @@ class login_signup_form extends moodleform implements renderable, templatable {
             format_string('CPF'), 
             'maxlength="11" size="11" id="profilefield_cpf" pattern="[0-9]{11}" data-tip="Informe o CPF (apenas números)" title="Apenas números"' 
         ); 
-        $mform->setType('number', PARAM_INT); 
+        $mform->setType('username', PARAM_TEXT); 
         // $mform->addRule('username', get_string('missingusername'), 'required', null, 'client'); 
-        $mform->addRule('username', get_string('missingcpf'), 'numeric', null, 'client'); 
+        $mform->addRule('username', get_string('onlydigits', 'profilefield_cpf'), 'numeric', null, 'client'); 
 
         if (!empty($CFG->passwordpolicy)){
             $mform->addElement('static', 'passwordpolicyinfo', '', print_password_policy());
