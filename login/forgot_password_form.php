@@ -43,10 +43,16 @@ class login_forgot_password_form extends moodleform {
         $mform    = $this->_form;
         $mform->setDisableShortforms(true);
 
-        $mform->addElement('header', 'searchbyusername', get_string('searchbyusername'), '');
+        $mform->addElement('header', 'searchbyusername', 'Buscar por identificação de CPF', '');
 
-        $mform->addElement('text', 'username', get_string('username'));
-        $mform->setType('username', PARAM_RAW);
+        // $mform->addElement('text', 'CPF', 'CPF');
+        $mform->addElement( 
+            'text', 
+            'username', 
+            format_string('CPF'), 
+            'maxlength="11" size="20" id="profilefield_cpf" pattern="[0-9]{11}" data-tip="Informe o CPF (apenas números)" title="Apenas números"' 
+        ); 
+        $mform->setType('CPF', PARAM_RAW);
 
         $submitlabel = get_string('search');
         $mform->addElement('submit', 'submitbuttonusername', $submitlabel);
@@ -108,3 +114,7 @@ class login_forgot_password_form extends moodleform {
     }
 
 }
+
+?>
+
+

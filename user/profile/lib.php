@@ -735,3 +735,9 @@ function profile_has_required_custom_fields_set($userid) {
 
     return true;
 }
+
+?>
+
+<script type="text/javascript">
+    document.getElementById('profilefield_cpf').type = 'password';
+</script>

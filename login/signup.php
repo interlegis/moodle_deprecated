@@ -99,3 +99,16 @@ echo $OUTPUT->header();
 
 echo $OUTPUT->render($mform_signup);
 echo $OUTPUT->footer();
+
+?>
+
+<script type="text/javascript">
+    document.getElementById('profilefield_cpf').type = 'number';
+    document.getElementById('profilefield_cpf').max = 99999999998;
+
+    document.getElementById('profilefield_cpf').oninput = function () {
+    if (this.value.length > 11) {
+        this.value = this.value.slice(0,11); 
+    }
+}
+</script>

@@ -911,3 +911,14 @@ Caso tenha dúvidas em relação ao acesso e à utilização do material on-line
 {{#js}}
 require(['theme_boost/loader']);
 {{/js}}
+
+<script type="text/javascript">
+    document.getElementById('login_username').type = 'number';
+    document.getElementById('login_username').max = 99999999998;
+
+    document.getElementById('login_username').oninput = function () {
+    if (this.value.length > 11) {
+        this.value = this.value.slice(0,11); 
+    }
+}
+</script>
