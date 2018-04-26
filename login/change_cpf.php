@@ -16,7 +16,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Change password page.
+ * Change CPF page.
  *
  * @package    core
  * @subpackage auth
@@ -94,9 +94,6 @@ if (is_mnet_remote_user($USER)) {
 // load the appropriate auth plugin
 $userauth = get_auth_plugin($USER->auth);
 
-if (!$userauth->can_change_password()) {
-    print_error('nopasswordchange', 'auth');
-}
 
 if ($changeurl = $userauth->change_password_url()) {
     // this internal scrip not used
@@ -113,16 +110,8 @@ if ($mform->is_cancelled()) {
     redirect($CFG->wwwroot.'/user/preferences.php?userid='.$USER->id.'&amp;course='.$course->id);
 } else if ($data = $mform->get_data()) {
 
-    if (!$userauth->user_update_password($USER, $data->newpassword1)) {
+    if (!$userauth->user_update_cpf($USER, $data->newcpf)) {
         print_error('errorpasswordupdate', 'auth');
-    }
-
-    if (!empty($CFG->passwordchangelogout)) {
-        \core\session\manager::kill_user_sessions($USER->id, session_id());
-    }
-
-    if (!empty($data->signoutofotherservices)) {
-        webservice::delete_user_ws_tokens($USER->id);
     }
 
     // Reset login lockout - we want to prevent any accidental confusion here.
@@ -131,7 +120,7 @@ if ($mform->is_cancelled()) {
     // register success changing password
     unset_user_preference('auth_forcecpfchange', $USER);
 
-    $strpasswordchanged = get_string('passwordchanged');
+    $strpasswordchanged = 'Seu CPF foi modificado com sucesso.';
 
     $fullname = fullname($USER, true);
 
@@ -156,8 +145,8 @@ $PAGE->set_title($strchangepassword);
 $PAGE->set_heading($fullname);
 echo $OUTPUT->header();
 
-if (get_user_preferences('auth_forcepasswordchange')) {
-    echo $OUTPUT->notification(get_string('forcepasswordchangenotice'));
+if (get_user_preferences('auth_forcecpfchange')) {
+    echo $OUTPUT->notification('Você deve trocar seu CPF antes de continuar.');
 }
 $mform->display();
 echo $OUTPUT->footer();

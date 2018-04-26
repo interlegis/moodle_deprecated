@@ -16,7 +16,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Change password form definition.
+ * Form de inserção de CPF
  *
  * @package    core
  * @subpackage auth
@@ -56,12 +56,12 @@ class login_change_cpf_form extends moodleform {
         //$mform->addRule('newpassword2', get_string('required'), 'required', null, 'client');
         //$mform->setType('newpassword2', PARAM_RAW);
 
-        if (empty($CFG->passwordchangetokendeletion) and !empty(webservice::get_active_tokens($USER->id))) {
+       /* if (empty($CFG->passwordchangetokendeletion) and !empty(webservice::get_active_tokens($USER->id))) {
             $mform->addElement('advcheckbox', 'signoutofotherservices', get_string('signoutofotherservices'));
             $mform->addHelpButton('signoutofotherservices', 'signoutofotherservices');
             $mform->setDefault('signoutofotherservices', 1);
         }
-
+*/
         // hidden optional params
         $mform->addElement('hidden', 'id', 0);
         $mform->setType('id', PARAM_INT);
@@ -77,6 +77,7 @@ class login_change_cpf_form extends moodleform {
         $errors = parent::validation($data, $files);
 
         // ignore submitted username
+	/*
         if (!$user = authenticate_user_login($USER->username, $data['password'], true)) {
             $errors['password'] = get_string('invalidlogin');
             return $errors;
@@ -93,19 +94,22 @@ class login_change_cpf_form extends moodleform {
             $errors['newpassword2'] = get_string('mustchangepassword');
             return $errors;
         }
+	*/
 
-        if (user_is_previously_used_password($USER->id, $data['newpassword1'])) {
-            $errors['newpassword1'] = get_string('errorpasswordreused', 'core_auth');
-            $errors['newpassword2'] = get_string('errorpasswordreused', 'core_auth');
+	if (!user_cpf_validation($USER->id, $data['newcpf'])) {
+		$errors['newcpf'] = 'CPF Inválido.';
+	}
+        if (!user_cpf_is_available($USER->id, $data['newcpf'])) {
+            $errors['newcpf'] = 'Esse CPF já está registrado na plataforma. Por favor entre em contato com ilbead@senado.leg.br para regularizar a sua conta.';
         }
-
+	/*
         $errmsg = '';//prevents eclipse warnings
         if (!check_password_policy($data['newpassword1'], $errmsg)) {
             $errors['newpassword1'] = $errmsg;
             $errors['newpassword2'] = $errmsg;
             return $errors;
         }
-
+	*/
         return $errors;
     }
 }

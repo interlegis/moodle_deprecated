@@ -4697,6 +4697,24 @@ function update_internal_user_password($user, $password, $fasthash = false) {
  * @param int $mnethostid
  * @return mixed False, or A {@link $USER} object.
  */
+
+
+function update_internal_user_cpf($user, $cpf) {
+    global $CFG, $DB;
+    //    $DB->set_field('user_info_data', 'data',  $cpf, array('userid' => $user->id, 'fieldid' => 8));
+
+	$cpfdata = new stdClass();
+		$cpfdata->userid = $user->id;
+		$cpfdata->fieldid = 8;
+		$cpfdata->data = $cpf;
+      	$DB->insert_record('user_info_data', $cpfdata);   
+    return true;
+}
+
+
+
+
+
 function get_complete_user_data($field, $value, $mnethostid = null) {
     global $CFG, $DB;
 

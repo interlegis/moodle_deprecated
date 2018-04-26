@@ -271,10 +271,10 @@ class auth_plugin_db extends auth_plugin_base {
         global $DB;
 
         if ($this->is_internal()) {
-            $puser = $DB->get_record('user', array('id'=>$user->id), '*', MUST_EXIST);
+            $puser = $DB->get_record('user_info_data', array('id'=>$user->id), '*', MUST_EXIST);
 
-            if (update_internal_user_password($puser, $newcpf)) {
-                $user->cpf = $puser->cpf;
+            if (update_internal_user_cpf($puser, $newcpf)) {
+                $user->data = $puser->data;
                 return true;
             } else {
                 return false;

@@ -1028,30 +1028,24 @@ function user_is_previously_used_password($userid, $password) {
 function user_cpf_is_available($userid, $cpf) {
     global $CFG, $DB;
 
-    if (empty($CFG->passwordreuselimit) or $CFG->passwordreuselimit < 0) {
-        return false;
-    }
+    $fields = $DB->get_field_sql("SELECT COUNT(*)
+		FROM  {user} u
+  			join {user_info_data} d on u.id = d.userid
+	 			and u.deleted = 0
+	 			and d.fieldid = 8
+	 			and d.data = ?", array($cpf));
 
-    $reused = false;
-
-    $i = 0;
-    $records = $DB->get_records('user_password_history', array('userid' => $userid), 'timecreated DESC, id DESC');
-    foreach ($records as $record) {
-        $i++;
-        if ($i > $CFG->passwordreuselimit) {
-            $DB->delete_records('user_password_history', array('id' => $record->id));
-            continue;
-        }
-        // NOTE: this is slow but we cannot compare the hashes directly any more.
-        if (password_verify($password, $record->hash)) {
-            $reused = true;
-        }
-    }
-
-    return $reused;
+	if($fields == 0) return true;
+	else return false;
 }
 
+function user_cpf_validation($userid, $cpf) {
+	global $CFG, $DB;
 
+	$fields = $DB->get_field_sql("SELECT (1) WHERE funvalidacpf(?) is true", array($cpf));
+
+	return $fields;
+}
 
 /**
  * Remove a user device from the Moodle database (for PUSH notifications usually).
