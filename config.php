@@ -6,10 +6,10 @@ $CFG = new stdClass();
 
 $CFG->dbtype    = 'pgsql';
 $CFG->dblibrary = 'native';
-$CFG->dbhost    = '10.1.15.239';
+$CFG->dbhost    = '10.1.10.129';
 $CFG->dbname    = 'moodle';
 $CFG->dbuser    = 'saberes';
-$CFG->dbpass    = 'jpaPok7JDAr26nZRbgfd';
+$CFG->dbpass    = 'saberes';
 $CFG->prefix    = 'mdl_';
 $CFG->dboptions = array (
   'dbpersist' => 0,
