@@ -1047,6 +1047,21 @@ function user_cpf_validation($userid, $cpf) {
 	return $fields;
 }
 
+function user_can_change_cpf($userid) {
+    global $CFG, $DB;
+
+    $fields = $DB->get_field_sql("SELECT COUNT(*)
+        FROM  {user} u
+            join {user_info_data} d on u.id = d.userid
+                and u.deleted = 0
+                and d.fieldid = 8
+                and d.userid = ?
+                and d.data is not null", array($userid));
+
+    if($fields == 0) return true;
+    else return false;
+}
+
 /**
  * Remove a user device from the Moodle database (for PUSH notifications usually).
  *

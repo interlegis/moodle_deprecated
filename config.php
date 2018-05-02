@@ -6,18 +6,18 @@ $CFG = new stdClass();
 
 $CFG->dbtype    = 'pgsql';
 $CFG->dblibrary = 'native';
-$CFG->dbhost    = '10.1.15.239';
+$CFG->dbhost    = '10.1.10.129';
 $CFG->dbname    = 'moodle';
 $CFG->dbuser    = 'saberes';
-$CFG->dbpass    = 'jpaPok7JDAr26nZRbgfd';
+$CFG->dbpass    = 'saberes';
 $CFG->prefix    = 'mdl_';
 $CFG->dboptions = array (
   'dbpersist' => 0,
   'dbsocket' => '',
 );
 
-$CFG->wwwroot   = 'http://10.1.2.242/moodle';
-$CFG->dataroot  = '/var/www/moodledata';
+$CFG->wwwroot   = 'http://127.0.0.1/moodle';
+$CFG->dataroot  = '/var/www/html/moodledata';
 //'/var/aplicacoes/saberes/moodledata';
 $CFG->admin     = 'admin';
 

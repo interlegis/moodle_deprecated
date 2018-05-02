@@ -2668,7 +2668,7 @@ function require_login($courseorid = null, $autologinguest = true, $cm = null, $
     // Verifica se o usuário tem que trocar o CPF.
     if (get_user_preferences('auth_forcecpfchange') && !\core\session\manager::is_loggedinas()) {
         $userauth = get_auth_plugin($USER->auth);
-        if ($userauth->can_change_password() and !$preventredirect) {
+        if (!$preventredirect) {
             if ($setwantsurltome) {
                 $SESSION->wantsurl = qualified_me();
             }
@@ -2684,10 +2684,6 @@ function require_login($courseorid = null, $autologinguest = true, $cm = null, $
                     redirect($wwwroot .'/login/change_cpf.php');
                 }
             }
-        } else if ($userauth->can_change_password()) {
-            throw new moodle_exception('forcepasswordchangenotice');
-        } else {
-            throw new moodle_exception('nopasswordchangeforced', 'auth');
         }
     }
 
@@ -2705,10 +2701,10 @@ function require_login($courseorid = null, $autologinguest = true, $cm = null, $
             } else {
                 // Use moodle internal method.
                 if (empty($CFG->loginhttps)) {
-                    redirect($CFG->wwwroot .'/login/change_paaaaassword.php');
+                    redirect($CFG->wwwroot .'/login/change_password.php');
                 } else {
                     $wwwroot = str_replace('http:', 'https:', $CFG->wwwroot);
-                    redirect($wwwroot .'/login/changdddddde_password.php');
+                    redirect($wwwroot .'/login/change_password.php');
                 }
             }
         } else if ($userauth->can_change_password()) {
@@ -4707,7 +4703,13 @@ function update_internal_user_cpf($user, $cpf) {
 		$cpfdata->userid = $user->id;
 		$cpfdata->fieldid = 8;
 		$cpfdata->data = $cpf;
-      	$DB->insert_record('user_info_data', $cpfdata);   
+      	$DB->insert_record('user_info_data', $cpfdata);
+
+    $cpfuser = new stdClass();
+    	$cpfuser->id = $user->id;
+    	$cpfuser->username = $cpf;
+    	$DB->update_record('user', $cpfuser);
+
     return true;
 }
 
