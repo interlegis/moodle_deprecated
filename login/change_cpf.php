@@ -84,14 +84,6 @@ if (\core\session\manager::is_loggedinas()) {
     print_error('cannotcallscript');
 }
 
-if (is_mnet_remote_user($USER)) {
-    $message = get_string('usercannotchangepassword', 'mnet');
-    if ($idprovider = $DB->get_record('mnet_host', array('id'=>$USER->mnethostid))) {
-        $message .= get_string('userchangepasswordlink', 'mnet', $idprovider);
-    }
-    print_error('userchangepasswordlink', 'mnet', '', $message);
-}
-
 // load the appropriate auth plugin
 $userauth = get_auth_plugin($USER->auth);
 
@@ -115,13 +107,13 @@ if ($mform->is_cancelled()) {
         print_error('errorpasswordupdate', 'auth');
     }
 
-    // Reset login lockout - we want to prevent any accidental confusion here.
+    // Reset login lockout - we want to prevent any accidental confusion here. 
     login_unlock_account($USER);
 
     // register success changing password
     unset_user_preference('auth_forcecpfchange', $USER);
 
-    $strpasswordchanged = 'Seu CPF foi modificado com sucesso.';
+    $strpasswordchanged = 'Seu CPF foi cadastrado com sucesso!';
 
     $fullname = fullname($USER, true);
 
@@ -138,7 +130,7 @@ if ($mform->is_cancelled()) {
 // make sure we really are on the https page when https login required
 $PAGE->verify_https_required();
 
-$strchangepassword = 'Mudar o CPF';
+$strchangepassword = 'Informe seu CPF';
 
 $fullname = fullname($USER, true);
 
@@ -147,7 +139,7 @@ $PAGE->set_heading($fullname);
 echo $OUTPUT->header();
 
 if (get_user_preferences('auth_forcecpfchange')) {
-    echo $OUTPUT->notification('Você deve trocar seu CPF antes de continuar.');
+    echo $OUTPUT->notification('Você deve cadastrar seu CPF antes de continuar.');
 }
 $mform->display();
-echo $OUTPUT->footer();
+echo $OUTPUT->footer(); 

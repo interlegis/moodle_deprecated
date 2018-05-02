@@ -36,7 +36,7 @@ class login_change_cpf_form extends moodleform {
         $mform = $this->_form;
         $mform->setDisableShortforms(true);
 
-        $mform->addElement('header', 'changecpf', 'Mudar o CPF', '');
+        $mform->addElement('header', 'changecpf', 'Informe o CPF', '');
 
         // visible elements
         $mform->addElement('static', 'username', get_string('username'), $USER->username);
@@ -70,10 +70,12 @@ class login_change_cpf_form extends moodleform {
 	
 
 	if (!user_cpf_validation($USER->id, $data['newcpf'])) {
-		$errors['newcpf'] = 'CPF Inválido.';
+		$errors['newcpf'] = 'Informe um número de CPF válido!';
 	}
         if (!user_cpf_is_available($USER->id, $data['newcpf'])) {
-            $errors['newcpf'] = 'Esse CPF já está registrado na plataforma. Por favor entre em contato com ilbead@senado.leg.br para regularizar a sua conta.';
+            $errors['newcpf'] = 'Já há um usuário cadastrado no Saberes com este CPF!' . 
+		'<br>Por favor, entre em contato com ilbead@senado.leg.br para regularizar ' . 
+		'seu cadastro e recuperar acesso ao Saberes.';
         }
         return $errors;
     }
