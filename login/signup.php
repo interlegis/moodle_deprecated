@@ -100,15 +100,83 @@ echo $OUTPUT->header();
 echo $OUTPUT->render($mform_signup);
 echo $OUTPUT->footer();
 
-?>
+// require_once($CFG->dirroot.'/user/profile/field/cpf/field.class.php');
+// $cpf = $formfield->display_data();
 
-<script type="text/javascript">
-    document.getElementById('profilefield_cpf').type = 'number';
-    document.getElementById('profilefield_cpf').max = 99999999998;
+$cpf = "<script>document.getElementById('profilefield_cpf').value</script>";
 
-    document.getElementById('profilefield_cpf').oninput = function () {
-    if (this.value.length > 11) {
-        this.value = this.value.slice(0,11); 
+echo "<h1>" . $cpf . "</h1>";
+
+function validatecpf($cpf = null)  {   // Verifica se um número foi informado
+    if(empty($cpf)) {
+        return false;
+    }
+ 
+    // Elimina possivel mascara
+    $cpf = str_replace('[^0-9]', '', $cpf);
+    $cpf = str_pad($cpf, 11, '0', STR_PAD_LEFT);
+     
+    // Verifica se o numero de digitos informados é igual a 11 
+    if (strlen($cpf) != 11) {
+        return false;
+    }
+    // Verifica se nenhuma das sequências invalidas abaixo 
+    // foi digitada. Caso afirmativo, retorna falso
+    else if ($cpf == '00000000000' || 
+        $cpf == '11111111111' || 
+        $cpf == '22222222222' || 
+        $cpf == '33333333333' || 
+        $cpf == '44444444444' || 
+        $cpf == '55555555555' || 
+        $cpf == '66666666666' || 
+        $cpf == '77777777777' || 
+        $cpf == '88888888888' || 
+        $cpf == '99999999999') {
+        return false;
+     // Calcula os digitos verificadores para verificar se o
+     // CPF é válido
+     } else {   
+         
+        for ($t = 9; $t < 11; $t++) {
+             
+            for ($d = 0, $c = 0; $c < $t; $c++) {
+                $d += $cpf{$c} * (($t + 1) - $c);
+            }
+            $d = ((10 * $d) % 11) % 10;
+            if ($cpf{$c} != $d) {
+                return false;
+            }
+        }
+ 
+        return true;
     }
 }
+
+$valido = validatecpf($cpf);
+
+echo "<script>console.log(" . validatecpf($cpf) . ");</script>";
+
+if ($valido == false) {
+    echo "<script>document.getElementById('id_error_username').innerHTML('CPF inválido');</script>";
+}
+
+?>
+<script type="text/javascript">
+    
+    var cpf = document.getElementById("profilefield_cpf");
+    cpf.onkeypress = cpf.onpaste = checkInput;
+
+    function checkInput(e) {
+        var e = e || event;
+        var char = e.type == 'keypress' 
+            ? String.fromCharCode(e.keyCode || e.which) 
+            : (e.clipboardData || window.clipboardData).getData('Text');
+        if (/[^\d]/gi.test(char)) {
+            return false;
+        }
+    }
+
+
 </script>
+
+<!--  -->

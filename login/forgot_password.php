@@ -95,12 +95,18 @@ if (empty($token)) {
 ?>
 
 <script type="text/javascript">
-    document.getElementById('profilefield_cpf').type = 'number';
-    document.getElementById('profilefield_cpf').max = 99999999998;
+    
+    var text = document.getElementById("profilefield_cpf");
+    text.onkeypress = text.onpaste = checkInput;
 
-    document.getElementById('profilefield_cpf').oninput = function () {
-    if (this.value.length > 11) {
-        this.value = this.value.slice(0,11); 
+    function checkInput(e) {
+        var e = e || event;
+        var char = e.type == 'keypress' 
+            ? String.fromCharCode(e.keyCode || e.which) 
+            : (e.clipboardData || window.clipboardData).getData('Text');
+        if (/[^\d]/gi.test(char)) {
+            return false;
+        }
     }
-}
+
 </script>

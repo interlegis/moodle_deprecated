@@ -913,12 +913,20 @@ require(['theme_boost/loader']);
 {{/js}}
 
 <script type="text/javascript">
-    document.getElementById('login_username').type = 'number';
-    document.getElementById('login_username').max = 99999999998;
+    
+    var text = document.getElementById("profilefield_cpf");
+    text.onkeypress = text.onpaste = checkInput;
 
-    document.getElementById('login_username').oninput = function () {
-    if (this.value.length > 11) {
-        this.value = this.value.slice(0,11); 
+    function checkInput(e) {
+        var e = e || event;
+        var char = e.type == 'keypress' 
+            ? String.fromCharCode(e.keyCode || e.which) 
+            : (e.clipboardData || window.clipboardData).getData('Text');
+        if (/[^\d]/gi.test(char)) {
+            return false;
+        }
     }
-}
+
 </script>
+
+
