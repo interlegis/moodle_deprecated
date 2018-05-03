@@ -696,6 +696,7 @@
                 </ol>
             </div>
         </div>
+
         <!-- logotipo e texto -->
         <div class="col-xs-12 col-md-4 text-center">
             <div style="background-color: #F7F7F7; border: 1px solid #E6E6E6; border-bottom: 0; padding: 11% 0 12% 0;">
@@ -760,95 +761,98 @@
     {{/username}}
     <!-- se está logado, exibe nome do usuário, login, boas vindas e opção para sair -->
     {{#username}}
-
-	{{#cpf1}}
-		{{! Inserir modal do aviso caso o CPF seja único e válido e o login foi migrado }}
-		<script>
-			alert("Caso 1!");
-		</script>
-	{{/cpf1}}
-
 	{{#cpf2}}
 		{{! Inserir modal do aviso caso o CPF seja duplicado e válido e o login foi migrado }}
-		<script>	
-			alert("Caso 2!");	
+		<script>
+			$.ajax({url: "{{{ moodle_url }}}/login/logout.php?sesskey={{{ sessKey }}}", success: function(result){
+				alert("O usuário {{username}} foi desabilitado, favor efetuar login com seu CPF!");	
+				window.location.replace("{{{ moodle_url }}}");
+			}});			
 		</script>
 	{{/cpf2}}
 
 	{{#cpf3}}		
 		{{! Inserir modal do aviso caso o CPF seja duplicado e inválido, o usuário foi cancelado }}	
 		<script>
-			alert("Caso 3!");
+			$.ajax({url: "{{{ moodle_url }}}/login/logout.php?sesskey={{{ sessKey }}}", success: function(result){
+				alert("O usuário {{username}} foi inativado, favor entrar em contato com ilbead@senado.leg.br para maiores informações.");	
+				window.location.replace("{{{ moodle_url }}}");
+			}});			
 		</script>
 	{{/cpf3}}
 
-    <!-- Modal do CPF -->
-    <div id="modalCPF" class="modal fade">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <!-- corpo -->
-          <div class="modal-header">
-            Aviso
-          </div>
-          <div class="modal-body">
-            <p>Prezado(a) {{{ firstname }}},</p><br>
-	    <p>A partir da próxima segunda-feira, 7/5/2018, o acesso a plataforma Saberes
-		será feito por meio de seu CPF cadastrado na plataforma, e não mais pelo seu
-		nome de usuário.</p>
-	    <p>Fique tranquilo, vamos cuidar para que os certificados dos cursos que você 
-	       participou sejam mantidos mesmo com esta mudança.</p>
-	    <p>No caso de qualquer dúvida, ou caso precise regularizar seu cadastro, 
-		entre em contato conosco pelo endereço de e-mail 
-		ilbead@senado.leg.br</p><br>
-	    <p>Atenciosamente,</p>
-	    <p>Equipe do Instituto Legislativo Brasileiro</p>
-          </div>
-          <div class="modal-footer"><button type="button" class="btn btn-primary" data-dismiss="modal">OK</button></div>
-        </div>
-      </div>
-    </div>
      
     <!-- JS do modal CPF (tem que ser inserido depois de #username) -->
-    <script>
-        $("#modalCPF").on("show", function() {
-            $("#modalCPF a.btn").on("click", function(e) {
-                $("#modalCPF").modal('hide');
-            });
-        });
-        $("#modalCPF").on("hide", function() {  
-            $("#modalCPF a.btn").off("click");
-        });
-       
-        $("#modalCPF").on("hidden", function() {
-            $("#modalCPF").remove();
-        });
-       
-        $("#modalCPF").modal({                  
-          "backdrop"  : "static",
-          "keyboard"  : true,
-          "show"      : true                    
-        });
-    </script>
-     
-    <!-- CSS para localização do modal do CPF no centro da tela e no topo para mobile -->
-    <style>
-    @media only screen and (min-width: 768px) {
-      .modal {
-        text-align: center;
-      }
-      .modal:before {
-        display: inline-block;
-        vertical-align: middle;
-        content: " ";
-        height: 100%;
-      }
-      .modal-dialog {
-        display: inline-block;
-        text-align: left;
-        vertical-align: middle;
-      }
-    }
-    </style>
+    {{#loginChangeNotification}}
+	    <!-- Modal do CPF -->
+	    <div id="modalCPF" class="modal fade">
+	      <div class="modal-dialog">
+		<div class="modal-content">
+		  <!-- corpo -->
+		  <div class="modal-header">
+		    Aviso
+		  </div>
+		  <div class="modal-body">
+		    <p>Prezado(a) {{{ firstname }}},</p><br>
+		    <p>A partir da próxima segunda-feira, 7/5/2018, o acesso à plataforma Saberes
+			será feito por meio de seu CPF e não mais pelo seu
+			nome de usuário. Sua senha permanece a mesma.</p>
+		    <p>Os certificados dos cursos que você 
+		       participou serão mantidos, mesmo com essa mudança.</p>
+		    <p>Qualquer dúvida ou caso precise regularizar seu cadastro, 
+			entre em contato conosco pelo endereço de e-mail 
+			ilbead@senado.leg.br</p><br>
+		    <p>Atenciosamente,</p>
+		    <p>Equipe de Ensino a Distância do ILB</p>
+		  </div>
+		  <div class="modal-footer"><button type="button" class="btn btn-primary" data-dismiss="modal">OK</button></div>
+		</div>
+	      </div>
+	    </div>
+
+	    <script>
+		    $("#modalCPF").on("show", function() {
+		    $("#modalCPF a.btn").on("click", function(e) {
+		        $("#modalCPF").modal('hide');
+		    });
+		});
+		$("#modalCPF").on("hide", function() {  
+		    $("#modalCPF a.btn").off("click");
+		});
+	       
+		$("#modalCPF").on("hidden", function() {
+		    $("#modalCPF").remove();
+		});
+	       
+		$("#modalCPF").modal({                  
+		  "backdrop"  : "static",
+		  "keyboard"  : true,
+		  "show"      : true                    
+		});
+	    </script>
+	     
+	    <!-- CSS para localização do modal do CPF no centro da tela e no topo para mobile -->
+	    <style>
+	    @media only screen and (min-width: 768px) {
+	      .modal {
+		text-align: center;
+	      }
+	      .modal:before {
+		display: inline-block;
+		vertical-align: middle;
+		content: " ";
+		height: 100%;
+	      }
+	      .modal-dialog {
+		display: inline-block;
+		text-align: left;
+		vertical-align: middle;
+	      }
+	    }
+	    </style>
+    {{/loginChangeNotification}}
+
+
     <div class="col-xs-12 col-md-4">
         <div class="col-xs-12" style="background:#f7f7f7; border:1px solid #e6e6e6; padding-top: 3%;">
             <h3 style="margin-top: auto; margin-bottom: 8%;">Bem-vindo ao Saberes!</h3>
