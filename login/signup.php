@@ -103,73 +103,49 @@ echo $OUTPUT->footer();
 // require_once($CFG->dirroot.'/user/profile/field/cpf/field.class.php');
 // $cpf = $formfield->display_data();
 
-$cpf = "<script>document.getElementById(\"profilefield_cpf\").value</script>";
-
-echo $cpf;
-
-function validatecpf($cpf = null)  {   // Verifica se um número foi informado
-    
-    if(empty($cpf)) {
-        return false;
-    }
- 
-    // Elimina possivel mascara
-    $cpf = str_replace('[^0-9]', '', $cpf);
-    $cpf = str_pad($cpf, 11, '0', STR_PAD_LEFT);
-     
-    // Verifica se o numero de digitos informados é igual a 11 
-    if (strlen($cpf) != 11) {
-        return false;
-    }
-    // Verifica se nenhuma das sequências invalidas abaixo 
-    // foi digitada. Caso afirmativo, retorna falso
-    else if ($cpf == '00000000000' || 
-        $cpf == '11111111111' || 
-        $cpf == '22222222222' || 
-        $cpf == '33333333333' || 
-        $cpf == '44444444444' || 
-        $cpf == '55555555555' || 
-        $cpf == '66666666666' || 
-        $cpf == '77777777777' || 
-        $cpf == '88888888888' || 
-        $cpf == '99999999999') {
-            echo "<h1>Falso</h1>";
-        return false;
-     // Calcula os digitos verificadores para verificar se o
-     // CPF é válido
-     } else {   
-         
-        for ($t = 9; $t < 11; $t++) {
-             
-            for ($d = 0, $c = 0; $c < $t; $c++) {
-                $d += $cpf{$c} * (($t + 1) - $c);
-            }
-            $d = ((10 * $d) % 11) % 10;
-            if ($cpf{$c} != $d) {
-                return false;
-            }
-        }
-            echo "<h1>TRUE</h1>";
-        return true;
-    }
-}
-
-$valido = validatecpf($cpf);
-
-if ($valido == false) {
-
-    echo "<script>document.getElementById('id_error_username').style.display = 'block'";
-    echo "<script>document.getElementById('id_error_username').innerHTML = 'CPF inválido';</script>";
-}
-
 ?>
 
 <script type="text/javascript">
 
+    function TestaCPF(strCPF) {
+        var Soma;
+        var Resto;
+        Soma = 0;
+        if (strCPF == "00000000000") return false;
+        
+        for (i=1; i<=9; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (11 - i);
+        Resto = (Soma * 10) % 11;
+        
+        if ((Resto == 10) || (Resto == 11))  Resto = 0;
+        if (Resto != parseInt(strCPF.substring(9, 10)) ) return false;
+        
+        Soma = 0;
+        for (i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (12 - i);
+        Resto = (Soma * 10) % 11;
+        
+        if ((Resto == 10) || (Resto == 11))  Resto = 0;
+        if (Resto != parseInt(strCPF.substring(10, 11) ) ) return false;
+        return true;
+    }
+
+    var button = document.getElementById("id_submitbutton");
+
+    button.onclick = function(){
+        
+        var valido = TestaCPF(document.getElementById("id_username").value);
+        if(valido == false){
+            document.getElementById('id_error_username').style.display = 'block';
+            document.getElementById('id_error_username').style.color = '#ff4136';
+            document.getElementById('id_error_username').innerHTML = '- CPF inválido';
+            
+        }
+
+    }
+
     var child = document.getElementById("id_error_username");
     child.style.display = "none";
     
-    var cpf = document.getElementById("profilefield_cpf");
+    var cpf = document.getElementById("id_username");
     cpf.onkeypress = cpf.onpaste = checkInput;
 
     function checkInput(e) {
