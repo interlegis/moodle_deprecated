@@ -38,20 +38,20 @@ class login_signup_form extends moodleform implements renderable, templatable {
 
         $mform->addElement('header', 'createuserandpass', get_string('createuserandpass'), '');
 
-        // $mform->addElement('number', 'username', get_string('username'), 'maxlength="11" size="12"');
-        // $mform->setType('username', PARAM_INT);
-        // // $mform->addRule('username', get_string('missingusername'), 'required', null, 'client');
+        $mform->addElement('number', 'username', get_string('username'), 'maxlength="11" size="12"');
+        $mform->setType('username', PARAM_INT);
+        $mform->addRule('username', get_string('missingusername'), 'required', null, 'client');
  
         $mform->addElement( 
             'text', 
             'username', 
             format_string('CPF'), 
-            'maxlength="11" size="11" id="profilefield_cpf" pattern="[0-9]{11}" data-tip="Informe o CPF (apenas números)" title="Apenas números"' 
+            'maxlength="11" id="profilefield_cpf" pattern="[0-9]{11}" data-tip="Informe o CPF (apenas números)" title="Apenas números"' 
         ); 
         $mform->setType('username', PARAM_TEXT); 
         // $mform->addRule('username', get_string('missingusername'), 'required', null, 'client'); 
-        $mform->addRule('username', get_string('onlydigits'), 'numeric', null, 'client'); 
-
+        $mform->addRule('username', get_string('onlydigits', 'profilefield_cpf'), 'numeric', null, 'client');
+        
         if (!empty($CFG->passwordpolicy)){
             $mform->addElement('static', 'passwordpolicyinfo', '', print_password_policy());
         }

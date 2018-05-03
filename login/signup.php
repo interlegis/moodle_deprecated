@@ -103,11 +103,12 @@ echo $OUTPUT->footer();
 // require_once($CFG->dirroot.'/user/profile/field/cpf/field.class.php');
 // $cpf = $formfield->display_data();
 
-$cpf = "<script>document.getElementById('profilefield_cpf').value</script>";
+$cpf = "<script>document.getElementById(\"profilefield_cpf\").value</script>";
 
-echo "<h1>" . $cpf . "</h1>";
+echo $cpf;
 
 function validatecpf($cpf = null)  {   // Verifica se um número foi informado
+    
     if(empty($cpf)) {
         return false;
     }
@@ -132,6 +133,7 @@ function validatecpf($cpf = null)  {   // Verifica se um número foi informado
         $cpf == '77777777777' || 
         $cpf == '88888888888' || 
         $cpf == '99999999999') {
+            echo "<h1>Falso</h1>";
         return false;
      // Calcula os digitos verificadores para verificar se o
      // CPF é válido
@@ -147,21 +149,25 @@ function validatecpf($cpf = null)  {   // Verifica se um número foi informado
                 return false;
             }
         }
- 
+            echo "<h1>TRUE</h1>";
         return true;
     }
 }
 
 $valido = validatecpf($cpf);
 
-echo "<script>console.log(" . validatecpf($cpf) . ");</script>";
-
 if ($valido == false) {
-    echo "<script>document.getElementById('id_error_username').innerHTML('CPF inválido');</script>";
+
+    echo "<script>document.getElementById('id_error_username').style.display = 'block'";
+    echo "<script>document.getElementById('id_error_username').innerHTML = 'CPF inválido';</script>";
 }
 
 ?>
+
 <script type="text/javascript">
+
+    var child = document.getElementById("id_error_username");
+    child.style.display = "none";
     
     var cpf = document.getElementById("profilefield_cpf");
     cpf.onkeypress = cpf.onpaste = checkInput;
