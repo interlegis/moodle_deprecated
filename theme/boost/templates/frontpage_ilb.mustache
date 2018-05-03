@@ -914,7 +914,8 @@ require(['theme_boost/loader']);
 
 <script type="text/javascript">
     
-    var text = document.getElementById("profilefield_cpf");
+    var text = document.getElementById("login_username");
+    document.getElementById("login_username").setAttribute("maxlength", 11);
     text.onkeypress = text.onpaste = checkInput;
 
     function checkInput(e) {

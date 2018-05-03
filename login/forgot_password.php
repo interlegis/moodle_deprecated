@@ -96,7 +96,8 @@ if (empty($token)) {
 
 <script type="text/javascript">
     
-    var text = document.getElementById("profilefield_cpf");
+    var text = document.getElementById("id_username");
+    document.getElementById("id_username").setAttribute("maxlength", 11);
     text.onkeypress = text.onpaste = checkInput;
 
     function checkInput(e) {
