@@ -49,6 +49,20 @@ if (isloggedin()) {
   $user_picture_url=$user_picture->get_url($PAGE);
   $user_profile_url=$CFG->wwwroot . "/user/profile.php?id=" . $USER->id . "&course=1";
 
+
+	switch($USER->profile['situacaoaluno'])
+	{
+		case '1':
+			$cpf1 = 'cpf1';
+			break;
+		case '2':
+			$cpf2 = 'cpf2';
+			break;
+		case '3':
+			$cpf3 = 'cpf3';
+			break;			
+	}
+
   $templatecontext = [
 	    'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
 	    'output' => $OUTPUT,
@@ -62,6 +76,9 @@ if (isloggedin()) {
 			'firstname' => $USER->firstname,
 			'lastname' => $USER->lastname,
 			'sessKey' => $USER->sesskey,
+			'cpf1' => $cpf1,
+			'cpf2' => $cpf2,
+			'cpf3' => $cpf3,
 			'moodle_url' => $CFG->wwwroot,
 			'userpictureurl' => $user_picture_url,
 			'userprofileurl' => $user_profile_url,
@@ -81,5 +98,8 @@ if (isloggedin()) {
 	    'bodyattributes' => $bodyattributes,
 	    'moodle_url' => $CFG->wwwroot
 	];
+	
+
+	
 	echo $OUTPUT->render_from_template('theme_boost/frontpage_ilb', $templatecontext);
 }

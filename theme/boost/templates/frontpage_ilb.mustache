@@ -761,6 +761,27 @@
     <!-- se está logado, exibe nome do usuário, login, boas vindas e opção para sair -->
     {{#username}}
 
+	{{#cpf1}}
+		{{! Inserir modal do aviso caso o CPF seja único e válido e o login foi migrado }}
+		<script>
+			alert("Caso 1!");
+		</script>
+	{{/cpf1}}
+
+	{{#cpf2}}
+		{{! Inserir modal do aviso caso o CPF seja duplicado e válido e o login foi migrado }}
+		<script>	
+			alert("Caso 2!");	
+		</script>
+	{{/cpf2}}
+
+	{{#cpf3}}		
+		{{! Inserir modal do aviso caso o CPF seja duplicado e inválido, o usuário foi cancelado }}	
+		<script>
+			alert("Caso 3!");
+		</script>
+	{{/cpf3}}
+
     <!-- Modal do CPF -->
     <div id="modalCPF" class="modal fade">
       <div class="modal-dialog">
