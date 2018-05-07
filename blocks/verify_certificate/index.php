@@ -64,6 +64,78 @@ $sql = "SELECT ci.timecreated AS citimecreated,
          WHERE ci.code = ?";
 $certificates = $DB->get_records_sql($sql, array($id));
 
+function getFormattedCPFFromUsername($userid) {
+	global $DB;
+	$user = $DB->get_record("user", array("id" => $userid));
+	return mask($user->username, '###.###.###-##');
+}
+
+function mask($val, $mask)
+{
+    if(validatecpf($val)) {
+	    $maskared = '';
+	    $k = 0;
+	    for($i = 0; $i<=strlen($mask)-1; $i++){
+	    
+		if($mask[$i] == '#'){
+		    if(isset($val[$k]))
+			   $maskared .= $val[$k++];
+		}
+		else
+		{
+		       if(isset($mask[$i]))
+			    $maskared .= $mask[$i];
+		}
+	    }
+	    return $maskared;
+    } else {
+	 return "";
+    }
+}
+
+
+function validatecpf($cpf) {
+	// Verifica se um numero foi informado.
+	if (is_null($cpf)) {
+	    return false;
+	}
+	if (!is_numeric($cpf)) {
+	    return false;
+	}
+	//$cpf = str_pad($cpf, 11, '0', STR_PAD_LEFT);
+
+	// Verifica se o numero de digitos informados eh igual a 11.
+	if (strlen($cpf) != 11) {
+	    return false;
+	} else if ($cpf == '00000000000' || $cpf == '11111111111' || $cpf == '22222222222' ||
+	    $cpf == '33333333333' || $cpf == '44444444444' || $cpf == '55555555555' ||
+	    $cpf == '66666666666' || $cpf == '77777777777' || $cpf == '88888888888' ||
+	    $cpf == '99999999999') {
+	    return false;
+	} else {
+	    // Calcula os digitos verificadores para verificar se o CPF eh valido.
+
+		$cpf = preg_replace('/[^0-9]/', '', (string) $cpf);
+		// Valida tamanho
+		if (strlen($cpf) != 11)
+			return false;
+		// Calcula e confere primeiro dígito verificador
+		for ($i = 0, $j = 10, $soma = 0; $i < 9; $i++, $j--)
+			$soma += $cpf{$i} * $j;
+		$resto = $soma % 11;
+		if ($cpf{9} != ($resto < 2 ? 0 : 11 - $resto))
+			return false;
+		// Calcula e confere segundo dígito verificador
+		for ($i = 0, $j = 11, $soma = 0; $i < 10; $i++, $j--)
+			$soma += $cpf{$i} * $j;
+		$resto = $soma % 11;
+	
+		$resultado = $cpf{10} == ($resto < 2 ? 0 : 11 - $resto);
+		return $resultado;
+	}
+}
+
+
 if (! $certificates) {
     echo $OUTPUT->box_start('generalbox boxaligncenter');
     echo '<div id="block_verify_certificate"><br>';
@@ -102,11 +174,12 @@ if (! $certificates) {
         $certrecord->id = $certdata->id;
 	$userid = $certrecord->userid;
 
-	// Exibe CPF, se definido        
-	require_once("$CFG->dirroot/user/profile/lib.php");
-	require_once("$CFG->dirroot/user/profile/field/cpf/field.class.php");
-	$formfield = new profile_field_cpf('8', $certdata->userid);
-	$cpf = $formfield->display_data();
+	// Exibe CPF, se username for CPF        
+	#require_once("$CFG->dirroot/user/profile/lib.php");
+	#require_once("$CFG->dirroot/user/profile/field/cpf/field.class.php");
+	#$formfield = new profile_field_cpf('8', $certdata->userid);
+	#$cpf = $formfield->display_data();
+	$cpf = getFormattedCPFFromUsername($userid);
 	if ($cpf) {
             echo '<p><b>' . "CPF" . ': </b>' . $cpf . '<br /></p>';
         } 

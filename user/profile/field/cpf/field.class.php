@@ -46,29 +46,29 @@ class profile_field_cpf extends profile_field_base {
     private function exists($cpf = null, $userid = 0) {
 	global $DB;
 
-	// Por definição, se for admin, aceita 00000000000
-	if( is_siteadmin() && $cpf == '00000000000') {
-	    return true;
-	}
-	                             	    
-        // Verifica se um número foi informado.
-        if (is_null($cpf)) {
-            return false;
-	}
+    	// Por definição, se for admin, aceita 00000000000
+    	if( is_siteadmin() && $cpf == '00000000000') {
+    	    return true;
+    	}
+    	                             	    
+            // Verifica se um número foi informado.
+            if (is_null($cpf)) {
+                return false;
+    	}
 
-        $sql = "SELECT uid.data FROM {user_info_data} uid
-		INNER JOIN {user_info_field} uif ON uid.fieldid = uif.id
-                INNER JOIN {user} u on uid.userid = u.id
-                WHERE uif.datatype = 'cpf' AND u.deleted = 0 AND uid.data = :cpf AND uid.userid <> :userid";
-        $params['cpf'] = $cpf;
-        $params['userid'] = $userid;
-        $dbcpf = current($DB->get_records_sql($sql, $params));
+            $sql = "SELECT uid.data FROM {user_info_data} uid
+    		INNER JOIN {user_info_field} uif ON uid.fieldid = uif.id
+                    INNER JOIN {user} u on uid.userid = u.id
+                    WHERE uif.datatype = 'cpf' AND u.deleted = 0 AND uid.data = :cpf AND uid.userid <> :userid";
+            $params['cpf'] = $cpf;
+            $params['userid'] = $userid;
+            $dbcpf = current($DB->get_records_sql($sql, $params));
 
-        if (!empty($dbcpf)) {
-            return false;
-        } else {
-            return true;
-        }
+            if (!empty($dbcpf)) {
+                return false;
+            } else {
+                return true;
+            }
     }
 
     /*

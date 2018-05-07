@@ -38,11 +38,11 @@ class login_signup_form extends moodleform implements renderable, templatable {
 
         $mform->addElement('header', 'createuserandpass', get_string('createuserandpass'), '');
 
-
-        $mform->addElement('text', 'username', get_string('username'), 'maxlength="100" size="12"');
+        $mform->addElement('text', 'username', 'CPF', 'maxlength="11" size="11"');
         $mform->setType('username', PARAM_RAW);
-        $mform->addRule('username', get_string('missingusername'), 'required', null, 'client');
-
+        $mform->addRule('username', 'CPF não informado!', 'required', null, 'client');
+	$mform->addRule('username', 'Informe apenas dígitos!', 'numeric', null, 'client');
+        
         if (!empty($CFG->passwordpolicy)){
             $mform->addElement('static', 'passwordpolicyinfo', '', print_password_policy());
         }
@@ -121,7 +121,51 @@ class login_signup_form extends moodleform implements renderable, templatable {
         }
     }
 
+
     function validation($data, $files) {
+
+	    function validatecpf($cpf) {
+ 	       // Verifica se um numero foi informado.
+		if (is_null($cpf)) {
+		    return false;
+		}
+		if (!is_numeric($cpf)) {
+		    return false;
+		}
+		//$cpf = str_pad($cpf, 11, '0', STR_PAD_LEFT);
+
+		// Verifica se o numero de digitos informados eh igual a 11.
+		if (strlen($cpf) != 11) {
+		    return false;
+		} else if ($cpf == '00000000000' || $cpf == '11111111111' || $cpf == '22222222222' ||
+		    $cpf == '33333333333' || $cpf == '44444444444' || $cpf == '55555555555' ||
+		    $cpf == '66666666666' || $cpf == '77777777777' || $cpf == '88888888888' ||
+		    $cpf == '99999999999') {
+		    return false;
+		} else {
+		    // Calcula os digitos verificadores para verificar se o CPF eh valido.
+
+			$cpf = preg_replace('/[^0-9]/', '', (string) $cpf);
+			// Valida tamanho
+			if (strlen($cpf) != 11)
+				return false;
+			// Calcula e confere primeiro dígito verificador
+			for ($i = 0, $j = 10, $soma = 0; $i < 9; $i++, $j--)
+				$soma += $cpf{$i} * $j;
+			$resto = $soma % 11;
+			if ($cpf{9} != ($resto < 2 ? 0 : 11 - $resto))
+				return false;
+			// Calcula e confere segundo dígito verificador
+			for ($i = 0, $j = 11, $soma = 0; $i < 10; $i++, $j--)
+				$soma += $cpf{$i} * $j;
+			$resto = $soma % 11;
+			
+			$resultado = $cpf{10} == ($resto < 2 ? 0 : 11 - $resto);
+			return $resultado;
+		}
+	    }
+
+
         $errors = parent::validation($data, $files);
 
         if (signup_captcha_enabled()) {
@@ -137,12 +181,20 @@ class login_signup_form extends moodleform implements renderable, templatable {
             }
         }
 
+	// Valida CPF
+	$cpf = $this->_form->getElement('username')->getValue();
+	$cpfValido = validatecpf($cpf);
+	if(!$cpfValido) {
+             $errors['username'] = 'CPF inválido!';
+	}
+
         $errors += signup_validate_data($data, $files);
 
         return $errors;
 
     }
 
+    
     /**
      * Export this data so it can be used as the context for a mustache template.
      *

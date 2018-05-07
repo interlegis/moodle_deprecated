@@ -59,10 +59,29 @@ if ($certificate->datefmt == 1) {
 $start_date = userdate($start_date, $fmt);
 $end_date = userdate($end_date, $fmt);
 
-require_once($CFG->dirroot.'/user/profile/field/cpf/field.class.php');
-$formfield = new profile_field_cpf('8', $USER->id);
-$cpf = $formfield->display_data();
+//MASK para CPF
+function mask($val, $mask)
+{
+    $maskared = '';
+    $k = 0;
+    for($i = 0; $i<=strlen($mask)-1; $i++){
+    
+        if($mask[$i] == '#'){
+            if(isset($val[$k]))
+            $maskared .= $val[$k++];
+            }
+        else
+        {
+            if(isset($mask[$i]))
+            $maskared .= $mask[$i];
+        }
+    }
+return $maskared;
+}
 
+$cpf = mask($USER->username, '###.###.###-##');
+
+require_once($CFG->dirroot.'/user/profile/field/cpf/field.class.php');
 
 $pdf = new PDF($certificate->orientation, 'mm', 'A4', true, 'UTF-8', false);
 

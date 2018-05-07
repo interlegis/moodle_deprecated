@@ -42,9 +42,29 @@ $style = <<<EOT
 EOT
 */
 
+//MASK para CPF
+function mask($val, $mask)
+{
+    $maskared = '';
+    $k = 0;
+    for($i = 0; $i<=strlen($mask)-1; $i++){
+    
+        if($mask[$i] == '#'){
+            if(isset($val[$k]))
+            $maskared .= $val[$k++];
+            }
+        else
+        {
+            if(isset($mask[$i]))
+            $maskared .= $mask[$i];
+        }
+    }
+return $maskared;
+}
+
+$cpf = mask($USER->username, '###.###.###-##');
+
 require_once($CFG->dirroot.'/user/profile/field/cpf/field.class.php');
-$formfield = new profile_field_cpf('8', $USER->id);
-$cpf = $formfield->display_data();
 
 
 $pdf = new PDF($certificate->orientation, 'mm', 'A4', true, 'UTF-8', false);

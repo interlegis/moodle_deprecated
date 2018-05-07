@@ -108,3 +108,4 @@ class login_forgot_password_form extends moodleform {
     }
 
 }
+

@@ -38,7 +38,6 @@ $strdefaultcategory = get_string('profiledefaultcategory', 'admin');
 $strnofields        = get_string('profilenofieldsdefined', 'admin');
 $strcreatefield     = get_string('profilecreatefield', 'admin');
 
-
 // Do we have any actions to perform before printing the header.
 
 switch ($action) {

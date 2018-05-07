@@ -735,3 +735,4 @@ function profile_has_required_custom_fields_set($userid) {
 
     return true;
 }
+

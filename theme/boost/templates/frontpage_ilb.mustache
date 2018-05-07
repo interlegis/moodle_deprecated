@@ -727,7 +727,7 @@
                 <div class="col-xs-12" style="background-color: #F7F7F7; border: 1px solid #E6E6E6; border-bottom: 0;">
                     <h4 style="color: #0F5688; border: 0;">ACESSO</h4>
                     <div class="c1 fld username">
-                        <label for="login_username">Identificação de usuário</label>
+                        <label for="login_username">CPF</label>
                         <br />
                         <div class="input-group" style="width: 100%;">
                             <input type="text" name="username" id="login_username" value="" class="form-control input-sm">
@@ -742,7 +742,7 @@
                     </div>
                     <div class="c1 rememberusername">
                         <input type="checkbox" name="rememberusername" id="rememberusername" value="1">
-                        <label for="rememberusername">Lembrar identificação de usuário</label>
+                        <label for="rememberusername">Lembrar CPF</label>
                     </div>
                 </div>
                 <div class="col-xs-12" style="background-color: #F7F7F7; border: 1px solid #E6E6E6; border-top: 0; padding-bottom: 3%;">
@@ -761,11 +761,15 @@
     {{/username}}
     <!-- se está logado, exibe nome do usuário, login, boas vindas e opção para sair -->
     {{#username}}
+	
 	{{#cpf2}}
 		{{! Inserir modal do aviso caso o CPF seja duplicado e válido e o login foi migrado }}
 		<script>
 			$.ajax({url: "{{{ moodle_url }}}/login/logout.php?sesskey={{{ sessKey }}}", success: function(result){
-				alert("O usuário {{username}} foi desabilitado, favor efetuar login com seu CPF!");	
+				alert("O usuário {{username}} foi desativado e seus certificados foram migrados para outro cadastro com mesmo CPF. " + 
+					"\n\nCaso tenha dificuldades com seu acesso, favor entrar em conosco pelo e-mail ilbead@senado.leg.br.\n\n" + 
+					"Atenciosamente, \nEquipe de Ensino a Distância do ILB"
+				);
 				window.location.replace("{{{ moodle_url }}}");
 			}});			
 		</script>
@@ -775,7 +779,10 @@
 		{{! Inserir modal do aviso caso o CPF seja duplicado e inválido, o usuário foi cancelado }}	
 		<script>
 			$.ajax({url: "{{{ moodle_url }}}/login/logout.php?sesskey={{{ sessKey }}}", success: function(result){
-				alert("O usuário {{username}} foi inativado, favor entrar em contato com ilbead@senado.leg.br para maiores informações.");	
+				alert("O usuário {{username}} foi desativado em virtude de haver outro cadastro com mesmo CPF. " + 
+					"\n\nCaso seja o titular do CPF informado, favor entrar em contato com ilbead@senado.leg.br para regularizar seu acesso.\n\n" + 
+					"Atenciosamente, \nEquipe de Ensino a Distância do ILB"
+				);
 				window.location.replace("{{{ moodle_url }}}");
 			}});			
 		</script>

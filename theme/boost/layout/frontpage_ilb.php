@@ -79,7 +79,7 @@ if (isloggedin()) {
 			'cpf1' => $cpf1,
 			'cpf2' => $cpf2,
 			'cpf3' => $cpf3,
-			'loginChangeNotification' => !isset($cpf2) && !isset($cpf3),
+			'loginChangeNotification' => false,
 			'moodle_url' => $CFG->wwwroot,
 			'userpictureurl' => $user_picture_url,
 			'userprofileurl' => $user_profile_url,

@@ -91,3 +91,24 @@ if (empty($token)) {
         core_login_process_password_set($token);
     }
 }
+
+?>
+
+<script type="text/javascript">
+// FIXME suspenso até mudança definitiva para aceitarmos somente login por CPF
+/*    
+    var text = document.getElementById("id_username");
+    document.getElementById("id_username").setAttribute("maxlength", 11);
+    text.onkeypress = text.onpaste = checkInput;
+
+    function checkInput(e) {
+        var e = e || event;
+        var char = e.type == 'keypress' 
+            ? String.fromCharCode(e.keyCode || e.which) 
+            : (e.clipboardData || window.clipboardData).getData('Text');
+        if (/[^\d]/gi.test(char)) {
+            return false;
+        }
+    }
+ */
+</script>

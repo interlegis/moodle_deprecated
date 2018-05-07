@@ -32,9 +32,29 @@ $group = end(groups_get_all_groups($course->id, $USER->id));
 $group_name = format_string($group->name);
 $group_description = format_text($group->description, $group->descriptiontext);
 
+//MASK para CPF
+function mask($val, $mask)
+{
+    $maskared = '';
+    $k = 0;
+    for($i = 0; $i<=strlen($mask)-1; $i++){
+    
+        if($mask[$i] == '#'){
+            if(isset($val[$k]))
+            $maskared .= $val[$k++];
+            }
+        else
+        {
+            if(isset($mask[$i]))
+            $maskared .= $mask[$i];
+        }
+    }
+return $maskared;
+}
+
+$cpf = mask($USER->username, '###.###.###-##');
+
 require_once($CFG->dirroot.'/user/profile/field/cpf/field.class.php');
-$formfield = new profile_field_cpf('8', $USER->id);
-$cpf = $formfield->display_data();
 
 /*
 $style = <<<EOT
