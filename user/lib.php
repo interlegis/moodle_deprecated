@@ -1029,11 +1029,7 @@ function user_cpf_is_available($userid, $cpf) {
     global $CFG, $DB;
 
     $fields = $DB->get_field_sql("SELECT COUNT(*)
-		FROM  {user} u
-  			join {user_info_data} d on u.id = d.userid
-	 			and u.deleted = 0
-	 			and d.fieldid = 8
-	 			and d.data = ?", array($cpf));
+		FROM  {user} where username = ?", array($cpf));
 
 	if($fields == 0) return true;
 	else return false;

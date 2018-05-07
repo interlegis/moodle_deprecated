@@ -75,7 +75,6 @@ $PAGE->set_course($course);
 
 // do not require change own password cap if change forced
 if (!get_user_preferences('auth_forcecpfchange', false)) {
-    if(!user_can_change_cpf($USER->id))
         redirect($CFG->wwwroot); 
 }
 
